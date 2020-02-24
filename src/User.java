@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class User extends Account {
-	public User(String password, String name, Boolean user, Boolean admin) {
-		super(password, name, user, admin);
+	public User(String password, String name, boolean userBollean, boolean adminBollean) {
+		super(password, name, userBollean, adminBollean);
 		// TODO Auto-generated constructor stub
 	}
 

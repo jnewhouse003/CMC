@@ -3,8 +3,11 @@
  */
 package Driver;
 
+import java.util.ArrayList;
+
 import Account.Account;
 import Account.AccountUI;
+import university.University;
 import user.UserUI;
 
 /**
@@ -34,6 +37,15 @@ public class Driver implements AccountUI, UserUI
         System.out.println("Updated User Info: ");
         UserUI.viewUserInfo(peter);
         
+        System.out.println("--------------------");
+		System.out.println("Step 4: view results");
+		University school1 = new University("Peter University", "Minnesota", "St.Joe", "Peter", 1, 0, 100, 10, 10000, 10, 9999, 1, 100, 100, 10, 10,10,10);
+		University school2 = new University("Golden Circle", "Minnesota", "St.Paul", "Golden Circle", 6, 1/6, 5/6, 100, 100, 0, 0, 10000, 6/10000, 100, 10, 10,10,10);
+		ArrayList<University> results = new ArrayList<University>();
+		results.add(school1);
+		results.add(school2);
+		UserUI.displayResults(results);
+		
 	}
 
 }

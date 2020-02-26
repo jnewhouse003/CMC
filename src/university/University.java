@@ -11,7 +11,6 @@ package university;
  *
  */
 public class University {
-	//private variables
 	private String name;
 	private String state; 
 	private String location; 
@@ -22,7 +21,7 @@ public class University {
 	private int verbalSAT; 
 	private int mathSAT; 
 	private float expenses; 
-	private float finanicalAid; 
+	private float financialAid; 
 	private int numApplications; 
 	private float percentAdmitted; 
 	private float percentEnrolled;
@@ -33,14 +32,57 @@ public class University {
 	private int lifeQualityScale; 
 	private int emphases; 
 	
+	
+	
+	//private variables
 	/**
-	 * @param args
+	 * @param name
+	 * @param state
+	 * @param location
+	 * @param control
+	 * @param numStudents
+	 * @param percentFemale
+	 * @param percentMale
+	 * @param verbalSAT
+	 * @param mathSAT
+	 * @param expenses
+	 * @param financialAid
+	 * @param numApplications
+	 * @param percentAdmitted
+	 * @param percentEnrolled
+	 * @param academicsScale
+	 * @param socialScale
+	 * @param lifeQualityScale
+	 * @param emphases
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public University(String name, String state, String location, String control, int numStudents, float percentFemale,
+			float percentMale, int verbalSAT, int mathSAT, float expenses, float financialAid, int numApplications,
+			float percentAdmitted, float percentEnrolled, int academicsScale, int socialScale, int lifeQualityScale,
+			int emphases) {
+		super();
+		this.name = name;
+		this.state = state;
+		this.location = location;
+		this.control = control;
+		this.numStudents = numStudents;
+		this.percentFemale = percentFemale;
+		this.percentMale = percentMale;
+		this.verbalSAT = verbalSAT;
+		this.mathSAT = mathSAT;
+		this.expenses = expenses;
+		this.financialAid = financialAid;
+		this.numApplications = numApplications;
+		this.percentAdmitted = percentAdmitted;
+		this.percentEnrolled = percentEnrolled;
+		this.academicsScale = academicsScale;
+		this.socialScale = socialScale;
+		this.lifeQualityScale = lifeQualityScale;
+		this.emphases = emphases;
 	}
 
+	
+	
+	
 	/**
 	 * @return the name
 	 */
@@ -78,7 +120,7 @@ public class University {
 
 	/**
 	 * @param location the location to set
-	 */return University;
+	 */
 	public void setLocation(String location) {
 		this.location = location;
 	}
@@ -184,15 +226,15 @@ public class University {
 	/**
 	 * @return the finanicalAid
 	 */
-	public float getFinanicalAid() {
-		return finanicalAid;
+	public float getFinancialAid() {
+		return financialAid;
 	}
 
 	/**
 	 * @param finanicalAid the finanicalAid to set
 	 */
-	public void setFinanicalAid(float finanicalAid) {
-		this.finanicalAid = finanicalAid;
+	public void setFinancialAid(float financialAid) {
+		this.financialAid = financialAid;
 	}
 
 	/**

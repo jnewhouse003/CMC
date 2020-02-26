@@ -1,0 +1,11 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"Jerome\\CSCI230\\" : "src"
+		}
+	},
+	"name" : "jerome/CSCI230",
+	"require" : {
+		"php" : ">=7.1"
+	}
+}

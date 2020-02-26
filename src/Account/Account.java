@@ -1,3 +1,4 @@
+package Account;
 /**
  * 
  */
@@ -12,7 +13,7 @@ public class Account {
 	private boolean userLogOn;
 	private boolean adminLogOn;
 	
-	public Account(String password, String userName) {
+	public Account(String userName, String password) {
 		super();
 		this.password = password;
 		this.userName = userName;
@@ -50,27 +51,22 @@ public class Account {
 		this.adminLogOn = adminLogOn;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		public void logOff(){
 		//TODO	
 		}
 		
 		public boolean logOn(String userName, String password) {
-		//TODO	
+		
+			return true;
 		}
 		
 		public boolean isLoggedOn() {
-		//TODO	
+		
+			return true;
 		}
 		
 		
 		
 		}
-	}
+	
 
-}

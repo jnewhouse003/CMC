@@ -1,4 +1,7 @@
+package user;
 import java.util.ArrayList;
+
+import Account.Account;
 
 public class User extends Account {
 	public User(String name, String password) {

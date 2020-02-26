@@ -49,5 +49,23 @@ public class AccountController {
 	public void viewResults(String universityName) {
 		
 	}
+	
+	
+	public void viewUserInfo(Account user) {
+		System.out.println("User: " + user.getUserName()); 
+		
+		System.out.println("Password: " + user.getPassword()); 
+		
+		System.out.println("First Name: " + user.getFirstName()); 
+		
+		System.out.println("Last Name: " + user.getLastName()); 
+	}
+	
+	public void editUserInfo(Account info, String newPassword, String newFirstName, String newLastName) {
+		info.setPassword(newPassword); 
+		info.setFirstName(newFirstName);
+		info.setLastName(newLastName);
+		
+	}
 
 }

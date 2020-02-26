@@ -26,7 +26,7 @@ public class DBController
 	}
 	public Account getAccount(String account) 
 	{
-		Account peter = new Account("pohmann", "123");
+		Account peter = new Account("pohmann", "123", "peter", "ohmann");
 		return peter;
 	}
 	public boolean lookUpUser(String user) 

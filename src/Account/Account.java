@@ -10,11 +10,15 @@ package Account;
 public class Account {
 	private String password;
 	private String userName;
+	private String firstName; 
+	private String lastName;
 	private boolean userLogOn;
 	private boolean adminLogOn;
 	
-	public Account(String userName, String password) {
+	public Account(String userName, String password, String firstName, String lastName) {
 		super();
+		this.setFirstName(firstName); 
+		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
 	}
@@ -63,6 +67,34 @@ public class Account {
 		public boolean isLoggedOn() {
 		
 			return true;
+		}
+
+		/**
+		 * @return the firstName
+		 */
+		public String getFirstName() {
+			return firstName;
+		}
+
+		/**
+		 * @param firstName the firstName to set
+		 */
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+		/**
+		 * @return the lastName
+		 */
+		public String getLastName() {
+			return lastName;
+		}
+
+		/**
+		 * @param lastName the lastName to set
+		 */
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
 		}
 		
 		

@@ -5,6 +5,8 @@ package user;
 
 import java.util.ArrayList;
 
+import Account.Account;
+
 /**
  * @author giteghete001
  *
@@ -72,9 +74,14 @@ public class UserController {
 		 * @param info 
 		 * 
 		 */
-		public void editUserInfo(Object info) {
-			this.setUserInfo(info); 
+	
+		
+		/**public void viewUserInfo(Account user) {
+			System.out.println("User: " + user.getUserName()); 
+			
+			System.out.println("Password: " + user.getPassword()); 
 		}
+		*/
 		
 		private void setUserInfo(Object info) {
 			// TODO Auto-generated method stub

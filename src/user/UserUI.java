@@ -1,9 +1,12 @@
 package user;
 import java.util.ArrayList;
 
-public class UserUI {
+import Account.Account;
+import Account.AccountController;
 
-	
+public interface UserUI {
+
+	/**
 	public void addSavedSchool(University school) {
 		
 		
@@ -19,12 +22,21 @@ public class UserUI {
 		
 		
 	}
+	*/
 	
-	public void editUserInfo() {
+	public static void viewUserInfo(Account userInfo) {
+		AccountController info = new AccountController();
 		
-		
+		info.viewUserInfo(userInfo);
 	}
 	
+	public static void editUserInfo(Account userInfo, String password, String firstName, String lastName) {
+		
+		AccountController info = new AccountController();
+		
+		info.editUserInfo(userInfo, password,firstName, lastName);
+	}
+	/**
 	public void viewSavedSchool() {
 		
 		
@@ -48,5 +60,5 @@ public class UserUI {
 		
 	
 	}
-	
+	*/
 }

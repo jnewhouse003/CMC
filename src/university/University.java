@@ -29,7 +29,7 @@ public class University {
 	private int academicsScale;
 	private int socialScale; 
 	private int lifeQualityScale; 
-	private int emphases; 
+	private String emphases; 
 	
 	
 	
@@ -330,7 +330,7 @@ public class University {
 	/**
 	 * @param emphases the emphases to set
 	 */
-	public void setEmphases(int emphases) {
+	public void setEmphases(String emphases) {
 		this.emphases = emphases;
 	}
 

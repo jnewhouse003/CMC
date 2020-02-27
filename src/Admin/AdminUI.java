@@ -1,11 +1,14 @@
 package Admin;
 
+import java.util.ArrayList;
+
+import university.University;
 
 /**
  * @author jlaux001
  *
  */
-public class AdminUI {
+public interface AdminUI {
 	
 	public void addSchool(String university) {
 		
@@ -15,5 +18,39 @@ public class AdminUI {
 	}
 	public void logout() {
 		
+	}
+	
+	public void browseSchool() {
+		AdminController controller = new AdminController();
+		displayResults(controller.browseSchool());
+		
+	}
+	
+	public static void displayResults(ArrayList<University> results) {
+		for (int i = 0; i < results.size(); i++) {
+			System.out.println("University name: " + results.get(i).getName()); 
+			System.out.println("State: " + results.get(i).getState());
+			System.out.println("location: " + results.get(i).getLocation());
+			System.out.println("control: " + results.get(i).getControl());
+			System.out.println("Number of Students:" + results.get(i).getNumStudents());
+			System.out.println("percentage Female: " + results.get(i).getPercentFemale());
+			System.out.println("percentage Male: " + results.get(i).getPercentMale());
+			System.out.println("Verbal SAT: " + results.get(i).getVerbalSAT()); 
+			System.out.println("Math SAT: " + results.get(i).getMathSAT());
+			System.out.println("expenses: " + results.get(i).getExpenses());
+			System.out.println("control: " + results.get(i).getControl());
+			System.out.println("financial Aid:" + results.get(i).getFinancialAid());
+			System.out.println("Number of Applications: " + results.get(i).getNumApplications());
+			System.out.println("Percent Admitted " + results.get(i).getPercentAdmitted());
+			System.out.println("Percent Enrolled: " + results.get(i).getPercentEnrolled()); 
+			System.out.println("Academics Scale: " + results.get(i).getAcademicsScale());
+			System.out.println("Social Scale: " + results.get(i).getSocialScale());
+			System.out.println("Life Quality Scale: " + results.get(i).getLifeQualityScale());
+			System.out.println("Emphases:" + results.get(i).getEmphases());
+			System.out.println("");
+		
+		}
+		
+	
 	}
 }

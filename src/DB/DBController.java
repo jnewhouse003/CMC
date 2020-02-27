@@ -2,6 +2,7 @@ package DB;
 import java.util.ArrayList;
 
 import Account.Account;
+import university.University;
 import user.Criteria;
 
 /**
@@ -26,7 +27,7 @@ public class DBController
 	}
 	public Account getAccount(String account) 
 	{
-		Account peter = new Account("pohmann", "123", "peter", "ohmann");
+		Account peter = new Account("pohmann", "123", "peter", "ohmann"); 
 		return peter;
 	}
 	public boolean lookUpUser(String user) 
@@ -40,6 +41,11 @@ public class DBController
 			return false;
 		}
 	
+	}
+	public ArrayList<University> findallUniversity()
+	{
+		return null;
+		
 	}
 	
 	/*

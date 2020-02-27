@@ -16,18 +16,17 @@ public class University {
 	private String location; 
 	private String control; 
 	private int numStudents; 
-	private float percentFemale; 
-	private float percentMale; 
+	private double percentFemale; 
+	private double percentMale; 
 	private int verbalSAT; 
 	private int mathSAT; 
-	private float expenses; 
-	private float financialAid; 
+	private double expenses; 
+	private double financialAid; 
 	private int numApplications; 
-	private float percentAdmitted; 
-	private float percentEnrolled;
+	private double percentAdmitted; 
+	private double percentEnrolled;
 	//what is this variables for? 
 	private int academicsScale;
-	//
 	private int socialScale; 
 	private int lifeQualityScale; 
 	private int emphases; 
@@ -55,9 +54,9 @@ public class University {
 	 * @param lifeQualityScale
 	 * @param emphases
 	 */
-	public University(String name, String state, String location, String control, int numStudents, float percentFemale,
-			float percentMale, int verbalSAT, int mathSAT, float expenses, float financialAid, int numApplications,
-			float percentAdmitted, float percentEnrolled, int academicsScale, int socialScale, int lifeQualityScale,
+	public University(String name, String state, String location, String control, int numStudents, double percentFemale,
+			double percentMale, int verbalSAT, int mathSAT, double expenses, double financialAid, int numApplications,
+			double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int lifeQualityScale,
 			int emphases) {
 		super();
 		this.name = name;
@@ -156,28 +155,28 @@ public class University {
 	/**
 	 * @return the percentFemale
 	 */
-	public float getPercentFemale() {
+	public double getPercentFemale() {
 		return percentFemale;
 	}
 
 	/**
 	 * @param percentFemale the percentFemale to set
 	 */
-	public void setPercentFemale(float percentFemale) {
+	public void setPercentFemale(double percentFemale) {
 		this.percentFemale = percentFemale;
 	}
 
 	/**
 	 * @return the percentMale
 	 */
-	public float getPercentMale() {
+	public double getPercentMale() {
 		return percentMale;
 	}
 
 	/**
 	 * @param percentMale the percentMale to set
 	 */
-	public void setPercentMale(float percentMale) {
+	public void setPercentMale(double percentMale) {
 		this.percentMale = percentMale;
 	}
 
@@ -212,28 +211,28 @@ public class University {
 	/**
 	 * @return the expenses
 	 */
-	public float getExpenses() {
+	public double getExpenses() {
 		return expenses;
 	}
 
 	/**
 	 * @param expenses the expenses to set
 	 */
-	public void setExpenses(float expenses) {
+	public void setExpenses(double expenses) {
 		this.expenses = expenses;
 	}
 
 	/**
 	 * @return the finanicalAid
 	 */
-	public float getFinancialAid() {
+	public double getFinancialAid() {
 		return financialAid;
 	}
 
 	/**
 	 * @param finanicalAid the finanicalAid to set
 	 */
-	public void setFinancialAid(float financialAid) {
+	public void setFinancialAid(double financialAid) {
 		this.financialAid = financialAid;
 	}
 
@@ -254,28 +253,28 @@ public class University {
 	/**
 	 * @return the percentAdmitted
 	 */
-	public float getPercentAdmitted() {
+	public double getPercentAdmitted() {
 		return percentAdmitted;
 	}
 
 	/**
 	 * @param percentAdmitted the percentAdmitted to set
 	 */
-	public void setPercentAdmitted(float percentAdmitted) {
+	public void setPercentAdmitted(double percentAdmitted) {
 		this.percentAdmitted = percentAdmitted;
 	}
 
 	/**
 	 * @return the percentEnrolled
 	 */
-	public float getPercentEnrolled() {
+	public double getPercentEnrolled() {
 		return percentEnrolled;
 	}
 
 	/**
 	 * @param percentEnrolled the percentEnrolled to set
 	 */
-	public void setPercentEnrolled(float percentEnrolled) {
+	public void setPercentEnrolled(double percentEnrolled) {
 		this.percentEnrolled = percentEnrolled;
 	}
 

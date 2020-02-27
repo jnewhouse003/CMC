@@ -29,7 +29,7 @@ public class University {
 	private int academicsScale;
 	private int socialScale; 
 	private int lifeQualityScale; 
-	private int emphases; 
+	private String emphases; 
 	
 	
 	
@@ -52,12 +52,12 @@ public class University {
 	 * @param academicsScale
 	 * @param socialScale
 	 * @param lifeQualityScale
-	 * @param emphases
+	 * @param i
 	 */
 	public University(String name, String state, String location, String control, int numStudents, double percentFemale,
 			double percentMale, int verbalSAT, int mathSAT, double expenses, double financialAid, int numApplications,
 			double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int lifeQualityScale,
-			int emphases) {
+			String i) {
 		super();
 		this.name = name;
 		this.state = state;
@@ -76,7 +76,7 @@ public class University {
 		this.academicsScale = academicsScale;
 		this.socialScale = socialScale;
 		this.lifeQualityScale = lifeQualityScale;
-		this.emphases = emphases;
+		this.emphases = i;
 	}
 
 	
@@ -330,7 +330,7 @@ public class University {
 	/**
 	 * @param emphases the emphases to set
 	 */
-	public void setEmphases(int emphases) {
+	public void setEmphases(String emphases) {
 		this.emphases = emphases;
 	}
 

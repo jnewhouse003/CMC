@@ -80,8 +80,8 @@ public interface UserUI {
 		
 		}
 		
-	
 	}
+	
 
 
 	public static ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo)) {
@@ -92,3 +92,4 @@ public interface UserUI {
 	}
 	
 }
+

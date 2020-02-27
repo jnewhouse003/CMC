@@ -102,32 +102,30 @@ public class DBController
 		
 		ArrayList<University> allSchools = new ArrayList();
 		ArrayList<University> foundSchools = new ArrayList();
+		ArrayList<double> difference = new ArrayList();
+		
 		
 		for(int i = 0; i < allSchools.size(); i++) {
+			double temp = 0; 
 			if(allSchools.get(i).getState().contains(state)) {
-				if(allSchools.get(i).getControl().contains(control)) {
-					if(allSchools.get(i).getExpenses() > lowerExpense) {
-						if(upperExpense != 0) {
-							if(allSchools.get(i).getExpenses() < upperExpense) {
-								if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
-									foundSchools.add(allSchools.get(i));
-								}
-							}
-						}
-						else {
-							if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
-								foundSchools.add(allSchools.get(i));
-							}
-						}
+				temp += 1;
+			}
+			if(allSchools.get(i).getControl().contains(control)) {
+					temp += 1;
+				}
+			if(allSchools.get(i).getExpenses() > lowerExpense) {
+				if(upperExpense != 0) {
+					if(allSchools.get(i).getExpenses() < upperExpense) {
+						temp += 1;	
 					}
-					
 				}
 			}
-		}
-		
-		
-		
-		
+			if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
+				temp += 1;
+			}
+			
+					}
+					
 		return foundSchools;
 	}
 

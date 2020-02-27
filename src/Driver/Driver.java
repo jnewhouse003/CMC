@@ -18,7 +18,7 @@ import user.UserUI;
  * @author npink001
  *
  */
-public class Driver implements AccountUI, UserUI
+public class Driver implements AccountUI, UserUI, AdminUI
 {
 
 	private static String loginInfo, viewAndEditProfile, userSearchForSchools, userViewSearchResults, userFindTopFive, adminViewUniversities;

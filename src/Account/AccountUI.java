@@ -3,6 +3,10 @@
  */
 package Account;
 
+import java.util.ArrayList;
+
+import university.University;
+
 /**
  * @author dalvarez001
  *
@@ -25,6 +29,8 @@ public interface AccountUI {
 	public static void viewResults() { 
 		
 	}
+	
+	
 	
 	
 }

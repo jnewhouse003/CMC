@@ -52,8 +52,19 @@ public class DBController
 		
 		
 		
+		ArrayList<University> allSchools = new ArrayList();
+		ArrayList<University> foundSchools = new ArrayList();
 		
-		return null;
+		for(int i = 0; i < allSchools.size(); i++) {
+			if(allSchools.get(i).getState().equals(state)) {
+				if(allSchools.get(i).getNumStudents() == numStudents) {
+					foundSchools.add(allSchools.get(i));
+					
+				}
+			}
+		}
+		
+		return foundSchools;
 		
 	}
 	

@@ -43,17 +43,12 @@ public class Driver implements AccountUI, UserUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        searchController.searchSchool("Minnesota", "Students: 20,000");
-        searchController.searchSchool("Minnesota", "Students: 4,000");
-        searchController.searchSchool("California", "Students: 30,000");
-        //Scanner scan = new Scanner(System.in);
-        //String s = scan.next();
-        //String i = scan.nextLine();
-        
-        
-        
-      
-        
+        UserUI.searchSchool("Minnesota", "Students: 20,000");
+        UserUI.searchSchool("Colorado", "Students: 4,000");
+        UserUI.searchSchool("California", "Students: 10,000");
+        UserUI.searchSchool("Texas", "Students: 40,000");
+        UserUI.searchSchool("New York City", "Students: 8,000");
+        UserUI.searchSchool("Ohio", "Students: 15,000");
         
         
         

@@ -17,13 +17,11 @@ public interface UserUI {
 		
 		
 	}
-	
-	public University searchSchool(Criteria searchPara) {
-		return null;
-		
-		
-	}
 	*/
+	public static void searchSchool(String state, String numStudents) {
+		return null;
+	}
+	
 	
 	public static void viewUserInfo(Account userInfo) {
 		AccountController info = new AccountController();

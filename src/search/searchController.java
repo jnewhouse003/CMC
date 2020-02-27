@@ -12,7 +12,7 @@ public class searchController{
 	
 
 	public static void searchSchool(String state, String numStudents) {
-		University minnesota = new University();
+		
 		
 		
 	}

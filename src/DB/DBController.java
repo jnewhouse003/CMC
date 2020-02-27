@@ -67,6 +67,40 @@ public class DBController
 		return foundSchools;
 		
 	}
+	public ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,
+			String emphasesOne, String emphasesTwo) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<University> allSchools = new ArrayList();
+		ArrayList<University> foundSchools = new ArrayList();
+		
+		for(int i = 0; i < allSchools.size(); i++) {
+			if(allSchools.get(i).getState().contains(state)) {
+				if(allSchools.get(i).getControl().contains(control)) {
+					if(allSchools.get(i).getExpenses() > lowerExpense) {
+						if(upperExpense != 0) {
+							if(allSchools.get(i).getExpenses() < upperExpense) {
+								if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
+									foundSchools.add(allSchools.get(i));
+								}
+							}
+						}
+						else {
+							if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
+								foundSchools.add(allSchools.get(i));
+							}
+						}
+					}
+					
+				}
+			}
+		}
+		
+		
+		
+		
+		return foundSchools;
+	}
 	
 	/*
 	

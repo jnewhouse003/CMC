@@ -127,6 +127,14 @@ public class UserController {
 			
 			
 		}
+		
+		public ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo){
+		
+			DBController dataBase = new DBController();
+			return dataBase.findTopFive(state,control,lowerExpense,upperExpense,emphasesOne, emphasesTwo);
+			
+			
+		}
 	/**
 	 * 
 	 */

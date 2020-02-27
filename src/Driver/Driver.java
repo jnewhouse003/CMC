@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import Account.Account;
 import Account.AccountUI;
+import Admin.AdminUI;
 import search.searchController;
 import university.University;
 import user.User;
@@ -64,6 +65,17 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		results.add(school1);
 		results.add(school2);
 		UserUI.displayResults(results);
+		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 5: browse School");
+		AdminUI.browseSchool();
+		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 6: find top 5");
+		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
+
 		
 	}
 

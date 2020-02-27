@@ -20,7 +20,7 @@ public interface AdminUI {
 		
 	}
 	
-	public void browseSchool() {
+	public static void browseSchool() {
 		AdminController controller = new AdminController();
 		displayResults(controller.browseSchool());
 		

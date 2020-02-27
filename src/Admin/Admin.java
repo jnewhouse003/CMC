@@ -5,6 +5,8 @@ package Admin;
 
 import java.util.ArrayList;
 
+import Account.Account;
+
 /**
  * @author npink001
  *
@@ -12,9 +14,9 @@ import java.util.ArrayList;
 public class Admin extends Account
 {
 
-	ArrayList manageUniversities = new ArrayList<University>;
-	
-	ArrayList manageUsers = new ArrayList<User>;
+	ArrayList manageUniversities = new ArrayList<University();
+
+	ArrayList manageUsers = new ArrayList();
 	
 	/**
 	 * 

@@ -323,7 +323,7 @@ public class University {
 	/**
 	 * @return the emphases
 	 */
-	public int getEmphases() {
+	public String getEmphases() {
 		return emphases;
 	}
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import DB.DBController;
 import user.Criteria;
-import user.University;
 import university.University;
 
 /**
@@ -21,9 +20,7 @@ public class searchController{
 		
 	}
 	
-	public University displayResult(ArrayList<>){
-		
-		}
+	
 	
 	public void viewResults() {
 		System.out.println();

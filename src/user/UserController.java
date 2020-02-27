@@ -124,6 +124,7 @@ public class UserController {
 				return search.searchSchool(state, numStudents);
 				
 			}
+			return null;
 			
 			
 		}

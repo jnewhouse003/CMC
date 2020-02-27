@@ -2,10 +2,11 @@ package user;
 import java.util.ArrayList;
 
 import Account.Account;
+import university.University;
 
 public class User extends Account {
-	public User(String name, String password) {
-		super(name, password);
+	public User(String name, String password, String firstName, String lastName) {
+		super(name, password, firstName, lastName);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -29,10 +30,10 @@ public class User extends Account {
 		this.savedSchools.remove(school);
 	}
 	
-	public Boolean isLoggedOn() {
+	public boolean isLoggedOn() {
 		// TODO
 		
-		return null;
+		return true;
 		
 	}
 	

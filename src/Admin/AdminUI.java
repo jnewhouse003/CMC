@@ -10,13 +10,13 @@ import university.University;
  */
 public interface AdminUI {
 	
-	public void addSchool(String university) {
+	public static void addSchool(String university) {
 		
 	}
-	public void editSchool() {
+	public static void editSchool() {
 		
 	}
-	public void logout() {
+	public static void logout() {
 		
 	}
 	
@@ -27,6 +27,7 @@ public interface AdminUI {
 	}
 	
 	public static void displayResults(ArrayList<University> results) {
+		if(results.size() > 0) {
 		for (int i = 0; i < results.size(); i++) {
 			System.out.println("University name: " + results.get(i).getName()); 
 			System.out.println("State: " + results.get(i).getState());
@@ -51,6 +52,6 @@ public interface AdminUI {
 		
 		}
 		
-	
+		}
 	}
 }

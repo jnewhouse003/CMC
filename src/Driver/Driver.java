@@ -45,7 +45,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("pohmann", "123");
+        User peterUser = new User("pohmann", "123", "Peter", "Ohmann");
         UserUI.searchSchool(peterUser, "Minnesota", 20000);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);

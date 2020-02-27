@@ -84,7 +84,7 @@ public interface UserUI {
 	
 
 
-	public static ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo)) {
+	public static ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo) {
 		// TODO Auto-generated method stub
 		UserController userController = new UserController();
 		return userController.findTopFive(state,control,lowerExpense,upperExpense,emphasesOne,emphasesTwo);

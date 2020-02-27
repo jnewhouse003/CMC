@@ -6,6 +6,9 @@ package user;
 import java.util.ArrayList;
 
 import Account.Account;
+import DB.DBController;
+import search.searchController;
+import university.University;
 
 /**
  * @author giteghete001
@@ -113,6 +116,16 @@ public class UserController {
 		 */
 		public void manageProfile(String info) {
 			//Method implementation 
+		}
+		
+		public ArrayList<University> searchSchool(User user, String state, int numStudents){
+			if(user.isLoggedOn()) {
+				searchController search = new searchController();
+				return search.searchSchool(state, numStudents);
+				
+			}
+			
+			
 		}
 	/**
 	 * 

@@ -12,6 +12,7 @@ import Account.Account;
 import Account.AccountUI;
 import search.searchController;
 import university.University;
+import user.User;
 import user.UserUI;
 
 /**
@@ -43,12 +44,13 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        UserUI.searchSchool("Minnesota", "Students: 20,000");
-        UserUI.searchSchool("Colorado", "Students: 4,000");
-        UserUI.searchSchool("California", "Students: 10,000");
-        UserUI.searchSchool("Texas", "Students: 40,000");
-        UserUI.searchSchool("New York City", "Students: 8,000");
-        UserUI.searchSchool("Ohio", "Students: 15,000");
+        User peterUser = new User("pohmann", "123");
+        UserUI.searchSchool(peterUser, "Minnesota", 20000);
+        UserUI.searchSchool(peterUser, "Colorado", 4000);
+        UserUI.searchSchool(peterUser, "California", 10000);
+        UserUI.searchSchool(peterUser, "Texas",40000);
+        UserUI.searchSchool(peterUser, "New York City", 8000);
+        UserUI.searchSchool(peterUser, "Ohio", 15000);
         
         
         

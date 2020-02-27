@@ -21,6 +21,7 @@ public class Account {
 		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
+		this.userLogOn = true;
 	}
 
 	public String getPassword() {

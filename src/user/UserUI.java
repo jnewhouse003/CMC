@@ -18,8 +18,9 @@ public interface UserUI {
 		
 	}
 	*/
-	public static void searchSchool(String state, String numStudents) {
-		return null;
+	public static void searchSchool(User user, String state, int numStudents) {
+		UserController userController = new UserController();
+		userController.searchSchool(user, state, numStudents);
 	}
 	
 	

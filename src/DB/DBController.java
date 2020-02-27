@@ -47,12 +47,18 @@ public class DBController
 		return null;
 		
 	}
-	
-	/*
-	public Criteria findByCriteria(arrayList<> ) 
+	public ArrayList<University> findByCriteria(String state, int numStudents) 
 	{
 		
+		
+		
+		
+		return null;
+		
 	}
+	
+	/*
+	
 	public void persist(user) 
 	{
 		

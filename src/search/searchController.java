@@ -1,7 +1,11 @@
 package search;
 
+import java.util.ArrayList;
+
+import DB.DBController;
 import user.Criteria;
 import user.University;
+import university.University;
 
 /**
  * @author giteghete001
@@ -11,9 +15,9 @@ import user.University;
 public class searchController{
 	
 
-	public static void searchSchool(String state, String numStudents) {
-		
-		
+	public ArrayList<University> searchSchool(String state, int numStudents) {
+		DBController DataBase = new DBController();
+		return DataBase.findB;
 		
 	}
 	

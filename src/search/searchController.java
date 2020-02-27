@@ -11,7 +11,9 @@ import user.University;
 public class searchController{
 	
 
-	public void searchSchool(Criteria school) {
+	public static void searchSchool(String state, String numStudents) {
+		University minnesota = new University();
+		
 		
 	}
 	

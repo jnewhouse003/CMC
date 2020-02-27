@@ -12,5 +12,7 @@ public class SearchController {
 	public void viewResults() {
 		
 	}
+
+
 	
 }

@@ -3,10 +3,14 @@
  */
 package Driver;
 
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 import Account.Account;
 import Account.AccountUI;
+import search.searchController;
 import university.University;
 import user.UserUI;
 
@@ -36,6 +40,24 @@ public class Driver implements AccountUI, UserUI
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
         System.out.println("Updated User Info: ");
         UserUI.viewUserInfo(peter);
+       
+        System.out.println("--------------------");
+        System.out.println("Step 3: Search for schools by a combination of state and number of students");
+        searchController.searchSchool("Minnesota", "Students: 20,000");
+        searchController.searchSchool("Minnesota", "Students: 4,000");
+        searchController.searchSchool("California", "Students: 30,000");
+        //Scanner scan = new Scanner(System.in);
+        //String s = scan.next();
+        //String i = scan.nextLine();
+        
+        
+        
+      
+        
+        
+        
+        
+      
         
         System.out.println("--------------------");
 		System.out.println("Step 4: view results");

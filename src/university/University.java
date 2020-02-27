@@ -57,7 +57,7 @@ public class University {
 	public University(String name, String state, String location, String control, int numStudents, double percentFemale,
 			double percentMale, int verbalSAT, int mathSAT, double expenses, double financialAid, int numApplications,
 			double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int lifeQualityScale,
-			int emphases) {
+			String emphases) {
 		super();
 		this.name = name;
 		this.state = state;

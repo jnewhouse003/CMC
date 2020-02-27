@@ -58,8 +58,25 @@ public class DBController
 		private University School6 ("School 6", "Texas", "", "", 50, 86.0,24.1, 1540, 2451, 78.5, 23.1, 1230, 45.5, 50.0, 10, 70, 60,"");
 		
 		
+		ArrayList<University> allSchools = new ArrayList();
+		ArrayList<University> foundSchools = new ArrayList();
 		
+<<<<<<< HEAD
 	
+=======
+		for(int i = 0; i < allSchools.size(); i++) {
+			if(allSchools.get(i).getState().equals(state)) {
+				if(allSchools.get(i).getNumStudents() == numStudents) {
+					foundSchools.add(allSchools.get(i));
+					
+				}
+			}
+		}
+		
+		return foundSchools;
+		
+	}
+>>>>>>> f7e1c60463e8ce6b6092343cf326a618d79f0feb
 	
 	/*
 	

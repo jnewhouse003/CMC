@@ -75,6 +75,11 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		System.out.println("--------------------");
 		System.out.println("Step 6: find top 5");
 		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
+		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 7: remove saved school");
+		UserUI.removeSavedSchool("St.Johns");
 
 		
 	}

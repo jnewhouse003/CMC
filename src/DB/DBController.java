@@ -2,6 +2,7 @@ package DB;
 import java.util.ArrayList;
 
 import Account.Account;
+import Admin.AdminController;
 import university.University;
 import user.Criteria;
 
@@ -42,7 +43,7 @@ public class DBController
 		}
 	
 	}
-	public ArrayList<University> findallUniversity()
+	public static ArrayList<University> findallUniversity()
 	{
 		University School1 = new University("School 4", "New York", "", "", 70, 56.0,44.1, 3240, 2331, 78.5, 23.1, 1230, 45.5, 80.0, 30, 40, 50,"");
 		University School2 = new University("School 2", "Minnesota", "", "", 60, 36.0,45.1, 5200, 7321, 71.5, 25.1, 1430, 95.5, 60.0, 20, 60, 40,"");
@@ -64,7 +65,7 @@ public class DBController
 	public ArrayList<University> findByCriteria(String state, int numStudents) 
 	{
 		
-		University School1 = new University("School 4", "New York", "", "", 70, 56.0,44.1, 3240, 2331, 78.5, 23.1, 1230, 45.5, 80.0, 30, 40, 50,"");
+		University School1 = new University("School 1", "New York", "", "", 70, 56.0,44.1, 3240, 2331, 78.5, 23.1, 1230, 45.5, 80.0, 30, 40, 50,"");
 		University School2 = new University("School 2", "Minnesota", "", "", 60, 36.0,45.1, 5200, 7321, 71.5, 25.1, 1430, 95.5, 60.0, 20, 60, 40,"");
 		University School3 = new University("School 3", "Arkansas", "", "", 80, 76.0,34.1, 3240, 3918, 78.5, 23.1, 1230, 45.5, 80.0, 50, 40, 30,"");
 		University School4 = new University("School 4", "Kansas", "", "", 40, 36.0,84.1, 3260, 9031, 78.5, 23.1, 1230, 45.5, 70.0, 90, 20, 20,"");
@@ -102,11 +103,13 @@ public class DBController
 		
 		ArrayList<University> allSchools = new ArrayList();
 		ArrayList<University> foundSchools = new ArrayList();
-		ArrayList<double> difference = new ArrayList();
+		ArrayList<Double> difference = new ArrayList();
+	
 		
 		
 		for(int i = 0; i < allSchools.size(); i++) {
 			double temp = 0; 
+			
 			if(allSchools.get(i).getState().contains(state)) {
 				temp += 1;
 			}
@@ -123,10 +126,10 @@ public class DBController
 			if(allSchools.get(i).getEmphases().equals(emphasesOne) || allSchools.get(i).getEmphases().equals(emphasesTwo)) {
 				temp += 1;
 			}
-			
 					}
 					
 		return foundSchools;
+		
 	}
 
 

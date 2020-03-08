@@ -11,6 +11,7 @@ import java.util.Scanner;
 import Account.Account;
 import Account.AccountUI;
 import Admin.AdminUI;
+import DB.DBController;
 import search.searchController;
 import university.University;
 import user.User;
@@ -53,10 +54,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
         UserUI.searchSchool(peterUser, "New York City", 8000);
         UserUI.searchSchool(peterUser, "Ohio", 15000);
         
-        
-        
-      
-        
         System.out.println("--------------------");
 		System.out.println("Step 4: view results");
 		University school1 = new University("Peter University", "Minnesota", "St.Joe", "Peter", 1, 0.0, 100.0, 10, 10000, 10.0, 9999.0, 1, 100.0, 100.0, 10, 10,10,"MATH");
@@ -74,8 +71,15 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 6: find top 5");
-		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
-
+		ArrayList<University> schools = new ArrayList<University>();
+		schools = DBController.findallUniversity();
+		UserUI.displayResults(schools);
+		UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");//.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");
+	    System.out.println("Top 5 is: ");
+		
+		
+		
+		
 		
 	}
 

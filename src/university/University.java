@@ -79,9 +79,9 @@ public class University {
 		this.emphases = i;
 	}
 
-	
-	
-	
+
+
+
 	/**
 	 * @return the name
 	 */

@@ -89,26 +89,19 @@ public class DBController
 	
 	}
 
-	public static ArrayList<University> findallUniversity()
+	public ArrayList<University> findallUniversity()
 	{
 		
-		University School1 = new University("School 4", "New York", "", "", 70, 56.0,44.1, 3240, 2331, 78.5, 23.1, 1230, 45.5, 80.0, 30, 40, 50,"");
-		University School2 = new University("School 2", "Minnesota", "", "", 60, 36.0,45.1, 5200, 7321, 71.5, 25.1, 1430, 95.5, 60.0, 20, 60, 40,"");
-		University School3 = new University("School 3", "Arkansas", "", "", 80, 76.0,34.1, 3240, 3918, 78.5, 23.1, 1230, 45.5, 80.0, 50, 40, 30,"");
-		University School4 = new University("School 4", "Kansas", "", "", 40, 36.0,84.1, 3260, 9031, 78.5, 23.1, 1230, 45.5, 70.0, 90, 20, 20,"");
-		University School5 = new University("School 5", "Maine", "", "", 30, 66.0,54.1, 1840, 1671, 78.5, 23.1, 1230, 45.5, 60.0, 40, 50, 10,"");
-		University School6 = new University("School 6", "Texas", "", "", 50, 86.0,24.1, 1540, 2451, 78.5, 23.1, 1230, 45.5, 50.0, 10, 70, 60,"");
-	
-		ArrayList<University> allSchools = new ArrayList();
-		allSchools.add(School1);
-		allSchools.add(School2);
-		allSchools.add(School3);
-		allSchools.add(School4);
-		allSchools.add(School5);
-		allSchools.add(School6);
+		String[][] allSchools = this.dataBase.university_getUniversities();
+		ArrayList<University> schools = new ArrayList();
+		for(int i = 0; i < allSchools.length; i++) {
+			University temp = new University(allSchools[i]);
+			schools.add(temp);
+		}
 		
-		return allSchools;
-				//this.dataBase.university_getUniversities();
+		
+		return schools;
+				
 		
 	}
 	public ArrayList<University> findByCriteria(String state, int numStudents) 

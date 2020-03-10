@@ -1,13 +1,12 @@
-/**
- * 
- */
 package Account;
 
 import DB.DBController;
+import university.University;
 
 /**
+ * This is the controller class for Accounts
+ * 
  * @author npink001
- *
  */
 public class AccountController {
 
@@ -16,6 +15,12 @@ public class AccountController {
 		
 	}
 	
+	/**
+	 * This method logs an account on
+	 * 
+	 * @param username
+	 * @param password
+	 */
 	public void logOn(String username, String password) {
 		DBController dbController = new DBController("goldencircle","csci230");
 		if (dbController.lookUpUser(username) == true)
@@ -39,8 +44,13 @@ public class AccountController {
 		
 	}
 	
+	/**
+	 * This method logs an Account out
+	 * 
+	 * @param account
+	 */
 	public void logOut(String account) {
-		DB.DBController dbController = new DB.DBController("goldencircle","csci230");
+		DBController dbController = new DBController("goldencircle","csci230");
 		
 		if (dbController.getAccount(account) == null);
 		{
@@ -53,7 +63,11 @@ public class AccountController {
 		return null;
 	}
 	
-	public void viewResults(String universityName) {
+	public University viewResults(String university) {
+		DBController dbController = new DBController("goldencircle", "csci230");
+		 return dbController.getUniversity(university);
+			
+			
 		
 	}
 	
@@ -68,6 +82,14 @@ public class AccountController {
 		System.out.println("Last Name: " + user.getLastName()); 
 	}
 	
+	/**
+	 * This method changes the information tied to a user's Account
+	 * 
+	 * @param info
+	 * @param newPassword
+	 * @param newFirstName
+	 * @param newLastName
+	 */
 	public void editUserInfo(Account info, String newPassword, String newFirstName, String newLastName) {
 		info.setPassword(newPassword); 
 		info.setFirstName(newFirstName);
@@ -75,6 +97,16 @@ public class AccountController {
 		
 	}
 
+	/**
+	 * This method adds a new User Account
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param userName
+	 * @param password
+	 * @param type
+	 * @return
+	 */
 	public int addUser(String firstName, String lastName, String userName, String password, char type) {
 		// TODO Auto-generated method stub
 		DBController dbController = new DBController("goldencircle","csci230");

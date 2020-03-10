@@ -37,8 +37,12 @@ public interface AccountUI {
 		name.logOut(account);
 	}
 
-	public static void viewResults() {
 
+	public static String viewResults(String university) { 
+		
+			AccountController name = new AccountController();
+			name.viewResults(university);
+		return university;
 	}
 
 	/**

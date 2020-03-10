@@ -24,22 +24,20 @@ import user.UserUI;
 public class Driver implements AccountUI, UserUI, AdminUI
 {
 
-	//private static String loginInfo, viewAndEditProfile, userSearchForSchools, userViewSearchResults, userFindTopFive, adminViewUniversities;
+	private static String loginInfo, viewAndEditProfile, userSearchForSchools, userViewSearchResults, userFindTopFive, adminViewUniversities;
 	
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AccountUI.addUser("peter", "ohmann", "pohmann", "123",'u');
-		
 		System.out.println("Step 1: logon");
 		AccountUI.logOn("pohmann", "123");
 		AccountUI.logOn("pohmann", "12");
 		AccountUI.logOn("notPeter", "123");
 		System.out.println("--------------------");
 		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann",'u');
+		Account peter = new Account("pohmann", "123", "peter", "ohmann");
 		System.out.println("Step 2: viewAndEditProfile");
 		UserUI.viewUserInfo(peter);
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
@@ -48,8 +46,8 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("peter", "Ohmann", "pohmann", "123",'u');
-        UserUI.searchSchool(peterUser, "Minnesota", 60);
+        User peterUser = new User("pohmann", "123", "Peter", "Ohmann",'u');
+        UserUI.searchSchool(peterUser, "Minnesota", 20000);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);
         UserUI.searchSchool(peterUser, "Texas",40000);
@@ -73,9 +71,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 6: find top 5");
-		ArrayList<University> schools = new ArrayList<University>();
-		schools = DBController.findallUniversity();
-		UserUI.displayResults(schools);
 		UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");//.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");
 	    System.out.println("Top 5 is: ");
 		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
@@ -83,15 +78,15 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 7: remove saved school");
-
-		//UserUI.removeSavedSchool("St.Johns");
-
-
 		UserUI.removeSavedSchool("St.Johns");
 		
 		System.out.println("--------------------");
-		System.out.println("Step 9: view specific school information");
-		//DB.DBController.getUniversity("School 1");
+		System.out.println("Step 8: view specific school information");
+		
+		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 9: saved school");
 		
 		
 		System.out.println("-------------------");
@@ -100,7 +95,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		
 		
-
 		
 	}
 

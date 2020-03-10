@@ -49,7 +49,7 @@ public class AccountController {
 	 * @param account
 	 */
 	public void logOut(String account) {
-		DB.DBController dbController = new DB.DBController("goldencircle","csci230");
+		DBController dbController = new DBController("goldencircle","csci230");
 		
 		if (dbController.getAccount(account) == null);
 		{

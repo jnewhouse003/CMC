@@ -95,7 +95,7 @@ public class Account {
 		public boolean logOff(String account){
 			return true;
 		}
-		
+	
 		public boolean logOn(String userName, String password) {
 		
 			return true;
@@ -105,6 +105,7 @@ public class Account {
 		
 			return true;
 		}
+		
 
 		/**
 		 * This method returns the first name tied to an account

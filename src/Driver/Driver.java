@@ -38,7 +38,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		AdminUI.createController(dataBase);
 		
 		
-		System.out.println("Step 1: logon");
+		System.out.println("Step 1: Logon");
 		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
 		AccountUI.logOn("pohmann", "123");
 		AccountUI.logOn("pohmann", "12");
@@ -46,7 +46,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		System.out.println("--------------------");
 		
 		Account peter = new Account("pohmann", "123", "peter", "ohmann", 'u');
-		System.out.println("Step 2: viewAndEditProfile");
+		System.out.println("Step 2: View and Edit Profile");
 		UserUI.viewUserInfo(peter);
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
         System.out.println("Updated User Info: ");
@@ -64,7 +64,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
         UserUI.searchSchool(peterUser, "Ohio", 15000);
         
         System.out.println("--------------------");
-		System.out.println("Step 4: view results");
+		System.out.println("Step 4: View results");
 		University school1 = new University("Peter University", "Minnesota", "St.Joe", "Peter", 1, 0.0, 100.0, 10, 10000, 10.0, 9999.0, 1, 100.0, 100.0, 10, 10,10,"MATH");
 		University school2 = new University("Golden Circle", "Minnesota", "St.Paul", "Golden Circle",1, 0.0, 100.0, 10, 10000, 10.0, 9999.0, 1, 100.0, 100.0, 10, 10,10,"MATH");
 		ArrayList<University> results = new ArrayList<University>();
@@ -74,23 +74,23 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		
 		System.out.println("--------------------");
-		System.out.println("Step 5: browse School");
+		System.out.println("Step 5: Browse School");
 		AdminUI.browseSchool();
 		
 		
 		System.out.println("--------------------");
-		System.out.println("Step 6: find top 5");
+		System.out.println("Step 6: Find top 5");
 		UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");//.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");
 	    System.out.println("Top 5 is: ");
 		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
 		
 		
 		System.out.println("--------------------");
-		System.out.println("Step 7: remove saved school");
+		System.out.println("Step 7: Remove saved school");
 		UserUI.removeSavedSchool(peterUser,"St.Johns");
 		
 		System.out.println("--------------------");
-		System.out.println("Step 8: view specific school information");
+		System.out.println("Step 8: View specific school information");
 		ArrayList<University> schools = new ArrayList();
 		schools.add(AccountUI.viewResults("ARIZONA STATE"));
 		UserUI.displayResults(schools);
@@ -98,16 +98,16 @@ public class Driver implements AccountUI, UserUI, AdminUI
 
 		
 		System.out.println("--------------------");
-		System.out.println("Step 9: saved school");
+		System.out.println("Step 9: Saved school");
 		
 		
 		System.out.println("--------------------");
-		System.out.println("Step 10: add saved school");
+		System.out.println("Step 10: Add saved school");
 		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
 		
 		System.out.println("-------------------");
 		System.out.println("Step 12: Logout");
-		AccountUI.logOut("User is logged out");
+		AccountUI.logOut("");
 		
 		
 		

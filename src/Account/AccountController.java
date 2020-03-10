@@ -32,7 +32,6 @@ public class AccountController {
 				System.out.println("Password invalid");
 			}
 			
-			
 		}
 		else
 		{

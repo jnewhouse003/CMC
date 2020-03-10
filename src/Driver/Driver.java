@@ -46,7 +46,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("pohmann", "123", "Peter", "Ohmann");
+        User peterUser = new User("pohmann", "123", "Peter", "Ohmann",'u');
         UserUI.searchSchool(peterUser, "Minnesota", 20000);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);
@@ -71,9 +71,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 6: find top 5");
-		ArrayList<University> schools = new ArrayList<University>();
-		schools = DBController.findallUniversity();
-		UserUI.displayResults(schools);
 		UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");//.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH");
 	    System.out.println("Top 5 is: ");
 		UserUI.displayResults(UserUI.findTopFive("ta", "CITY", 10000,0,"SCIENCE", "MATH"));
@@ -85,7 +82,8 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: view specific school information");
-		DB.DBController.getUniversity("School 1");
+		
+		
 		
 		System.out.println("--------------------");
 		System.out.println("Step 9: saved school");

@@ -24,7 +24,7 @@ public class Account {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Account(String userName, String password, String firstName, String lastName) {
+	public Account(String userName, String password, String firstName, String lastName,char type) {
 		super();
 		this.setFirstName(firstName); 
 		this.setLastName(lastName); 

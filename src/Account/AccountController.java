@@ -4,6 +4,7 @@
 package Account;
 
 import DB.DBController;
+import university.University;
 
 /**
  * @author npink001
@@ -53,7 +54,11 @@ public class AccountController {
 		return null;
 	}
 	
-	public void viewResults(String universityName) {
+	public University viewResults(String university) {
+		DBController dbController = new DBController("goldencircle", "csci230");
+		 return dbController.getUniversity(university);
+			
+			
 		
 	}
 	

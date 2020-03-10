@@ -37,7 +37,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		AccountUI.logOn("notPeter", "123");
 		System.out.println("--------------------");
 		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann");
+		Account peter = new Account("pohmann", "123", "peter", "ohmann", 'u');
 		System.out.println("Step 2: viewAndEditProfile");
 		UserUI.viewUserInfo(peter);
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
@@ -82,7 +82,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: view specific school information");
-		
+		AccountUI.viewResults("ARIZONA STATE");
 		
 		
 		System.out.println("--------------------");

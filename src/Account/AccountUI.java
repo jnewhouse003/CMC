@@ -27,11 +27,11 @@ public interface AccountUI {
 			name.logOut(account);
 	}
 
-	public static String viewResults(String university) { 
+	public static University viewResults(String university) { 
 		
 			AccountController name = new AccountController();
-			name.viewResults(university);
-		return university;
+			return name.viewResults(university);
+		
 	}
 
 	public static int addUser(String firstName, String lastName, String userName, String password, char type) {

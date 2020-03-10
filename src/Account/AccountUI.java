@@ -37,13 +37,9 @@ public interface AccountUI {
 		name.logOut(account);
 	}
 
-<<<<<<< HEAD
-	public static University viewResults(String university) { 
-=======
 
-	public static String viewResults(String university) { 
->>>>>>> 657788aa2869235a9bb6eb93392bbb8306c4fc5c
-		
+	public static University viewResults(String university) { 
+	
 			AccountController name = new AccountController();
 			return name.viewResults(university);
 		

@@ -32,6 +32,12 @@ public class DBController
 	}
 	
 	
+	public void addSavedSchool(String user, String university) {
+		
+		this.dataBase.user_saveSchool(user, university);
+	}
+	
+	
 	public void editSchool()
 	{
 		

@@ -32,6 +32,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 	 */
 	public static void main(String[] args) {
 		System.out.println("Step 1: logon");
+		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
 		AccountUI.logOn("pohmann", "123");
 		AccountUI.logOn("pohmann", "12");
 		AccountUI.logOn("notPeter", "123");
@@ -46,10 +47,9 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-<<<<<<< HEAD
         User peterUser = new User("pohmann", "123", "Peter", "Ohmann", 'u');
 
-        UserUI.searchSchool(peterUser, "Minnesota", 20000);
+        UserUI.searchSchool(peterUser, "FLORIDA", 10000);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);
         UserUI.searchSchool(peterUser, "Texas",40000);
@@ -84,16 +84,17 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: view specific school information");
-<<<<<<< HEAD
-		//DB.DBController.getUniversity("School 1");
-=======
 		AccountUI.viewResults("ARIZONA STATE");
 		
->>>>>>> 2a46b4657a5cd0041f61a659b26901e3ed7a085f
+
 		
 		System.out.println("--------------------");
 		System.out.println("Step 9: saved school");
 		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 10: add saved school");
+		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
 		
 		System.out.println("-------------------");
 		System.out.println("Step 12: Logout");

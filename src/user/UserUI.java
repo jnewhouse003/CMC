@@ -9,10 +9,7 @@ import university.University;
 public interface UserUI {
 
 	/**
-	public void addSavedSchool(University school) {
-		
-		
-	}
+	
 	
 	public static void findUniverstiy(String name) {
 
@@ -39,12 +36,19 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static void removeSavedSchool(String name) {
+	public static void removeSavedSchool(User user, String name) {
 		
 		UserController userController = new UserController();
-		userController.removeSavedSchool(name);
+		userController.removeSavedSchool(user, name);
 	}
-	/**
+	
+	
+	public static void addSavedSchool(String user, String school) {
+		UserController userController = new UserController();
+		userController.addSavedSchool(user, school);
+		
+	}
+/**
 	public void viewSavedSchool() {
 		
 		

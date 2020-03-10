@@ -38,19 +38,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		AdminUI.createController(dataBase);
 		
 		
-<<<<<<< HEAD
-		System.out.println("Step 1: Logon");
-		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
-		AccountUI.logOn("pohmann", "123");
-		AccountUI.logOn("pohmann", "12");
-		AccountUI.logOn("notPeter", "123");
-		System.out.println("--------------------");
-		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann", 'u');
-		System.out.println("Step 2: View and Edit Profile");
-		UserUI.viewUserInfo(peter);
-        UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
-=======
 		System.out.println("Step 1: logon");
 		AccountUI.addUser("test", "mcTesty", "testy", "123", 'u');
 		if(AccountUI.logOn("testy", "123") == true) {
@@ -79,7 +66,6 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		UserUI.viewUserInfo(test);
 		
         UserUI.editUserInfo(test, "1234", "Test", "Mctest");
->>>>>>> bba03ed94691f24a48c3a7fba97c6261168b7261
         System.out.println("Updated User Info: ");
         UserUI.viewUserInfo(test);
        
@@ -129,11 +115,8 @@ public class Driver implements AccountUI, UserUI, AdminUI
 
 		
 		System.out.println("--------------------");
-<<<<<<< HEAD
 		System.out.println("Step 9: Saved school");
-=======
-		System.out.println("Step 9: view saved school");
->>>>>>> bba03ed94691f24a48c3a7fba97c6261168b7261
+
 		
 		
 		System.out.println("--------------------");
@@ -141,8 +124,19 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
 		
 		System.out.println("-------------------");
+		System.out.println("Step 11: Add User");
+		AccountUI.addUser("Diego", "A", "dalv1212", "3232", 'a');
+		
+		System.out.println("-------------------");
 		System.out.println("Step 12: Logout");
-		AccountUI.logOut("");
+		if (AccountUI.logOut("dalv1212") == true)
+		{
+			System.out.println("Logged Out");
+		}
+		else
+		{
+			System.out.println("Logged Out Failed");
+		}
 		
 		
 		

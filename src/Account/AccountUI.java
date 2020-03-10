@@ -35,9 +35,9 @@ public interface AccountUI {
 	 * 
 	 * @param account
 	 */
-	public static void logOut(String account) {
+	public static boolean logOut(String account) {
 	
-		name.logOut(account);
+		return name.logOut(account);
 	}
 
 	/**

@@ -37,14 +37,7 @@ public class AccountController {
 			else {
 				return false;
 			}
-			
-<<<<<<< HEAD
-		}
-		else
-		{
-			System.out.println("User invalid");
-=======
->>>>>>> bba03ed94691f24a48c3a7fba97c6261168b7261
+		
 		}
 		
 		
@@ -55,14 +48,20 @@ public class AccountController {
 	 * 
 	 * @param account
 	 */
-	public void logOut(String account) {
+	public boolean logOut(String account) {
 
 		
-		if (dbController.getAccount(account) == null);
+		if (dbController.getAccount(account) != null)
 		{
-			System.out.println("The user is no longer logged in");
+			dbController.getAccount(account).logOff();
+			return true;
 		}
-	}
+		
+		return false;
+		
+		}
+		 
+	
 	
 	public String getPassword() {
 		

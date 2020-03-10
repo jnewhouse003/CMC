@@ -13,8 +13,7 @@ public class Account {
 	private String userName;
 	private String firstName; 
 	private String lastName;
-	private boolean userLogOn;
-	private boolean adminLogOn;
+	private boolean logOnSatus;
 	private char type;
 	
 	/**
@@ -31,7 +30,7 @@ public class Account {
 		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
-		this.userLogOn = true;
+		this.setLogOnSatus(true);
 		this.setType(type);
 	}
 
@@ -71,29 +70,10 @@ public class Account {
 		this.userName = userName;
 	}
 
-	/**
-	 * This method checks if the user is logged on. If so, it returns true
-	 * 
-	 * @return userLogOn
-	 */
-	public boolean isUserLogOn() {
-		return userLogOn;
-	}
+	
 
-	public void setUserLogOn(boolean userLogOn) {
-		this.userLogOn = userLogOn;
-	}
-
-	public boolean isAdminLogOn() {
-		return adminLogOn;
-	}
-
-	public void setAdminLogOn(boolean adminLogOn) {
-		this.adminLogOn = adminLogOn;
-	}
-
-		public boolean logOff(String account){
-			return true;
+		public void logOff(){
+			this.setLogOnSatus(false);
 		}
 	
 		public boolean logOn(String userName, String password) {
@@ -155,6 +135,20 @@ public class Account {
 		 */
 		public void setType(char type) {
 			this.type = type;
+		}
+
+		/**
+		 * @return the logOnSatus
+		 */
+		public boolean isLogOnSatus() {
+			return logOnSatus;
+		}
+
+		/**
+		 * @param logOnSatus the logOnSatus to set
+		 */
+		public void setLogOnSatus(boolean logOnSatus) {
+			this.logOnSatus = logOnSatus;
 		}
 		
 		

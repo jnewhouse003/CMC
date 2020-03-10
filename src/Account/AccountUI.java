@@ -37,11 +37,15 @@ public interface AccountUI {
 		name.logOut(account);
 	}
 
-
+	/**
+	 * This method calls on the controller to get a University
+	 * 
+	 * @param university
+	 * @return university
+	 */
 	public static String viewResults(String university) { 
-		
-			AccountController name = new AccountController();
-			name.viewResults(university);
+		AccountController name = new AccountController();
+		name.viewResults(university);
 		return university;
 	}
 

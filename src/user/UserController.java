@@ -11,8 +11,9 @@ import search.searchController;
 import university.University;
 
 /**
+ * This is the Controller class for Users
+ * 
  * @author giteghete001
- *
  */
 public class UserController {
 	private Object savedSchools;
@@ -118,6 +119,14 @@ public class UserController {
 			//Method implementation 
 		}
 		
+		/**
+		 * This method returns Universities if the user is logged on
+		 * 
+		 * @param user
+		 * @param state
+		 * @param numStudents
+		 * @return ArrayList of Universities
+		 */
 		public ArrayList<University> searchSchool(User user, String state, int numStudents){
 			if(user.isLoggedOn()) {
 				searchController search = new searchController();
@@ -129,6 +138,17 @@ public class UserController {
 			
 		}
 		
+		/**
+		 * This method returns a list of the top 5 schools based on given criteria
+		 * 
+		 * @param state
+		 * @param control
+		 * @param lowerExpense
+		 * @param upperExpense
+		 * @param emphasesOne
+		 * @param emphasesTwo
+		 * @return a list of the top five shools
+		 */
 		public ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo){
 		
 			DBController dataBase = new DBController("goldencircle","csci230");

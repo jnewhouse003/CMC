@@ -9,16 +9,20 @@ import DB.DBController;
 import university.University;
 
 /**
+ * This is the class for an Admin Controller
+ * 
  * @author jnewhouse003
- *
  */
 public class AdminController {
 	
+	/**
+	 * This method returns a list of Universities from the DB
+	 * 
+	 * @return list of Universities from DB
+	 */
 	public ArrayList<University> browseSchool() {
 		DBController DataBase = new DBController("goldencircle","csci230");
 		return DataBase.findallUniversity();
-
-		
 	}
 
 }

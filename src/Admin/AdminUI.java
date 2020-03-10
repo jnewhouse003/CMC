@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import university.University;
 
 /**
+ * This is the interface for the AdminUI
+ * 
  * @author jlaux001
- *
  */
 public interface AdminUI {
 	
@@ -20,12 +21,19 @@ public interface AdminUI {
 		
 	}
 	
+	/**
+	 * This method calls on the AdminController to show a list of Universities
+	 */
 	public static void browseSchool() {
 		AdminController controller = new AdminController();
 		displayResults(controller.browseSchool());
-		
 	}
 	
+	/**
+	 * This method prints out the information tied to each University
+	 * 
+	 * @param results
+	 */
 	public static void displayResults(ArrayList<University> results) {
 		if(results.size() > 0) {
 		for (int i = 0; i < results.size(); i++) {

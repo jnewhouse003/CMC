@@ -4,16 +4,36 @@ import java.util.ArrayList;
 import Account.Account;
 import university.University;
 
+
+/**
+ * This is the class for a User
+ * 
+ * @author npink001
+ */
 public class User extends Account {
 	//an array list of schools the user has saved.
 	private ArrayList<University> savedSchools;
 	
+	/**
+	 * This is the constructor for a User
+	 * 
+	 * @param name
+	 * @param password
+	 * @param firstName
+	 * @param lastName
+	 * @param type
+	 */
 	public User(String name, String password, String firstName, String lastName, char type) {
 		super(name, password, firstName, lastName, type);
-		// TODO Auto-generated constructor stub
+		// TODO
 	}
 
 	
+	/**
+	 * This method adds a school to a User's saved schools
+	 * 
+	 * @param newSchool
+	 */
 	public void addSavedSchool(University newSchool) {
 		this.savedSchools.add(newSchool);
 	}

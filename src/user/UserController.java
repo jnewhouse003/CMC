@@ -95,8 +95,8 @@ public class UserController {
 		 * 
 		 * @param school
 		 */
-		public void removeSavedSchool(University school) {
-			this.addSavedSchools.remove(String school);
+		public void removeSavedSchool(String name) {
+			//user.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
 		/**

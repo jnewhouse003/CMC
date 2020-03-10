@@ -22,8 +22,9 @@ public interface AccountUI {
 		
 	}
 	
-	public static void logOut() {
-		
+	public static void logOut(String account) {
+			AccountController name = new AccountController();
+			name.logOut(account);
 	}
 
 	public static void viewResults() { 

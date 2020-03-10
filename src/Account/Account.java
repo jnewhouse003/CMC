@@ -56,8 +56,8 @@ public class Account {
 		this.adminLogOn = adminLogOn;
 	}
 
-		public void logOff(){
-		//TODO	
+		public boolean logOff(String account){
+			return true;
 		}
 		
 		public boolean logOn(String userName, String password) {

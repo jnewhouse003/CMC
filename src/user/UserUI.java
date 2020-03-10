@@ -21,7 +21,7 @@ public interface UserUI {
 	*/
 	public static void searchSchool(User user, String state, int numStudents) {
 		UserController userController = new UserController();
-		userController.searchSchool(user, state, numStudents);
+		displayResults(userController.searchSchool(user, state, numStudents));
 	}
 	
 	
@@ -37,16 +37,18 @@ public interface UserUI {
 		
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
+	
+	public static void removeSavedSchool(String name) {
+		
+		//userController.removeSavedSchool(name);
+	}
 	/**
 	public void viewSavedSchool() {
 		
 		
 	}
 	
-	public void removeSavedSchool(University school) {
-		
-		
-	}
+	
 	
 	public void logout() {
 		

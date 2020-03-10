@@ -37,8 +37,13 @@ public class AccountController {
 		
 	}
 	
-	public void logOut() {
+	public void logOut(String account) {
+		DB.DBController dbController = new DB.DBController();
 		
+		if (dbController.getAccount(account) == null);
+		{
+			System.out.println("The user is no longer logged in");
+		}
 	}
 	
 	public String getPassword() {

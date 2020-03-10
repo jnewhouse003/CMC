@@ -14,14 +14,16 @@ public class Account {
 	private String lastName;
 	private boolean userLogOn;
 	private boolean adminLogOn;
+	private char type;
 	
-	public Account(String userName, String password, String firstName, String lastName) {
+	public Account(String firstName, String lastName, String userName, String password, char type) {
 		super();
 		this.setFirstName(firstName); 
 		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
 		this.userLogOn = true;
+		this.setType(type);
 	}
 
 	public String getPassword() {
@@ -96,6 +98,20 @@ public class Account {
 		 */
 		public void setLastName(String lastName) {
 			this.lastName = lastName;
+		}
+
+		/**
+		 * @return the type
+		 */
+		public char getType() {
+			return type;
+		}
+
+		/**
+		 * @param type the type to set
+		 */
+		public void setType(char type) {
+			this.type = type;
 		}
 		
 		

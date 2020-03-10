@@ -15,7 +15,7 @@ public class searchController{
 	
 
 	public ArrayList<University> searchSchool(String state, int numStudents) {
-		DBController DataBase = new DBController();
+		DBController DataBase = new DBController("goldencircle","csci230");
 		return DataBase.findByCriteria(state, numStudents);
 		
 	}

@@ -23,20 +23,22 @@ import user.UserUI;
 public class Driver implements AccountUI, UserUI, AdminUI
 {
 
-	private static String loginInfo, viewAndEditProfile, userSearchForSchools, userViewSearchResults, userFindTopFive, adminViewUniversities;
+	//private static String loginInfo, viewAndEditProfile, userSearchForSchools, userViewSearchResults, userFindTopFive, adminViewUniversities;
 	
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		AccountUI.addUser("peter", "ohmann", "pohmann", "123",'u');
+		
 		System.out.println("Step 1: logon");
 		AccountUI.logOn("pohmann", "123");
 		AccountUI.logOn("pohmann", "12");
 		AccountUI.logOn("notPeter", "123");
 		System.out.println("--------------------");
 		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann");
+		Account peter = new Account("pohmann", "123", "peter", "ohmann",'u');
 		System.out.println("Step 2: viewAndEditProfile");
 		UserUI.viewUserInfo(peter);
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
@@ -45,8 +47,8 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("pohmann", "123", "Peter", "Ohmann");
-        UserUI.searchSchool(peterUser, "Minnesota", 20000);
+        User peterUser = new User("peter", "Ohmann", "pohmann", "123",'u');
+        UserUI.searchSchool(peterUser, "Minnesota", 60);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);
         UserUI.searchSchool(peterUser, "Texas",40000);
@@ -79,7 +81,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 7: remove saved school");
-		UserUI.removeSavedSchool("St.Johns");
+		//UserUI.removeSavedSchool("St.Johns");
 
 		
 	}

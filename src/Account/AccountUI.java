@@ -29,6 +29,15 @@ public interface AccountUI {
 	public static void viewResults() { 
 		
 	}
+
+	public static int addUser(String firstName, String lastName, String userName, String password, char type) {
+		// TODO Auto-generated method stub
+		AccountController name = new AccountController();
+		return name.addUser(firstName, lastName, userName, password, type);
+		
+	}
+	
+	
 	
 	
 	

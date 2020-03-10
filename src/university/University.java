@@ -82,6 +82,32 @@ public class University {
 	
 	
 	
+	public University(String[] strings) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.name = strings[0];
+		this.state = strings[1];
+		this.location = strings[2];
+		this.control = strings[3];
+		this.numStudents = Integer.valueOf(strings[4]);
+		this.percentFemale = Double.valueOf(strings[5]);
+		this.percentMale = 100 - this.percentFemale;
+		this.verbalSAT = Integer.valueOf(strings[6]);
+		this.mathSAT = Integer.valueOf(strings[7]);
+		this.expenses = Double.valueOf(strings[8]);
+		this.financialAid = Double.valueOf(strings[9]);
+		this.numApplications = Integer.valueOf(strings[10]);
+		this.percentAdmitted = Double.valueOf(strings[11]);
+		this.percentEnrolled = Double.valueOf(strings[12]);
+		this.academicsScale = Integer.valueOf(strings[13]);
+		this.socialScale = Integer.valueOf(strings[14]);
+		this.lifeQualityScale = Integer.valueOf(strings[15]);
+		this.emphases = "none";
+	}
+
+
+
+
 	/**
 	 * @return the name
 	 */

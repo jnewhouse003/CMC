@@ -15,7 +15,7 @@ import university.University;
 public class AdminController {
 	
 	public ArrayList<University> browseSchool() {
-		DBController DataBase = new DBController();
+		DBController DataBase = new DBController("goldencircle","csci230");
 		return DataBase.findallUniversity();
 		
 	}

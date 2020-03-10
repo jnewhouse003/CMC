@@ -1,6 +1,7 @@
 package Account;
 
 import DB.DBController;
+import Account.Account;
 import university.University;
 
 /**
@@ -18,27 +19,36 @@ public class AccountController {
 	 * @param username
 	 * @param password
 	 */
-	public void logOn(String username, String password) {
+	public Boolean logOn(String username, String password) {
 		
-		if (dbController.lookUpUser(username) == true)
-		{
+		
 			Account hardCode = dbController.getAccount(username);
-			if (hardCode.getPassword() == password)
-			{
-				System.out.println("Peter is logged in!");
+			if(hardCode != null) {
+				if (hardCode.getPassword().equals(password))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				
+				}
 			}
-			else
-			{
-				System.out.println("Password invalid");
+			else {
+				return false;
 			}
 			
+<<<<<<< HEAD
 		}
 		else
 		{
 			System.out.println("User invalid");
+=======
+>>>>>>> bba03ed94691f24a48c3a7fba97c6261168b7261
 		}
 		
-	}
+		
+	
 	
 	/**
 	 * This method logs an Account out
@@ -90,7 +100,12 @@ public class AccountController {
 		info.setPassword(newPassword); 
 		info.setFirstName(newFirstName);
 		info.setLastName(newLastName);
-		
+		if(dbController == null) {
+			
+		}
+		else {
+		dbController.editUser(info.getFirstName(), info.getLastName(), info.getUserName(), info.getPassword(), info.getType(), 'y');
+		}
 	}
 
 	/**

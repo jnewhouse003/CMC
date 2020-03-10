@@ -53,10 +53,14 @@ public class DBController
 	}
 	
 	
-	public void editSchool()
-	{
+	
+	
+	public void editUser(String firstName, String lastName, String userName, String password, char type, char status){
 		
+		
+		this.dataBase.user_editUser(userName, firstName, lastName, password, type, status);
 	}
+	
 	
 	/**
 	 * This method gets a University based on its String name
@@ -87,15 +91,18 @@ public class DBController
 	public Account getAccount(String account) 
 	{
 		String[][] allUsers = this.dataBase.user_getUsers();
+		Account temp;
 		for(int i = 0; i < allUsers.length; i++)
 		{
-			if(allUsers[i][2] == account) {
-				Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+			if(allUsers[i][2].equals(account)) {
+				temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
 				return temp;
 				
 			}
 		}
-		return null;
+		temp = new Account("", "", "", "", ' '); 
+		return temp;
+		
 	}
 	
 	/**
@@ -104,23 +111,25 @@ public class DBController
 	 * @param user
 	 * @return false is User DNE; true if User exists
 	 */
-	public boolean lookUpUser(String user) 
-	{
-		String[][] allUsers = this.dataBase.user_getUsers();
-			for(int i = 0; i < allUsers.length; i++)
-			{
-				if (allUsers[i][2] == user) 
-				{
-					return true;
-				}
-				else 
-				{
-					return false;
-				}
-			}
-			return false;
 	
+	public boolean lookUpUser(String user){
+		String[][] allUsers;
+		allUsers = this.dataBase.user_getUsers();
+		for(int i = 0; i < allUsers.length; i++) 
+		{
+			if (allUsers[i][2].equals(user)) 
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		return false;
+		
 	}
+	
 
 	/**
 	 * This method returns a list of all Universities

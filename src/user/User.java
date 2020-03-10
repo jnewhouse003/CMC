@@ -8,8 +8,8 @@ public class User extends Account {
 	//an array list of schools the user has saved.
 	private ArrayList<University> savedSchools;
 	
-	public User(String name, String password, String firstName, String lastName) {
-		super(name, password, firstName, lastName);
+	public User(String name, String password, String firstName, String lastName, char type) {
+		super(name, password, firstName, lastName, type);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -59,4 +59,6 @@ public class User extends Account {
 		
 		
 	}
+	
+	
 }

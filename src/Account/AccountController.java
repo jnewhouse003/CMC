@@ -3,6 +3,8 @@
  */
 package Account;
 
+import DB.DBController;
+
 /**
  * @author npink001
  *
@@ -15,7 +17,7 @@ public class AccountController {
 	}
 	
 	public void logOn(String username, String password) {
-		DB.DBController dbController = new DB.DBController();
+		DBController dbController = new DBController("goldencircle","csci230");
 		if (dbController.lookUpUser(username) == true)
 		{
 			Account hardCode = dbController.getAccount(username);
@@ -38,7 +40,7 @@ public class AccountController {
 	}
 	
 	public void logOut(String account) {
-		DB.DBController dbController = new DB.DBController();
+		DB.DBController dbController = new DB.DBController("goldencircle","csci230");
 		
 		if (dbController.getAccount(account) == null);
 		{
@@ -71,6 +73,12 @@ public class AccountController {
 		info.setFirstName(newFirstName);
 		info.setLastName(newLastName);
 		
+	}
+
+	public int addUser(String firstName, String lastName, String userName, String password, char type) {
+		// TODO Auto-generated method stub
+		DBController dbController = new DBController("goldencircle","csci230");
+		return dbController.addUser(firstName, lastName, userName, password, type);
 	}
 
 }

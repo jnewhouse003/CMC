@@ -84,8 +84,11 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		UserUI.removeSavedSchool("St.Johns");
 		
 		System.out.println("--------------------");
-		System.out.println("Step 9: view specific school information");
+		System.out.println("Step 8: view specific school information");
 		DB.DBController.getUniversity("School 1");
+		
+		System.out.println("--------------------");
+		System.out.println("Step 9: saved school");
 		
 		
 		System.out.println("-------------------");

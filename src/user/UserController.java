@@ -95,8 +95,9 @@ public class UserController {
 		 * 
 		 * @param school
 		 */
-		public void removeSavedSchool(String name) {
-			//user.removeSavedSchool(dataBase.getUniversity(name));
+		public void removeSavedSchool(User user, String name) {
+			DBController dataBase = new DBController("goldencircle","csci230");
+			user.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
 		/**

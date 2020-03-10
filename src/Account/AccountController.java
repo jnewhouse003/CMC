@@ -21,28 +21,27 @@ public class AccountController {
 	 */
 	public Boolean logOn(String username, String password) {
 		
-		if (dbController.lookUpUser(username))
-		{
+		
 			Account hardCode = dbController.getAccount(username);
-			if (hardCode.getPassword().equals(password))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
+			if(hardCode != null) {
+				if (hardCode.getPassword().equals(password))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
 				
+				}
 			}
-			
-			
-		}
-		else
-		{
-			return false;
+			else {
+				return false;
+			}
 			
 		}
 		
-	}
+		
+	
 	
 	/**
 	 * This method logs an Account out

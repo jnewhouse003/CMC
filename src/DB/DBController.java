@@ -91,15 +91,18 @@ public class DBController
 	public Account getAccount(String account) 
 	{
 		String[][] allUsers = this.dataBase.user_getUsers();
+		Account temp;
 		for(int i = 0; i < allUsers.length; i++)
 		{
-			if(allUsers[i][2] == account) {
-				Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+			if(allUsers[i][2].equals(account)) {
+				temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
 				return temp;
 				
 			}
 		}
-		return null;
+		temp = new Account("", "", "", "", ' '); 
+		return temp;
+		
 	}
 	
 	/**

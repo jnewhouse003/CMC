@@ -39,7 +39,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		
 		System.out.println("Step 1: logon");
-		System.out.println(AccountUI.addUser("test", "mcTesty", "testy", "123", 'u'));
+		AccountUI.addUser("test", "mcTesty", "testy", "123", 'u');
 		if(AccountUI.logOn("testy", "123") == true) {
 			System.out.println("login was succesful");
 		}

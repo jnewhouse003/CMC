@@ -31,6 +31,13 @@ public class Driver implements AccountUI, UserUI, AdminUI
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		DBController dataBase = new DBController("goldencircle","csci230");
+		UserUI.createController(dataBase);
+		AccountUI.createController(dataBase);
+		AdminUI.createController(dataBase);
+		
+		
 		System.out.println("Step 1: logon");
 		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
 		AccountUI.logOn("pohmann", "123");

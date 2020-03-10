@@ -5,6 +5,7 @@ package Account;
 
 import java.util.ArrayList;
 
+import DB.DBController;
 import university.University;
 
 /**
@@ -13,6 +14,8 @@ import university.University;
  * @author dalvarez001
  */
 public interface AccountUI {
+	
+	AccountController name = new AccountController();
 
 	/**
 	 * This method calls on the controller to set an Account to logged on 
@@ -22,7 +25,7 @@ public interface AccountUI {
 	 */
 	public static void logOn(String username, String password) {
 
-		AccountController name = new AccountController();
+		
 		name.logOn(username, password);
 
 	}
@@ -33,14 +36,14 @@ public interface AccountUI {
 	 * @param account
 	 */
 	public static void logOut(String account) {
-		AccountController name = new AccountController();
+	
 		name.logOut(account);
 	}
 
 
 	public static University viewResults(String university) { 
 	
-			AccountController name = new AccountController();
+			
 			return name.viewResults(university);
 		
 	}
@@ -57,9 +60,14 @@ public interface AccountUI {
 	 */
 	public static int addUser(String firstName, String lastName, String userName, String password, char type) {
 		// TODO Auto-generated method stub
-		AccountController name = new AccountController();
+		
 		return name.addUser(firstName, lastName, userName, password, type);
 
+	}
+
+	public static void createController(DBController dataBase) {
+		// TODO Auto-generated method stub
+		name.createController(dataBase);
 	}
 
 }

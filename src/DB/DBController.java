@@ -120,7 +120,7 @@ public class DBController
 		
 
 		for(int i = 0; i < allSchools.length; i++) {
-			if(allSchools[i][1] == state && Integer.valueOf(allSchools[i][4]) == numStudents) 
+			if(allSchools[i][1].equals(state) && Integer.valueOf(allSchools[i][4]) == numStudents) 
 			{
 					University tempUniversity = new University(allSchools[i]);
 					foundSchools.add(tempUniversity);

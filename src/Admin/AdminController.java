@@ -13,12 +13,17 @@ import university.University;
  *
  */
 public class AdminController {
+	DBController DataBase;
 	
 	public ArrayList<University> browseSchool() {
-		DBController DataBase = new DBController("goldencircle","csci230");
 		return DataBase.findallUniversity();
 
 		
+	}
+
+	public void createDataBase(DBController dataBase) {
+		// TODO Auto-generated method stub
+		DataBase = dataBase;
 	}
 
 }

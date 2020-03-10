@@ -2,6 +2,7 @@ package Admin;
 
 import java.util.ArrayList;
 
+import DB.DBController;
 import university.University;
 
 /**
@@ -9,6 +10,10 @@ import university.University;
  *
  */
 public interface AdminUI {
+	
+	AdminController controller = new AdminController();
+	
+	
 	
 	public static void addSchool(String university) {
 		
@@ -21,7 +26,7 @@ public interface AdminUI {
 	}
 	
 	public static void browseSchool() {
-		AdminController controller = new AdminController();
+		
 		displayResults(controller.browseSchool());
 		
 	}
@@ -53,5 +58,10 @@ public interface AdminUI {
 		}
 		
 		}
+	}
+	public static void createController(DBController dataBase) {
+		// TODO Auto-generated method stub
+		controller.createDataBase(dataBase);
+		
 	}
 }

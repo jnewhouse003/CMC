@@ -7,6 +7,9 @@ import DB.DBController;
 import university.University;
 
 public interface UserUI {
+	
+	UserController userController = new UserController();
+	AccountController info = new AccountController();
 
 	/**
 	
@@ -18,33 +21,33 @@ public interface UserUI {
 	*/
 	
 	public static void searchSchool(User user, String state, int numStudents) {
-		UserController userController = new UserController();
+		
 		displayResults(userController.searchSchool(user, state, numStudents));
 	}
 	
 	
 	public static void viewUserInfo(Account userInfo) {
-		AccountController info = new AccountController();
+		
 		
 		info.viewUserInfo(userInfo);
 	}
 	
 	public static void editUserInfo(Account userInfo, String password, String firstName, String lastName) {
 		
-		AccountController info = new AccountController();
+		
 		
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
 	public static void removeSavedSchool(User user, String name) {
 		
-		UserController userController = new UserController();
+		
 		userController.removeSavedSchool(user, name);
 	}
 	
 	
 	public static void addSavedSchool(String user, String school) {
-		UserController userController = new UserController();
+		
 		userController.addSavedSchool(user, school);
 		
 	}
@@ -95,8 +98,15 @@ public interface UserUI {
 
 	public static ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo) {
 		// TODO Auto-generated method stub
-		UserController userController = new UserController();
+
 		return userController.findTopFive(state,control,lowerExpense,upperExpense,emphasesOne,emphasesTwo);
+		
+	}
+
+
+	public static void createController(DBController dataBase) {
+		// TODO Auto-generated method stub
+		userController.createDataBase(dataBase);
 		
 	}
 

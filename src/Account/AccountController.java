@@ -10,10 +10,7 @@ import university.University;
  */
 public class AccountController {
 
-	public AccountController() {
-		
-		
-	}
+	DBController dbController;
 	
 	/**
 	 * This method logs an account on
@@ -22,7 +19,7 @@ public class AccountController {
 	 * @param password
 	 */
 	public void logOn(String username, String password) {
-		DBController dbController = new DBController("goldencircle","csci230");
+		
 		if (dbController.lookUpUser(username) == true)
 		{
 			Account hardCode = dbController.getAccount(username);
@@ -50,7 +47,7 @@ public class AccountController {
 	 * @param account
 	 */
 	public void logOut(String account) {
-		DBController dbController = new DBController("goldencircle","csci230");
+		
 		
 		if (dbController.getAccount(account) == null);
 		{
@@ -64,7 +61,7 @@ public class AccountController {
 	}
 	
 	public University viewResults(String university) {
-		DBController dbController = new DBController("goldencircle", "csci230");
+		
 		 return dbController.getUniversity(university);
 			
 			
@@ -109,8 +106,13 @@ public class AccountController {
 	 */
 	public int addUser(String firstName, String lastName, String userName, String password, char type) {
 		// TODO Auto-generated method stub
-		DBController dbController = new DBController("goldencircle","csci230");
+	
 		return dbController.addUser(firstName, lastName, userName, password, type);
+	}
+
+	public void createController(DBController dataBase) {
+		// TODO Auto-generated method stub
+		this.dbController = dataBase;
 	}
 
 }

@@ -16,7 +16,8 @@ import university.University;
  */
 public class UserController {
 	private Object savedSchools;
-	private Object DBController;
+	DBController dataBase;
+	searchController search = new searchController();
 	
 
 	//private DBContoller dbController; 
@@ -96,7 +97,7 @@ public class UserController {
 		 * @param school
 		 */
 		public void removeSavedSchool(User user, String name) {
-			DBController dataBase = new DBController("goldencircle","csci230");
+			
 			user.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
@@ -121,7 +122,7 @@ public class UserController {
 		
 		public ArrayList<University> searchSchool(User user, String state, int numStudents){
 			if(user.isLoggedOn()) {
-				searchController search = new searchController();
+				
 				return search.searchSchool(state, numStudents);
 				
 			}
@@ -132,7 +133,7 @@ public class UserController {
 		
 		public ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo){
 		
-			DBController dataBase = new DBController("goldencircle","csci230");
+			
 			return dataBase.findTopFive(state,control,lowerExpense,upperExpense,emphasesOne, emphasesTwo);
 			
 			
@@ -144,10 +145,16 @@ public class UserController {
 
 		public void addSavedSchool(String user, String school) {
 			// TODO Auto-generated method stub
-			DBController dataBase = new DBController("goldencircle","csci230");
+			
 			dataBase.addSavedSchool(user,school);
 			
 		}
+
+	public void createDataBase(DB.DBController dataBase) {
+		// TODO Auto-generated method stub
+		this.dataBase = dataBase;
+		
+	}
 
 
 }

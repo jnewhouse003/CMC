@@ -43,10 +43,11 @@ public interface AccountUI {
 	 * @param university
 	 * @return university
 	 */
-	public static String viewResults(String university) { 
-		AccountController name = new AccountController();
-		name.viewResults(university);
-		return university;
+	public static University viewResults(String university) { 
+	
+			AccountController name = new AccountController();
+			return name.viewResults(university);
+		
 	}
 
 	/**

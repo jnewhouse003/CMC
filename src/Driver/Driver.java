@@ -32,12 +32,13 @@ public class Driver implements AccountUI, UserUI, AdminUI
 	 */
 	public static void main(String[] args) {
 		System.out.println("Step 1: logon");
+		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
 		AccountUI.logOn("pohmann", "123");
 		AccountUI.logOn("pohmann", "12");
 		AccountUI.logOn("notPeter", "123");
 		System.out.println("--------------------");
 		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann");
+		Account peter = new Account("pohmann", "123", "peter", "ohmann", 'u');
 		System.out.println("Step 2: viewAndEditProfile");
 		UserUI.viewUserInfo(peter);
         UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
@@ -46,8 +47,9 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("pohmann", "123", "Peter", "Ohmann",'u');
-        UserUI.searchSchool(peterUser, "Minnesota", 20000);
+        User peterUser = new User("pohmann", "123", "Peter", "Ohmann", 'u');
+
+        UserUI.searchSchool(peterUser, "FLORIDA", 10000);
         UserUI.searchSchool(peterUser, "Colorado", 4000);
         UserUI.searchSchool(peterUser, "California", 10000);
         UserUI.searchSchool(peterUser, "Texas",40000);
@@ -78,16 +80,21 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 7: remove saved school");
-		UserUI.removeSavedSchool("St.Johns");
+		UserUI.removeSavedSchool(peterUser,"St.Johns");
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: view specific school information");
+		AccountUI.viewResults("ARIZONA STATE");
 		
-		
+
 		
 		System.out.println("--------------------");
 		System.out.println("Step 9: saved school");
 		
+		
+		System.out.println("--------------------");
+		System.out.println("Step 10: add saved school");
+		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
 		
 		System.out.println("-------------------");
 		System.out.println("Step 12: Logout");

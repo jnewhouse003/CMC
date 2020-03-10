@@ -49,7 +49,9 @@ public class User extends Account {
 	}
 	
 	public void removeSavedSchool(University school) {
-		this.savedSchools.remove(school);
+		if(savedSchools != null) {
+			this.savedSchools.remove(school);
+		}
 	}
 	
 	public boolean isLoggedOn() {

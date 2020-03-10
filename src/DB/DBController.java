@@ -4,11 +4,7 @@ import Account.Account;
 
 import dblibrary.project.csci230.UniversityDBLibrary;
 
-import Admin.AdminController;
-
 import university.University;
-import user.Criteria;
-import user.User;
 
 
 /**
@@ -51,6 +47,12 @@ public class DBController
 	}
 	
 	
+	public void addSavedSchool(String user, String university) {
+		
+		this.dataBase.user_saveSchool(user, university);
+	}
+	
+	
 	public void editSchool()
 	{
 		
@@ -72,6 +74,7 @@ public class DBController
 				return temp;
 			}
 		}
+		return null;
 	}
 	
 	

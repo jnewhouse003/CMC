@@ -9,16 +9,14 @@ import university.University;
 public interface UserUI {
 
 	/**
-	public void addSavedSchool(University school) {
-		
-		
-	}
 	
-	public void findUniverstiy(String name) {
-		
+	
+	public static void findUniverstiy(String name) {
+
 		
 	}
 	*/
+	
 	public static void searchSchool(User user, String state, int numStudents) {
 		UserController userController = new UserController();
 		displayResults(userController.searchSchool(user, state, numStudents));
@@ -38,12 +36,19 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static void removeSavedSchool(User user ,String name) {
+	public static void removeSavedSchool(User user, String name) {
 		
 		UserController userController = new UserController();
 		userController.removeSavedSchool(user, name);
 	}
-	/**
+	
+	
+	public static void addSavedSchool(String user, String school) {
+		UserController userController = new UserController();
+		userController.addSavedSchool(user, school);
+		
+	}
+/**
 	public void viewSavedSchool() {
 		
 		

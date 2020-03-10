@@ -15,6 +15,7 @@ public class Account {
 	private String lastName;
 	private boolean userLogOn;
 	private boolean adminLogOn;
+	private char type;
 	
 	/**
 	 * This method is the constructor for an Account
@@ -31,6 +32,7 @@ public class Account {
 		this.password = password;
 		this.userName = userName;
 		this.userLogOn = true;
+		this.type = type;
 	}
 
 	/**

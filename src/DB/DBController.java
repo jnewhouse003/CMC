@@ -50,7 +50,7 @@ public class DBController
 		String[][] allSchools;
 		allSchools = this.dataBase.university_getUniversities();
 		for(int i = 0; i < allSchools.length; i++) {
-			if(allSchools[i][0] == university) {
+			if(allSchools[i][0].equals(university)) {
 				University temp = new University(allSchools[i]);
 				return temp;
 			}

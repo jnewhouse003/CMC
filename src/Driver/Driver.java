@@ -84,7 +84,9 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: view specific school information");
-		AccountUI.viewResults("ARIZONA STATE");
+		ArrayList<University> schools = new ArrayList();
+		schools.add(AccountUI.viewResults("ARIZONA STATE"));
+		UserUI.displayResults(schools);
 		
 
 		

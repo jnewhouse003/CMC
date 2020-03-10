@@ -23,10 +23,10 @@ public interface AccountUI {
 	 * @param username
 	 * @param password
 	 */
-	public static void logOn(String username, String password) {
+	public static Boolean logOn(String username, String password) {
 
 		
-		name.logOn(username, password);
+		return name.logOn(username, password);
 
 	}
 

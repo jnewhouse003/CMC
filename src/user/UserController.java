@@ -88,6 +88,8 @@ public class UserController {
 		}
 		*/
 		
+		
+		
 		private void setUserInfo(Object info) {
 			// TODO Auto-generated method stub
 			

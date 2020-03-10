@@ -53,10 +53,14 @@ public class DBController
 	}
 	
 	
-	public void editSchool()
-	{
+	
+	
+	public void editUser(String firstName, String lastName, String userName, String password, char type, char status){
 		
+		
+		this.dataBase.user_editUser(userName, firstName, lastName, password, type, status);
 	}
+	
 	
 	/**
 	 * This method gets a University based on its String name
@@ -104,23 +108,25 @@ public class DBController
 	 * @param user
 	 * @return false is User DNE; true if User exists
 	 */
-	public boolean lookUpUser(String user) 
-	{
-		String[][] allUsers = this.dataBase.user_getUsers();
-			for(int i = 0; i < allUsers.length; i++)
-			{
-				if (allUsers[i][2] == user) 
-				{
-					return true;
-				}
-				else 
-				{
-					return false;
-				}
-			}
-			return false;
 	
+	public boolean lookUpUser(String user){
+		String[][] allUsers;
+		allUsers = this.dataBase.user_getUsers();
+		for(int i = 0; i < allUsers.length; i++) 
+		{
+			if (allUsers[i][2].equals(user)) 
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		return false;
+		
 	}
+	
 
 	/**
 	 * This method returns a list of all Universities

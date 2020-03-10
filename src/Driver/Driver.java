@@ -39,18 +39,35 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		
 		System.out.println("Step 1: logon");
-		AccountUI.addUser("peter", "ohmann", "pohmann", "123", 'u');
-		AccountUI.logOn("pohmann", "123");
-		AccountUI.logOn("pohmann", "12");
-		AccountUI.logOn("notPeter", "123");
+		System.out.println(AccountUI.addUser("test", "mcTesty", "testy", "123", 'u'));
+		if(AccountUI.logOn("testy", "123") == true) {
+			System.out.println("login was succesful");
+		}
+		else {
+			System.out.println("login failed");
+		}
+		if(AccountUI.logOn("testy", "12") == true) {
+			System.out.println("login was succesful");
+		}
+		else {
+			System.out.println("login failed");
+		}
+		if(AccountUI.logOn("mcTester", "123") == true) {
+			System.out.println("login was succesful");
+		}
+		else {
+			System.out.println("login failed");
+		}
+		
 		System.out.println("--------------------");
 		
-		Account peter = new Account("pohmann", "123", "peter", "ohmann", 'u');
+		Account test = new Account("test", "mctester", "testy", "123", 'u');
 		System.out.println("Step 2: viewAndEditProfile");
-		UserUI.viewUserInfo(peter);
-        UserUI.editUserInfo(peter, "1234", "Peter", "Ohmann");
+		UserUI.viewUserInfo(test);
+		
+        UserUI.editUserInfo(test, "1234", "Test", "Mctest");
         System.out.println("Updated User Info: ");
-        UserUI.viewUserInfo(peter);
+        UserUI.viewUserInfo(test);
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
@@ -98,7 +115,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 
 		
 		System.out.println("--------------------");
-		System.out.println("Step 9: saved school");
+		System.out.println("Step 9: view saved school");
 		
 		
 		System.out.println("--------------------");

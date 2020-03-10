@@ -25,14 +25,14 @@ public class Account {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Account(String userName, String password, String firstName, String lastName,char type) {
+	public Account(String firstName, String lastName, String userName, String password,char type) {
 		super();
 		this.setFirstName(firstName); 
 		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
 		this.userLogOn = true;
-		this.type = type;
+		this.setType(type);
 	}
 
 	/**
@@ -140,6 +140,20 @@ public class Account {
 		 */
 		public void setLastName(String lastName) {
 			this.lastName = lastName;
+		}
+
+		/**
+		 * @return the type
+		 */
+		public char getType() {
+			return type;
+		}
+
+		/**
+		 * @param type the type to set
+		 */
+		public void setType(char type) {
+			this.type = type;
 		}
 		
 		

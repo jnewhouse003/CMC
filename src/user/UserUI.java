@@ -38,9 +38,10 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static void removeSavedSchool(String name) {
+	public static void removeSavedSchool(User user ,String name) {
 		
-		//userController.removeSavedSchool(name);
+		UserController userController = new UserController();
+		userController.removeSavedSchool(user, name);
 	}
 	/**
 	public void viewSavedSchool() {

@@ -79,6 +79,7 @@ public class University {
 		this.emphases = i;
 	}
 
+
 	
 	
 	
@@ -104,6 +105,7 @@ public class University {
 		this.lifeQualityScale = Integer.valueOf(strings[15]);
 		this.emphases = "none";
 	}
+
 
 
 

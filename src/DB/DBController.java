@@ -1,7 +1,11 @@
 package DB;
 import java.util.ArrayList;
 import Account.Account;
+
 import dblibrary.project.csci230.UniversityDBLibrary;
+
+import Admin.AdminController;
+
 import university.University;
 import user.Criteria;
 import user.User;
@@ -37,10 +41,21 @@ public class DBController
 		
 	}
 	
-	public void getUniversity(String university) 
+	public University getUniversity(String university) 
 	{
 		
+		
+		String[][] allSchools;
+		allSchools = this.dataBase.university_getUniversities();
+		for(int i = 0; i < allSchools.length; i++) {
+			if(allSchools[i][0] == university) {
+				University temp = new University(allSchools[i]);
+				return temp;
+			}
+		}
 	}
+	
+	
 	public Account getAccount(String account) 
 	{
 		String[][] allUsers = this.dataBase.user_getUsers();
@@ -76,8 +91,8 @@ public class DBController
 		
 	
 	}
-	
-	public ArrayList<University> findallUniversity()
+
+	public static ArrayList<University> findallUniversity()
 	{
 		
 		University School1 = new University("School 4", "New York", "", "", 70, 56.0,44.1, 3240, 2331, 78.5, 23.1, 1230, 45.5, 80.0, 30, 40, 50,"");
@@ -101,9 +116,8 @@ public class DBController
 	}
 	public ArrayList<University> findByCriteria(String state, int numStudents) 
 	{
-
-		
 		String[][] allSchools;
+
 		ArrayList<University> foundSchools = new ArrayList();
 		
 		allSchools = this.dataBase.university_getUniversities();
@@ -133,12 +147,15 @@ public class DBController
 		
 		
 		allSchools = this.dataBase.university_getUniversities();
+
+		
+
 		
 		ArrayList<Integer> difference = new ArrayList<Integer>();
 		
 		for(int i = 0; i < allSchools.length; i++) {
-			University temp = new University(allSchools[i]);
-			schools.add(temp);
+			University tempSchool = new University(allSchools[i]);
+			schools.add(tempSchool);
 		}
 		
 		
@@ -161,7 +178,6 @@ public class DBController
 			if(tempUniversity.getEmphases().equals(emphasesOne) || tempUniversity.getEmphases().equals(emphasesTwo)) {
 				temp += 1;
 			}
-		
 			difference.add(temp);
 		}
 		
@@ -182,8 +198,10 @@ public class DBController
 			
 			
 		}
+
 					
 		return foundSchools;
+		
 	}
 
 

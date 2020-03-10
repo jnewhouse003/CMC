@@ -8,15 +8,20 @@ import university.University;
 
 
 /**
+ * This is the controller for the Database
+ * 
  * @author jlaux001
- * @param <account>
- * @param <criteria>
- *
  */
 public class DBController 
 {
 	private UniversityDBLibrary dataBase;
 	
+	/**
+	 * This is the constructor for the DBController
+	 * 
+	 * @param username
+	 * @param password
+	 */
 	public DBController(String username, String password){
 	   this.dataBase = new UniversityDBLibrary(username,password);
 	  }
@@ -26,6 +31,16 @@ public class DBController
 		
 	}
 	
+	/**
+	 * This method adds a User to the DB
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param userName
+	 * @param password
+	 * @param type
+	 * @return an integer to be used by the database
+	 */
 	public int addUser(String firstName, String lastName, String userName, String password, char type ) {
 		
 		return this.dataBase.user_addUser(firstName, lastName, userName, password, type);
@@ -43,10 +58,14 @@ public class DBController
 		
 	}
 	
+	/**
+	 * This method gets a University based on its String name
+	 * 
+	 * @param university
+	 * @return University temp
+	 */
 	public University getUniversity(String university) 
 	{
-		
-		
 		String[][] allSchools;
 		allSchools = this.dataBase.university_getUniversities();
 		for(int i = 0; i < allSchools.length; i++) {
@@ -59,6 +78,12 @@ public class DBController
 	}
 	
 	
+	/**
+	 * This method gets an Account based on its String name
+	 * 
+	 * @param account
+	 * @return Account temp
+	 */
 	public Account getAccount(String account) 
 	{
 		String[][] allUsers = this.dataBase.user_getUsers();
@@ -73,6 +98,12 @@ public class DBController
 		return null;
 	}
 	
+	/**
+	 * This method checks if a User exists
+	 * 
+	 * @param user
+	 * @return false is User DNE; true if User exists
+	 */
 	public boolean lookUpUser(String user) 
 	{
 		String[][] allUsers = this.dataBase.user_getUsers();
@@ -88,13 +119,14 @@ public class DBController
 				}
 			}
 			return false;
-		
-			
-		
-		
 	
 	}
 
+	/**
+	 * This method returns a list of all Universities
+	 * 
+	 * @return schools
+	 */
 	public ArrayList<University> findallUniversity()
 	{
 		
@@ -105,11 +137,16 @@ public class DBController
 			schools.add(temp);
 		}
 		
-		
 		return schools;
-				
-		
 	}
+	
+	/**
+	 * This method searches the Universities based on given criteria
+	 * 
+	 * @param state
+	 * @param numStudents
+	 * @return foundSchools
+	 */
 	public ArrayList<University> findByCriteria(String state, int numStudents) 
 	{
 		String[][] allSchools;
@@ -132,6 +169,17 @@ public class DBController
 		
 	}
 
+	/**
+	 * This method returns the top 5 schools based on given criteria
+	 * 
+	 * @param state
+	 * @param control
+	 * @param lowerExpense
+	 * @param upperExpense
+	 * @param emphasesOne
+	 * @param emphasesTwo
+	 * @return foundSchools
+	 */
 	public ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,
 			String emphasesOne, String emphasesTwo) {
 		// TODO Auto-generated method stub

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package Driver;
 
 
@@ -18,8 +15,9 @@ import user.User;
 import user.UserUI;
 
 /**
- * @author npink001
- *
+ * This is the class for the driver
+ * 
+ * @author GoldenCircle
  */
 public class Driver implements AccountUI, UserUI, AdminUI
 {
@@ -28,6 +26,8 @@ public class Driver implements AccountUI, UserUI, AdminUI
 	
 	
 	/**
+	 * This method runs the driver
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

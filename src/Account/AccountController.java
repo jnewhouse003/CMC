@@ -47,7 +47,7 @@ public class AccountController {
 	 * @param account
 	 */
 	public void logOut(String account) {
-		
+
 		
 		if (dbController.getAccount(account) == null);
 		{
@@ -102,7 +102,7 @@ public class AccountController {
 	 * @param userName
 	 * @param password
 	 * @param type
-	 * @return
+	 * @return an integer to be used by the database
 	 */
 	public int addUser(String firstName, String lastName, String userName, String password, char type) {
 		// TODO Auto-generated method stub

@@ -29,25 +29,8 @@ public class UserController {
 			// TODO Auto-generated constructor stub
 		}
 
-		/**
-		 * pre-condition: school can not be in savedSchool list already
-		 * 
-		 * @param univ
-		 * @return
-		 */
-		public void addSavedSchools(University univ) {
-			if(univ.length() != 0) {
-			for(University univ1 : savedSchools){
+	
 		
-			ArrayList<University> savedSchools = new ArrayList<University>();
-			this.savedSchools.add(((Object) this.DBController).getUniversity(univ1)); 
-			}
-			}
-			else
-			{
-				System.out.print("Error, the university you are trying to add is already your saved schools list. Try entering another school. ");
-			}
-			}
 		/**
 		 * 
 		 * @param university
@@ -70,8 +53,9 @@ public class UserController {
 		 * 
 		 * @param savedSchools 
 		 */
-		public void viewSavedSchool() {
-			System.out.println(savedSchools); 
+		public String[] viewSavedSchool(String username) {
+			return dataBase.getSavedSchool(username);
+			
 		
 		}
 		
@@ -160,11 +144,15 @@ public class UserController {
 			
 			
 		}
-	/**
-	 * @param school2 
-	 * 
-	 */
 
+		
+		/**
+		 * pre-condition: school can not be in savedSchool list already
+		 * 
+		 * @param user
+		 * @param school
+		 * @return
+		 */
 		public void addSavedSchool(String user, String school) {
 			// TODO Auto-generated method stub
 			

@@ -51,14 +51,14 @@ public interface UserUI {
 		userController.addSavedSchool(user, school);
 		
 	}
-/**
-	public void viewSavedSchool() {
+
+	public static String[] viewSavedSchool(String username) {
 		
-		
+		return userController.viewSavedSchool(username);
 	}
 	
 	
-	
+	/**
 	public void logout() {
 		
 	}

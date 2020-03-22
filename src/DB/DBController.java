@@ -62,6 +62,19 @@ public class DBController
 	}
 	
 	
+	public String[] getSavedSchool(String username) {
+		String[][] users;
+		users = this.dataBase.user_getUsernamesWithSavedSchools();
+		for(int i = 0; i< users.length; i++) {
+			if(users[i][0].equals(username)) {
+				return users[i];
+			}
+		}
+		String[] empty = null;
+		return empty;
+		
+	}
+	
 	/**
 	 * This method gets a University based on its String name
 	 * 

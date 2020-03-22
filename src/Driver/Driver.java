@@ -112,16 +112,17 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		schools.add(AccountUI.viewResults("ARIZONA STATE"));
 		UserUI.displayResults(schools);
 		
-
 		
 		System.out.println("--------------------");
-		System.out.println("Step 9: Saved school");
-
-		
-		
-		System.out.println("--------------------");
-		System.out.println("Step 10: Add saved school");
+		System.out.println("Step 9: Add saved school");
 		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
+		
+		System.out.println("--------------------");
+		System.out.println("Step 10: view Saved school");
+		String[] savedSchools = UserUI.viewSavedSchool("pohmann");
+		for(int i = 0; i< savedSchools.length; i++) {
+			System.out.println(savedSchools[i]);
+		}
 		
 		System.out.println("-------------------");
 		System.out.println("Step 11: Add User");

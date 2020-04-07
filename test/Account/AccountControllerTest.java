@@ -9,19 +9,19 @@ import DB.DBController;
 
 public class AccountControllerTest {
 	AccountController controller;
+	DBController dataBase;
 
 	@Before
 	public void setUp() throws Exception {
 		this.controller = new AccountController();
-		DBController dataBase = new DBController("goldencircle","csci230");
+		this.dataBase = new DBController("goldencircle","csci230");
 		controller.createController(dataBase);
 		dataBase.addUser("test", "mcTesty", "testy", "123", 'u');
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		//delete user
-		
+		this.dataBase.removeUser("testy");	
 	}
 
 	@Test

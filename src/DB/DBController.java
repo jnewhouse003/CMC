@@ -269,6 +269,10 @@ public class DBController
 		return foundSchools;
 		
 	}
+	
+	public void removeUser(String userName) {
+		this.dataBase.user_deleteUser(userName);
+	}
 
 
 	

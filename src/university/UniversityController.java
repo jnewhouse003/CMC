@@ -13,7 +13,6 @@ public class UniversityController {
 	//how will it take in the criteria
 	public University searchSchool(Criteria) {
 		
-		
 		return University;
 	}
 	

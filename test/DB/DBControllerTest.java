@@ -26,6 +26,8 @@ public class DBControllerTest {
 		Assert.assertEquals("userFound" , "testy" ,this.controller.getAccount("testy").getUserName());
 		
 		Assert.assertEquals("user not found" , "" ,this.controller.getAccount("notTesty").getUserName());
+		
+		Assert.assertEquals("user not found" , "", this.controller.getAccount("").getUserName());
 	
 	}
 

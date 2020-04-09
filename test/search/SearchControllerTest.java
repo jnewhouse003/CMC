@@ -28,8 +28,7 @@ public class SearchControllerTest {
 	public void setUp() throws Exception {
 		//creating the universities
 		University uni1 = new University("Circle University", "Minnesota", "location1", "control", 53, 40.5, 50.5, 1000, 2000, 2000.00, 1500.00, 100, 30.00, 50.00, 98, 23, 80, "majors");
-		//University uni2 = new University("peterUni", "Chicago", 1000);
-		//University uni3 = new University("ohmannUni", "Texas", 1200);
+	
 		
 		this.controller = new searchController("Minnesota", 53);
 		this.dataBase = new DBController("goldencircle", "cs230");

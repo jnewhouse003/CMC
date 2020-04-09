@@ -24,7 +24,7 @@ public class logOutTest {
 
 	@After
 	public void tearDown() throws Exception {
-		dataBase.getAccount("Mr.Logout12");
+		dataBase.removeUser("Mr.Logout12");
 	}
 
 	@Test

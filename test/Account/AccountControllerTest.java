@@ -28,6 +28,7 @@ public class AccountControllerTest {
 	@After
 	public void tearDown() throws Exception {
 		this.dataBase.removeUser("testy");
+		this.dataBase.removeUser("Mr.Logout12");
 		
 		
 	}

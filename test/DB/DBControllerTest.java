@@ -25,7 +25,6 @@ public class DBControllerTest {
 		
 		this.search = new searchController();
 		this.controller = new DBController("goldencircle", "cs230");
-		this.controller.addUser("test", "mcTesty", "testy", "123", 'u');
 		this.controller.addSchool("Circle University");
 	}
 

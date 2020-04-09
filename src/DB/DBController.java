@@ -26,11 +26,10 @@ public class DBController
 	   this.dataBase = new UniversityDBLibrary(username,password);
 	  }
 	  
-	public void addSchool(String university) 
+	public void addSchool(University university) 
 	{
-		
+		this.dataBase.university_addUniversity(university.getName(),university.getState(), university.getLocation(),university.getControl(), university.getNumStudents(),university.getPercentFemale(), university.getVerbalSAT(), university.getMathSAT(), university.getExpenses(), university.getFinancialAid(), university.getNumApplications(), university.getPercentAdmitted(), university.getPercentEnrolled(), university.getAcademicsScale(), university.getSocialScale(), university.getLifeQualityScale());
 	}
-	
 	/**
 	 * This method adds a User to the DB
 	 * 

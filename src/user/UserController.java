@@ -82,10 +82,11 @@ public class UserController {
 		/**
 		 * 
 		 * @param school
+		 * @return 
 		 */
-		public void removeSavedSchool(User user, String name) {
+		public Boolean removeSavedSchool(User peterUser, String name) {
 			
-			user.removeSavedSchool(dataBase.getUniversity(name));
+			return peterUser.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
 		/**

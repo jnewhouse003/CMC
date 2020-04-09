@@ -39,10 +39,10 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static void removeSavedSchool(User user, String name) {
+	public static Boolean removeSavedSchool(User peterUser, String name) {
 		
 		
-		userController.removeSavedSchool(user, name);
+		return userController.removeSavedSchool(peterUser, name);
 	}
 	
 	

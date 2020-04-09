@@ -48,10 +48,12 @@ public class User extends Account {
 		// TODO
 	}
 	
-	public void removeSavedSchool(University school) {
+	public Boolean removeSavedSchool(University school) {
 		if(savedSchools != null) {
 			this.savedSchools.remove(school);
+			return true;
 		}
+		return false;
 	}
 	
 	public boolean isLoggedOn() {

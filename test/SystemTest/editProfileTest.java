@@ -1,0 +1,44 @@
+package SystemTest;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import Account.Account;
+import Account.AccountUI;
+import DB.DBController;
+import user.UserUI;
+
+public class editProfileTest {
+
+	DBController database;
+	Account account;
+	
+	@Before
+	public void setUp() throws Exception {
+		this.database = new DBController("goldencircle","csci230");
+		AccountUI.createController(database);
+		account = new Account("Bob", "Dylan","BobBeast","BobPass",'u');
+		database.addUser("Bob", "Dylan", "BobBeast", "BobPass", 'u');
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		database.removeUser("Bob");
+	}
+
+	@Test
+	public void testEditUserInfo() {
+		UserUI.editUserInfo(account, "BobBetterPass", "Bobby", "Dill");
+		
+		Assert.assertEquals("original user info has changed", "Bobby", account.getFirstName());
+		Assert.assertEquals("successful user edit", "Bobby", database.getAccount("Bob").getFirstName());
+		
+		
+		
+	}
+
+}

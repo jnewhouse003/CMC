@@ -45,6 +45,7 @@ public class DBControllerTest {
 	}
 	//GiGi
 	
+	@Test
 	public void TestGetUniversity() {
 		Assert.assertEquals("University found", "Circle University", this.controller.getUniversity("Circle University"));
 		

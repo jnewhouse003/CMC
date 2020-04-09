@@ -21,7 +21,7 @@ public class removeSavedSchoolTest {
 	public void setUp() throws Exception{
 		this.dataBase = new DBController("goldencircle", "csci230";)
 		UserUI.createController(dataBase);
-		dataBase.addUser(test, tester, tester, 123, s);
+		dataBase.addUser("test", "tester", "tester", "123", "s");
 		dataBase.addSavedSchool(tester, Harvard)
 		
 	}
@@ -33,9 +33,7 @@ public class removeSavedSchoolTest {
 	
 	@Test
 	public void testRemoveSavedSchools() {
-		user.removeSavedSchool(dataBase.getUniversity(Harvard));
-		Assert.assertTrue("Harvard should not be in saved schools list",return dataBase.getSavedSchool(tester););
-		
+		Assert.assertEquals("Removed School", true, userUI.removeSavedSchool("tester", "Harvard"));
 		
 		
 	}

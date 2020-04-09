@@ -27,15 +27,16 @@ public class editProfileTest {
 
 	@After
 	public void tearDown() throws Exception {
-		database.removeUser("Bob");
+		database.removeUser("BobBeast");
 	}
 
 	@Test
 	public void testEditUserInfo() {
 		UserUI.editUserInfo(account, "BobBetterPass", "Bobby", "Dill");
 		
-		Assert.assertEquals("original user info has changed", "Bobby", account.getFirstName());
-		Assert.assertEquals("successful user edit", "Bobby", database.getAccount("Bob").getFirstName());
+		Assert.assertEquals("user info changed in account", "Bobby", account.getFirstName());
+		
+		Assert.assertEquals("info changed in database", "Bobby", database.getAccount("BobBeast").getFirstName());
 		
 		
 		

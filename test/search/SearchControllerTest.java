@@ -17,7 +17,7 @@ import DB.DBController;
  *
  */
 public class SearchControllerTest {
-	SearchController controller;
+	searchController controller;
 	DBController dataBase;
 
 
@@ -31,12 +31,12 @@ public class SearchControllerTest {
 		//University uni2 = new University("peterUni", "Chicago", 1000);
 		//University uni3 = new University("ohmannUni", "Texas", 1200);
 		
-		this.controller = new SearchController("Minnesota", 53);
+		this.controller = new searchController("Minnesota", 53);
 		this.dataBase = new DBController("goldencircle", "cs230");
 		
 		//Adding universities to DB
 		this.dataBase.addUser("test", "mcTesty", "testy", "123", 'u');
-		this.dataBase.addSchool("Circle University"));
+		this.dataBase.addSchool("Circle University");
 		//this.dataBase.addSchool("peterUni"));
 		//this.dataBase.addSchool("ohmannUni"));
 		
@@ -61,7 +61,7 @@ public class SearchControllerTest {
 	public void testSearchSchool() {
 		Assert.assertTrue("Circle University was found", this.controller.searchSchool("Minnesota", 53)== true);
 		
-		Asser.assertTrue("University Not Found", this.controller.searcSchool("Hawaii", 300)== false);
+		Assert.assertTrue("University Not Found", this.controller.searchSchool("Hawaii", 300)== false);
 	}
 
 }

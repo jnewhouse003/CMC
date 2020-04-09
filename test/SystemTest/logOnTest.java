@@ -39,12 +39,6 @@ public class logOnTest {
 		
 		}
 	
-	public void testLogOut() {
-		Assert.assertEquals("user is logged out"  , true, AccountUI.logOut("Mr.Logout12"));
-		
-		Assert.assertEquals("user is logged in", false, AccountUI.logOut("Mr.Logout12"));
-	}
-	
 	
 	}
 

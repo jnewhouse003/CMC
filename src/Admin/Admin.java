@@ -15,7 +15,7 @@ import Account.Account;
 public class Admin extends Account
 {
 
-	ArrayList manageUniversities = new ArrayList<University();
+	ArrayList manageUniversities = new ArrayList<University>();
 
 	ArrayList manageUsers = new ArrayList();
 	
@@ -29,7 +29,7 @@ public class Admin extends Account
 	 */
 	public Admin(String password, String username, boolean userBoolean, boolean adminBoolean) 
 	{
-	super(password,username,userBoolean,AdminBoolen)
+	super(password,username,userBoolean,AdminBoolen){
 	}
 	
 	/**

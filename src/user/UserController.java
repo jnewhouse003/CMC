@@ -144,6 +144,10 @@ public class UserController {
 			
 			
 		}
+		
+		public ArrayList<Account> allUsers(Account user){
+			
+		}
 
 		
 		/**

@@ -161,6 +161,24 @@ public class DBController
 		
 		return schools;
 	}
+
+	/**
+	 * this method returns a list of all users
+	 * 
+	 * @return users
+	 */
+	public ArrayList<Account> findallUsers(){
+		String[][] allUsers = this.dataBase.user_getUsers();
+		ArrayList<Account> users = new ArrayList();
+		for(int i = 0; i < allUsers.length; i++)
+		{
+			Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+			users.add(temp);
+				
+			}
+		return users;
+		}
+
 	
 	/**
 	 * This method searches the Universities based on given criteria
@@ -270,8 +288,8 @@ public class DBController
 		
 	}
 	
-	public void removeUser(String userName) {
-		this.dataBase.user_deleteUser(userName);
+	public int removeUser(String userName) {
+		return this.dataBase.user_deleteUser(userName);
 	}
 
 

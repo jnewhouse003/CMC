@@ -5,6 +5,7 @@ package Admin;
 
 import java.util.ArrayList;
 
+import Account.Account;
 import DB.DBController;
 import university.University;
 
@@ -14,7 +15,7 @@ import university.University;
  * @author jnewhouse003
  */
 public class AdminController {
-	DBController DataBase;
+	DBController dataBaseCon;
 	
 	/**
 	 * This method returns a list of Universities from the DB
@@ -22,12 +23,24 @@ public class AdminController {
 	 * @return list of Universities from DB
 	 */
 	public ArrayList<University> browseSchool() {
-		return DataBase.findallUniversity();
+		return dataBaseCon.findallUniversity();
 	}
+	
+
+	public ArrayList<Account> allUsers() {
+		
+		return dataBaseCon.findallUsers();
+	}
+	
 
 	public void createDataBase(DBController dataBase) {
 		// TODO Auto-generated method stub
-		DataBase = dataBase;
+		dataBaseCon = dataBase;
+	}
+	
+	public int deactivateUser(String userName) {
+		return dataBaseCon.removeUser(userName);
+		
 	}
 
 }

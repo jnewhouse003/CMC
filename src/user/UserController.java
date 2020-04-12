@@ -6,6 +6,7 @@ package user;
 import java.util.ArrayList;
 
 import Account.Account;
+import Criteria.Criteria;
 import DB.DBController;
 import search.searchController;
 import university.University;
@@ -45,8 +46,17 @@ public class UserController {
 		 * @param University
 		 * @return
 		 */
-		public University searchSchool(Criteria criteria) {
-			return this.searchSchool(criteria);
+		public ArrayList<University> searchSchool(User user, Criteria criteria) {
+			ArrayList<University> schools = new ArrayList();
+			if(this.dataBase.lookUpUser(user.getUserName()) == true) {
+				schools = this.dataBase.findByCriteria(criteria);
+				return schools;
+				
+			}
+			else {
+				return schools;
+			}
+			
 		}
 		
 		/**

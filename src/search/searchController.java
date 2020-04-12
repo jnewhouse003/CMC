@@ -2,8 +2,8 @@ package search;
 
 import java.util.ArrayList;
 
+import Criteria.Criteria;
 import DB.DBController;
-import user.Criteria;
 import university.University;
 
 /**

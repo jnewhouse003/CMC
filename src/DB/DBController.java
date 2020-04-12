@@ -1,7 +1,7 @@
 package DB;
 import java.util.ArrayList;
 import Account.Account;
-
+import Criteria.Criteria;
 import dblibrary.project.csci230.UniversityDBLibrary;
 
 import university.University;
@@ -186,20 +186,61 @@ public class DBController
 	 * @param numStudents
 	 * @return foundSchools
 	 */
-	public ArrayList<University> findByCriteria(String state, int numStudents) 
+	public ArrayList<University> findByCriteria(Criteria parameters) 
 	{
 		String[][] allSchools;
 
 		ArrayList<University> foundSchools = new ArrayList();
+		ArrayList<University> allUniversities = new ArrayList();
+		
 		
 		allSchools = this.dataBase.university_getUniversities();
 		
 
 		for(int i = 0; i < allSchools.length; i++) {
-			if(allSchools[i][1].equals(state) && Integer.valueOf(allSchools[i][4]) == numStudents) 
-			{
-					University tempUniversity = new University(allSchools[i]);
-					foundSchools.add(tempUniversity);
+			University temp = new University(allSchools[i]);
+			
+			if(temp.getState().equals(parameters.getState())) {
+				if(temp.getName().equals(parameters.getName())) {
+					if(temp.getLocation().equals(parameters.getLocation())) {
+						if(temp.getControl().equals(parameters.getControl())) {
+							if(temp.getNumStudents() < parameters.getNumStudentMax() && temp.getNumStudents() > parameters.getNumStudentMin()){
+								if(temp.getPercentFemale() > parameters.getPercentFemaleMin() && temp.getPercentFemale() < parameters.getPercentFemaleMax()) {
+									if(temp.getPercentMale() > parameters.getPercentMaleMin() && temp.getPercentMale() < parameters.getPercentMaleMax()) {
+										if(temp.getVerbalSAT() > parameters.getVerbalSATMin() && temp.getVerbalSAT() < parameters.getVerbalSATMax()) {
+											if(temp.getMathSAT() > parameters.getMathSATMin() && temp.getMathSAT() < parameters.getMathSATMax()) {
+												if(temp.getExpenses() > parameters.getExpensesMin() && temp.getExpenses() < parameters.getExpensesMax()) {
+													if(temp.getFinancialAid() > parameters.getFinancialAidMin() && temp.getFinancialAid() < parameters.getFinancialAidMax()) {
+														if(temp.getNumApplications() > parameters.getNumApplicantsMin() && temp.getNumApplications() < parameters.getNumApplicantsMax()) {
+															if(temp.getPercentAdmitted() > parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() < parameters.getPercentAdmittedMax()) {
+																if(temp.getPercentEnrolled() > parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() < parameters.getPercentEnrolledMax()) {
+																	if(temp.getAcademicsScale() > parameters.getAcademicsScaleMin() && temp.getAcademicsScale() < parameters.getAcademicScaleMax()) {
+																		if(temp.getSocialScale() > parameters.getSocialScaleMin() && temp.getSocialScale() < parameters.getSocialScaleMax()) {
+																			if(temp.getLifeQualityScale() > parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() < parameters.getLifeQualityScaleMax()) {
+																				for(int j = 0; j < parameters.getEmphases().size();j++) {
+																					if(temp.getEmphases().equals(parameters.getEmphases().get(j))) {
+																						foundSchools.add(temp);
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}	
+								}
+							}
+						}
+					}		
+				}
+					
+									
+					
 					
 			}
 		}

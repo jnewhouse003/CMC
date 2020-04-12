@@ -8,6 +8,7 @@ import java.util.Scanner;
 import Account.Account;
 import Account.AccountUI;
 import Admin.AdminUI;
+import Criteria.Criteria;
 import DB.DBController;
 import search.searchController;
 import university.University;
@@ -72,13 +73,13 @@ public class Driver implements AccountUI, UserUI, AdminUI
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
         User peterUser = new User("pohmann", "123", "Peter", "Ohmann", 'u');
-
-        UserUI.searchSchool(peterUser, "FLORIDA", 10000);
-        UserUI.searchSchool(peterUser, "Colorado", 4000);
-        UserUI.searchSchool(peterUser, "California", 10000);
-        UserUI.searchSchool(peterUser, "Texas",40000);
-        UserUI.searchSchool(peterUser, "New York City", 8000);
-        UserUI.searchSchool(peterUser, "Ohio", 15000);
+        Criteria parameters = new Criteria("Golden Circle", "Minnesota", "St.Paul", "Golden Circle",1, 0.0, 100.0, 10, 10000, 10.0, 9999.0, 1, 100.0, 100.0, 10, 10,10,"MATH");
+        UserUI.searchSchool(peterUser, parameters);
+        UserUI.searchSchool(peterUser, parameters);
+        UserUI.searchSchool(peterUser, parameters);
+        UserUI.searchSchool(peterUser, parameters);
+        UserUI.searchSchool(peterUser, parameters);
+        UserUI.searchSchool(peterUser, parameters);
         
         System.out.println("--------------------");
 		System.out.println("Step 4: View results");

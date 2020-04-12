@@ -191,7 +191,7 @@ public class DBController
 		String[][] allSchools;
 
 		ArrayList<University> foundSchools = new ArrayList();
-		ArrayList<University> allUniversities = new ArrayList();
+		
 		
 		
 		allSchools = this.dataBase.university_getUniversities();
@@ -200,20 +200,20 @@ public class DBController
 		for(int i = 0; i < allSchools.length; i++) {
 			University temp = new University(allSchools[i]);
 			
-			if(temp.getState().equals(parameters.getState())) {
-				if(temp.getName().equals(parameters.getName())) {
-					if(temp.getLocation().equals(parameters.getLocation())) {
-						if(temp.getControl().equals(parameters.getControl())) {
-							if(temp.getNumStudents() < parameters.getNumStudentMax() && temp.getNumStudents() > parameters.getNumStudentMin()){
-								if(temp.getPercentFemale() > parameters.getPercentFemaleMin() && temp.getPercentFemale() < parameters.getPercentFemaleMax()) {
-									if(temp.getPercentMale() > parameters.getPercentMaleMin() && temp.getPercentMale() < parameters.getPercentMaleMax()) {
-										if(temp.getVerbalSAT() > parameters.getVerbalSATMin() && temp.getVerbalSAT() < parameters.getVerbalSATMax()) {
-											if(temp.getMathSAT() > parameters.getMathSATMin() && temp.getMathSAT() < parameters.getMathSATMax()) {
-												if(temp.getExpenses() > parameters.getExpensesMin() && temp.getExpenses() < parameters.getExpensesMax()) {
-													if(temp.getFinancialAid() > parameters.getFinancialAidMin() && temp.getFinancialAid() < parameters.getFinancialAidMax()) {
-														if(temp.getNumApplications() > parameters.getNumApplicantsMin() && temp.getNumApplications() < parameters.getNumApplicantsMax()) {
-															if(temp.getPercentAdmitted() > parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() < parameters.getPercentAdmittedMax()) {
-																if(temp.getPercentEnrolled() > parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() < parameters.getPercentEnrolledMax()) {
+			if(temp.getState().equals(parameters.getState()) || parameters.getState().equals("")) {
+				if(temp.getName().equals(parameters.getName()) || parameters.getName().equals("")) {
+					if(temp.getLocation().equals(parameters.getLocation()) || parameters.getLocation().equals("")) {
+						if(temp.getControl().equals(parameters.getControl()) || parameters.getControl().equals("")) {
+							if(temp.getNumStudents() < parameters.getNumStudentMax() && temp.getNumStudents() > parameters.getNumStudentMin() || parameters.getNumApplicantsMax() == 0){
+								if(temp.getPercentFemale() > parameters.getPercentFemaleMin() && temp.getPercentFemale() < parameters.getPercentFemaleMax() || parameters.getPercentFemaleMax() == 0) {
+									if(temp.getPercentMale() > parameters.getPercentMaleMin() && temp.getPercentMale() < parameters.getPercentMaleMax() || parameters.getPercentMaleMax() == 0) {
+										if(temp.getVerbalSAT() > parameters.getVerbalSATMin() && temp.getVerbalSAT() < parameters.getVerbalSATMax() || parameters.getVerbalSATMax() == 0) {
+											if(temp.getMathSAT() > parameters.getMathSATMin() && temp.getMathSAT() < parameters.getMathSATMax() || parameters.getMathSATMax() == 0) {
+												if(temp.getExpenses() > parameters.getExpensesMin() && temp.getExpenses() < parameters.getExpensesMax() || parameters.getExpensesMax() == 0) {
+													if(temp.getFinancialAid() > parameters.getFinancialAidMin() && temp.getFinancialAid() < parameters.getFinancialAidMax() || parameters.getFinancialAidMax() == 0) {
+														if(temp.getNumApplications() > parameters.getNumApplicantsMin() && temp.getNumApplications() < parameters.getNumApplicantsMax() || parameters.getNumApplicantsMax() == 0) {
+															if(temp.getPercentAdmitted() > parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() < parameters.getPercentAdmittedMax() || parameters.getPercentAdmittedMax() == 0) {
+																if(temp.getPercentEnrolled() > parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() < parameters.getPercentEnrolledMax() || parameters.getPercentEnrolledMax() == 0) {
 																	if(temp.getAcademicsScale() > parameters.getAcademicsScaleMin() && temp.getAcademicsScale() < parameters.getAcademicScaleMax()) {
 																		if(temp.getSocialScale() > parameters.getSocialScaleMin() && temp.getSocialScale() < parameters.getSocialScaleMax()) {
 																			if(temp.getLifeQualityScale() > parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() < parameters.getLifeQualityScaleMax()) {

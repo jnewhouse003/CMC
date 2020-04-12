@@ -38,7 +38,7 @@ public class UserControllerTest {
 	
 	@Test 
 	public void testAddSavedSchool() {
-		
+		Assert.assertEquals("school saved", true, );
 	}
 
 }

@@ -46,14 +46,16 @@ public class UserController {
 		 * @param University
 		 * @return
 		 */
-		public ArrayList<University> searchSchool(User user, Criteria criteria) {
+		public ArrayList<University> searchSchool(String user, Criteria criteria) {
 			ArrayList<University> schools = new ArrayList();
-			if(this.dataBase.lookUpUser(user.getUserName()) == true) {
+			if(this.dataBase.lookUpUser(user) == true) {
 				schools = this.dataBase.findByCriteria(criteria);
+	
 				return schools;
 				
 			}
 			else {
+			
 				return schools;
 			}
 			

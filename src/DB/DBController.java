@@ -133,10 +133,6 @@ public class DBController
 			{
 				return true;
 			}
-			else 
-			{
-				return false;
-			}
 		}
 		return false;
 		
@@ -199,55 +195,112 @@ public class DBController
 
 		for(int i = 0; i < allSchools.length; i++) {
 			University temp = new University(allSchools[i]);
+			foundSchools.add(temp);
 			
 			if(temp.getState().equals(parameters.getState()) || parameters.getState().equals("")) {
 				if(temp.getName().equals(parameters.getName()) || parameters.getName().equals("")) {
 					if(temp.getLocation().equals(parameters.getLocation()) || parameters.getLocation().equals("")) {
 						if(temp.getControl().equals(parameters.getControl()) || parameters.getControl().equals("")) {
-							if(temp.getNumStudents() < parameters.getNumStudentMax() && temp.getNumStudents() > parameters.getNumStudentMin() || parameters.getNumApplicantsMax() == 0){
-								if(temp.getPercentFemale() > parameters.getPercentFemaleMin() && temp.getPercentFemale() < parameters.getPercentFemaleMax() || parameters.getPercentFemaleMax() == 0) {
-									if(temp.getPercentMale() > parameters.getPercentMaleMin() && temp.getPercentMale() < parameters.getPercentMaleMax() || parameters.getPercentMaleMax() == 0) {
-										if(temp.getVerbalSAT() > parameters.getVerbalSATMin() && temp.getVerbalSAT() < parameters.getVerbalSATMax() || parameters.getVerbalSATMax() == 0) {
-											if(temp.getMathSAT() > parameters.getMathSATMin() && temp.getMathSAT() < parameters.getMathSATMax() || parameters.getMathSATMax() == 0) {
-												if(temp.getExpenses() > parameters.getExpensesMin() && temp.getExpenses() < parameters.getExpensesMax() || parameters.getExpensesMax() == 0) {
-													if(temp.getFinancialAid() > parameters.getFinancialAidMin() && temp.getFinancialAid() < parameters.getFinancialAidMax() || parameters.getFinancialAidMax() == 0) {
-														if(temp.getNumApplications() > parameters.getNumApplicantsMin() && temp.getNumApplications() < parameters.getNumApplicantsMax() || parameters.getNumApplicantsMax() == 0) {
-															if(temp.getPercentAdmitted() > parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() < parameters.getPercentAdmittedMax() || parameters.getPercentAdmittedMax() == 0) {
-																if(temp.getPercentEnrolled() > parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() < parameters.getPercentEnrolledMax() || parameters.getPercentEnrolledMax() == 0) {
-																	if(temp.getAcademicsScale() > parameters.getAcademicsScaleMin() && temp.getAcademicsScale() < parameters.getAcademicScaleMax()) {
-																		if(temp.getSocialScale() > parameters.getSocialScaleMin() && temp.getSocialScale() < parameters.getSocialScaleMax()) {
-																			if(temp.getLifeQualityScale() > parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() < parameters.getLifeQualityScaleMax()) {
-																				for(int j = 0; j < parameters.getEmphases().size();j++) {
-																					if(temp.getEmphases().equals(parameters.getEmphases().get(j))) {
-																						foundSchools.add(temp);
+							if(parameters.getNumApplicantsMax() == 0 || temp.getNumStudents() <= parameters.getNumStudentMax() && temp.getNumStudents() >= parameters.getNumStudentMin() ){
+								if(parameters.getPercentFemaleMax() == 0.0 ||temp.getPercentFemale() >= parameters.getPercentFemaleMin() && temp.getPercentFemale() <= parameters.getPercentFemaleMax()) {
+									if(parameters.getPercentMaleMax() == 0.0 || temp.getPercentMale() >= parameters.getPercentMaleMin() && temp.getPercentMale() <= parameters.getPercentMaleMax()) {
+										if(parameters.getVerbalSATMax() == 0 || temp.getVerbalSAT() >= parameters.getVerbalSATMin() && temp.getVerbalSAT() <= parameters.getVerbalSATMax()) {
+											if(parameters.getMathSATMax() == 0 || temp.getMathSAT() >= parameters.getMathSATMin() && temp.getMathSAT() <= parameters.getMathSATMax()) {
+												if(parameters.getExpensesMax() == 0.0 || temp.getExpenses() >= parameters.getExpensesMin() && temp.getExpenses() <= parameters.getExpensesMax()) {
+													if(parameters.getFinancialAidMax() == 0.0 || temp.getFinancialAid() >= parameters.getFinancialAidMin() && temp.getFinancialAid() <= parameters.getFinancialAidMax()) {
+														if(parameters.getNumApplicantsMax() == 0 || temp.getNumApplications() >= parameters.getNumApplicantsMin() && temp.getNumApplications() <= parameters.getNumApplicantsMax()) {
+															if(parameters.getPercentAdmittedMax() == 0.0 || temp.getPercentAdmitted() >= parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() <= parameters.getPercentAdmittedMax()) {
+																if(parameters.getPercentEnrolledMax() == 0.0 || temp.getPercentEnrolled() >= parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() <= parameters.getPercentEnrolledMax()) {
+																	if(parameters.getAcademicScaleMax() == 0 || temp.getAcademicsScale() >= parameters.getAcademicsScaleMin() && temp.getAcademicsScale() <= parameters.getAcademicScaleMax()) {
+																		if(temp.getSocialScale() >= parameters.getSocialScaleMin() && temp.getSocialScale() <= parameters.getSocialScaleMax() || parameters.getSocialScaleMax() == 0) {
+																			if(temp.getLifeQualityScale() >= parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() <= parameters.getLifeQualityScaleMax() || parameters.getLifeQualityScaleMax() == 0) {
+																				if(parameters.getEmphases().size() == 0) {
+																					foundSchools.add(temp);
+																				}
+																				else {	
+																					if(parameters.getEmphases().contains(temp.getEmphases())) {
+																						
+																					}
+																					else {
+																						foundSchools.remove(temp);
 																					}
 																				}
 																			}
+																			else {
+																				foundSchools.remove(temp);
+																			}
+																		}
+																		else {
+																			foundSchools.remove(temp);
 																		}
 																	}
+																	else {
+																		foundSchools.remove(temp);
+																	}
+																}
+																else {
+																	foundSchools.remove(temp);
 																}
 															}
+															else {
+																foundSchools.remove(temp);
+															}
+														}
+														else {
+															foundSchools.remove(temp);
 														}
 													}
+													else {
+														foundSchools.remove(temp);
+													}
+												}
+												else {
+													foundSchools.remove(temp);
 												}
 											}
+											else {
+												foundSchools.remove(temp);
+											}
 										}
-									}	
+										else {
+											foundSchools.remove(temp);
+										}
+									}
+									else {
+										foundSchools.remove(temp);
+									}
 								}
+								else {
+									foundSchools.remove(temp);
+								}	
+							}
+							else {
+								foundSchools.remove(temp);
 							}
 						}
-					}		
+						else {
+							foundSchools.remove(temp);
+						}
+					}
+					else {
+						foundSchools.remove(temp);
+					}
 				}
-					
-									
-					
-					
+				else { 
+					foundSchools.remove(temp);
+				}
 			}
+			else {
+				foundSchools.remove(temp);
+			}
+	
+			}
+		return foundSchools;
 		}
 		
-		return foundSchools;
 		
-	}
+		
+	
 
 	/**
 	 * This method returns the top 5 schools based on given criteria

@@ -42,31 +42,7 @@ public class Criteria {
 	private int lifeQualityScaleMin; 
 	private int lifeQualityScaleMax;
 	private ArrayList<String> emphases;  
-	/**
-	 * @param string5 
-	 * @param p 
-	 * @param o 
-	 * @param n 
-	 * @param m 
-	 * @param h 
-	 * @param l 
-	 * @param g 
-	 * @param f 
-	 * @param k 
-	 * @param j 
-	 * @param e 
-	 * @param d 
-	 * @param i 
-	 * @param string4 
-	 * @param string3 
-	 * @param string2 
-	 * @param string 
-	 * 
-	 */
 	
-	public Criteria(String string, String string2, String string3, String string4, int i, double d, double e, int j, int k, double f, double g, int l, double h, double m, int n, int o, int p, String string5) {
-		// TODO Auto-generated constructor stub
-	}
 	
 	/**
 	 * @param state

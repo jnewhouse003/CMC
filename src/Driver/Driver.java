@@ -72,14 +72,16 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 3: Search for schools by a combination of state and number of students");
-        User peterUser = new User("pohmann", "123", "Peter", "Ohmann", 'u');
-        Criteria parameters = new Criteria("Golden Circle", "Minnesota", "St.Paul", "Golden Circle",1, 0.0, 100.0, 10, 10000, 10.0, 9999.0, 1, 100.0, 100.0, 10, 10,10,"MATH");
-        UserUI.searchSchool(peterUser, parameters);
-        UserUI.searchSchool(peterUser, parameters);
-        UserUI.searchSchool(peterUser, parameters);
-        UserUI.searchSchool(peterUser, parameters);
-        UserUI.searchSchool(peterUser, parameters);
-        UserUI.searchSchool(peterUser, parameters);
+        User peterUser = new User("peter", "ohmann", "pohmann", "123", 'u');
+        AccountUI.addUser("peter", "Ohmann", "pohmann", "123", 'u');
+        ArrayList<String> temp = new ArrayList();
+        Criteria parameters = new Criteria("ARIZONA STATE", "", "", "",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
+        UserUI.searchSchool("pohmann", parameters);
+        //UserUI.searchSchool(peterUser, parameters);
+        //UserUI.searchSchool(peterUser, parameters);
+        //UserUI.searchSchool(peterUser, parameters);
+        //UserUI.searchSchool(peterUser, parameters);
+        //UserUI.searchSchool(peterUser, parameters);
         
         System.out.println("--------------------");
 		System.out.println("Step 4: View results");

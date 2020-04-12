@@ -2,6 +2,7 @@ package Admin;
 
 import java.util.ArrayList;
 
+import Account.Account;
 import DB.DBController;
 import university.University;
 
@@ -25,6 +26,9 @@ public interface AdminUI {
 	public static void logout() {
 		
 	}
+	public static int deactivateUser(String userName) {
+		return controller.deactivateUser(userName);
+	}
 	
 	/**
 	 * This method calls on the AdminController to show a list of Universities
@@ -32,6 +36,25 @@ public interface AdminUI {
 	public static void browseSchool() {
 		
 		displayResults(controller.browseSchool());
+	}
+	
+	public static void allUsers() {
+		displayUsers(controller.allUsers());
+	}
+	
+	
+	
+	
+	
+	public static void displayUsers(ArrayList<Account> users) {
+	
+		System.out.println("   ");
+		if(users.size() > 0) {
+			for(int a = 0; a < users.size(); a++) {
+				System.out.println("USER:" + users.get(a).getUserName());
+				
+			}
+		}
 	}
 	
 	/**
@@ -72,4 +95,6 @@ public interface AdminUI {
 		controller.createDataBase(dataBase);
 		
 	}
+	
+
 }

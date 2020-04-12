@@ -125,8 +125,12 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		}
 		
 		System.out.println("-------------------");
-		System.out.println("Step 11: Add User");
+		System.out.println("Step 11: Activate/Add User");
 		AccountUI.addUser("Diego", "A", "dalv1212", "3232", 'a');
+		AccountUI.addUser("Jerome", "B", "jnew1212", "32321", 'a');
+		AccountUI.addUser("Nick", "C", "npink1212", "32322", 'a');
+		AccountUI.addUser("GiGi", "D", "gfit1212", "32323", 'a');
+		AccountUI.addUser("Joe", "E", "jlaux1212", "32324", 'a');
 		
 		System.out.println("-------------------");
 		System.out.println("Step 12: Logout");
@@ -138,6 +142,14 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		{
 			System.out.println("Logged Out Failed");
 		}
+		
+		System.out.println("-------------------");
+		System.out.println("Step 13: Deactivate user (admin)");
+		AdminUI.deactivateUser("dalv1212");
+		
+		System.out.println("-------------------");
+		System.out.println("Step 14: View list users (admin)");
+		AdminUI.allUsers();
 		
 		
 		

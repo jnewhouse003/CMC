@@ -215,7 +215,7 @@ public class DBController
 																		if(temp.getSocialScale() >= parameters.getSocialScaleMin() && temp.getSocialScale() <= parameters.getSocialScaleMax() || parameters.getSocialScaleMax() == 0) {
 																			if(temp.getLifeQualityScale() >= parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() <= parameters.getLifeQualityScaleMax() || parameters.getLifeQualityScaleMax() == 0) {
 																				if(parameters.getEmphases().size() == 0) {
-																					foundSchools.add(temp);
+																					
 																				}
 																				else {	
 																					if(parameters.getEmphases().contains(temp.getEmphases())) {

@@ -23,7 +23,10 @@ public class AccountController {
 		
 		
 			Account hardCode = dbController.getAccount(username);
-			if(hardCode != null) {
+			if(hardCode.getUserName().equals("")) {
+				return false;
+			}
+			else {
 				if (hardCode.getPassword().equals(password))
 				{
 					return true;
@@ -34,11 +37,12 @@ public class AccountController {
 				
 				}
 			}
-			else {
-				return false;
-			}
 		
-		}
+				
+			}
+			
+		
+		
 		
 		
 	

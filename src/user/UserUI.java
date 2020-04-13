@@ -48,9 +48,9 @@ public interface UserUI {
 	}
 	
 	
-	public static void addSavedSchool(String user, String school) {
+	public static Boolean addSavedSchool(String user, String school) {
 		
-		userController.addSavedSchool(user, school);
+		 return userController.addSavedSchool(user, school);
 		
 	}
 

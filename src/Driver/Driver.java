@@ -75,7 +75,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
         User peterUser = new User("peter", "ohmann", "pohmann", "123", 'u');
         AccountUI.addUser("peter", "Ohmann", "pohmann", "123", 'u');
         ArrayList<String> temp = new ArrayList();
-        Criteria parameters = new Criteria("", "NEW YORK", "", "",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
+        Criteria parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
         UserUI.searchSchool("pohmann", parameters);
         //UserUI.searchSchool(peterUser, parameters);
         //UserUI.searchSchool(peterUser, parameters);
@@ -153,6 +153,12 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		System.out.println("-------------------");
 		System.out.println("Step 14: View list users (admin)");
 		AdminUI.allUsers();
+		AdminUI.deactivateUser("testy");
+		AdminUI.deactivateUser("tester");
+		AdminUI.allUsers();
+		
+		
+		
 		
 		
 		

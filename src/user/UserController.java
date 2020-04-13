@@ -159,6 +159,7 @@ public class UserController {
 		}
 		
 		public ArrayList<Account> allUsers(Account user){
+			return null;
 			
 		}
 
@@ -170,10 +171,11 @@ public class UserController {
 		 * @param school
 		 * @return
 		 */
-		public void addSavedSchool(String user, String school) {
+		public Boolean addSavedSchool(String user, String school) {
 			// TODO Auto-generated method stub
 			
-			dataBase.addSavedSchool(user,school);
+			return dataBase.addSavedSchool(user,school);
+		
 			
 		}
 

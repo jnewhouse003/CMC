@@ -3,15 +3,11 @@
  */
 package SystemTest;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import Account.AccountUI;
-import User.UserController;
 import DB.DBController;
 import user.UserUI;
 
@@ -25,7 +21,7 @@ DBController dataBase;
 	
 	@Before
 	public void setUp() throws Exception{
-		this.dataBase = new DBController("goldencircle", "csci230";)
+		this.dataBase = new DBController("goldencircle", "csci230");
 		UserUI.createController(dataBase);
 		dataBase.addUser("John", "Smith", "jsmith001", "password", 'u');
 		
@@ -33,8 +29,9 @@ DBController dataBase;
 	
 	@After
 	public void tearDown() throws Exception {
-		dataBase.removeUser("jsmith001");
-		dataBase.removeSavedSchool(dataBase.getUniversity("ARIZONA STATE"));
+		
+		this.dataBase.removeSavedSchool("jsmith001","ARIZONA STATE");
+		this.dataBase.removeUser("jsmith001");
 	}
 	
 	@Test

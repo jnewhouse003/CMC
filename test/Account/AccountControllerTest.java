@@ -35,12 +35,11 @@ public class AccountControllerTest {
 
 	@Test
 	public void TestLogOn() {
-		Assert.assertTrue("login succesful", this.controller.logOn("testy","123") == true);
+		Assert.assertEquals("login failed no username", false, this.controller.logOn("","123"));
 		
-		Assert.assertTrue("login failed (wrong username)",this.controller.logOn("mctester", "123") == false);
+		Assert.assertEquals("login failed wrong password", false, this.controller.logOn("testy","password"));
 		
-		Assert.assertTrue("login failed (wrong password)", this.controller.logOn("testy", "password")== false);
-		
+		Assert.assertEquals("login succesful", true, this.controller.logOn("testy","123"));		
 		
 	}
 	

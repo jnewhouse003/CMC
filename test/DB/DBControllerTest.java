@@ -24,15 +24,17 @@ public class DBControllerTest {
 		University uni1 = new University("Circle University", "Minnesota", "location1", "control", 53, 40.5, 50.5, 1000, 2000, 2000.00, 1500.00, 100, 30.00, 50.00, 98, 23, 80, "majors");
 		
 		this.search = new searchController();
-		this.controller = new DBController("goldencircle", "cs230");
 		//this.controller.addSchool("Circle University");
+		//this.controller.addSavedSchool("testy", "HARVARD");
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		this.controller.removeSavedSchool("testy", "HARVARD");
+		this.controller.removeSavedSchool("testy", "ARIZONA STATE");
 		this.controller.removeUser("testy");
 	}
-
+/*
 	@Test
 	public void TestGetAccount() {
 		Assert.assertEquals("userFound" , "testy" ,this.controller.getAccount("testy").getUserName());
@@ -49,6 +51,22 @@ public class DBControllerTest {
 		Assert.assertEquals("University found", "Circle University", this.controller.getUniversity("Circle University"));
 		
 		Assert.assertEquals("University not found", "Bemid University", this.controller.getUniversity("Bemid University"));
+		
+	}
+	*/
+	@Test
+	public void TestAddSavedSchool() {
+		this.controller.addSavedSchool("testy", "HARVARD");
+		Assert.assertEquals("school saved succesful", true, this.controller.addSavedSchool("testy", "ARIZONA STATE"));
+		
+		Assert.assertEquals("school saved failed, school already saved", false, this.controller.addSavedSchool("testy", "HARVARD"));
+		
+		Assert.assertEquals("school saved failed, user doesn't exist", false, this.controller.addSavedSchool("notTester", "ARIZONA STATE"));
+		
+		Assert.assertEquals("school saved failed, database error", false, this.controller.addSavedSchool("testy", ""));
+		
+		this.controller.removeSavedSchool("testy", "HARVARD");
+		this.controller.removeSavedSchool("testy", "ARIZONA STATE");
 		
 	}
 }

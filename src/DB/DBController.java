@@ -46,9 +46,28 @@ public class DBController
 	}
 	
 	
-	public void addSavedSchool(String user, String university) {
+	public Boolean addSavedSchool(String user, String university) {
 		
-		this.dataBase.user_saveSchool(user, university);
+		if(this.dataBase.user_saveSchool(user, university) == 1) {
+			return true;	
+		}
+		else if(this.dataBase.user_saveSchool(user, university) == -1) {
+			return false;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public Boolean removeSavedSchool(String user, String university) {
+		
+		if(this.dataBase.user_removeSchool(user, university) == 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 	

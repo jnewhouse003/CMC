@@ -22,30 +22,37 @@ public class AccountTest {
 
 	@Test
 	public void testGetUserName() {
-		Assert.assertEquals("view user info not a user", true, test.getUserName().equals("testy"));
+		Assert.assertEquals("get username of a account", true, test.getUserName().equals("testy"));
 		
-		Assert.assertEquals("view user info not a user", false, test.getUserName().equals("notTesty"));
+		Assert.assertEquals("get username but doesn't equal what expected", false, test.getUserName().equals("notTesty"));
 	}
 	
 	@Test
 	public void testGetPassword() {
-		Assert.assertEquals("view user info not a user", true, test.getPassword().equals("123"));
+		Assert.assertEquals("get password of account", true, test.getPassword().equals("123"));
 		
-		Assert.assertEquals("view user info not a user", false, test.getPassword().equals("password"));
+		Assert.assertEquals("get password of account bit not what expected", false, test.getPassword().equals("password"));
 	}
 	
 	@Test
 	public void testGetLastName() {
-		Assert.assertEquals("view user info not a user", true, test.getLastName().equals("Mctester"));
+		Assert.assertEquals("get last name of account", true, test.getLastName().equals("Mctester"));
 		
-		Assert.assertEquals("view user info not a user", false, test.getLastName().equals("lastName"));
+		Assert.assertEquals("get last name of account but not what expected", false, test.getLastName().equals("lastName"));
 	}
 	
 	@Test
 	public void testGetFirstName() {
-		Assert.assertEquals("view user info not a user", true, test.getFirstName().equals("test"));
+		Assert.assertEquals("get account first name", true, test.getFirstName().equals("test"));
 		
-		Assert.assertEquals("view user info not a user", false, test.getFirstName().equals("firstName"));
+		Assert.assertEquals("get account first name but not what expected", false, test.getFirstName().equals("firstName"));
+	}
+	
+	@Test
+	public void testIsLoggedOn() {
+		Assert.assertEquals("get account log on status when logged in", true, test.getLogOnStatus());
+		this.test.setLogOnStatus(false);
+		Assert.assertEquals("get account log on status when logged off", false, test.getLogOnStatus());
 	}
 
 }

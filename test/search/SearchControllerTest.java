@@ -3,13 +3,14 @@
  */
 package search;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Criteria.Criteria;
 import DB.DBController;
 
 /**
@@ -19,6 +20,7 @@ import DB.DBController;
 public class SearchControllerTest {
 	searchController controller;
 	DBController dataBase;
+	Criteria parameters;
 
 
 	/**
@@ -27,17 +29,28 @@ public class SearchControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		//creating the universities
-		University uni1 = new University("Circle University", "Minnesota", "location1", "control", 53, 40.5, 50.5, 1000, 2000, 2000.00, 1500.00, 100, 30.00, 50.00, 98, 23, 80, "majors");
-	
 		
-		this.controller = new searchController("Minnesota", 53);
 		this.dataBase = new DBController("goldencircle", "cs230");
+		this.controller = new searchController(this.dataBase);
 		
-		//Adding universities to DB
-		this.dataBase.addUser("test", "mcTesty", "testy", "123", 'u');
-		this.dataBase.addSchool("Circle University");
-		//this.dataBase.addSchool("peterUni"));
-		//this.dataBase.addSchool("ohmannUni"));
+		ArrayList<String> temp = new ArrayList<String>();
+		this.parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
+		
+		//searchResults.add(dataBase.getUniversity("BARNARD"));
+		/*
+		this.searchResults.add(this.dataBase.getUniversity("COLUMBIA"));
+		this.searchResults.add(this.dataBase.getUniversity("COOPER UNION"));
+		this.searchResults.add(this.dataBase.getUniversity("EASTMAN SCHOOL OF MUSIC"));
+		this.searchResults.add(this.dataBase.getUniversity("FORDHAM"));
+		this.searchResults.add(this.dataBase.getUniversity("JUILLIARD"));
+		this.searchResults.add(this.dataBase.getUniversity("NEW YORK UNIVERSITY"));
+		this.searchResults.add(this.dataBase.getUniversity("POLYTECHNIC INSTITUTE OF NEWYORK"));
+		this.searchResults.add(this.dataBase.getUniversity("PRATT"));
+		this.searchResults.add(this.dataBase.getUniversity("ST JOHNS UNIVERSITY"));
+		this.searchResults.add(this.dataBase.getUniversity("TOURO"));
+		this.searchResults.add(this.dataBase.getUniversity("UNIVERSITY OF ROCHESTER"));
+		
+		*/
 		
 		
 		
@@ -50,17 +63,18 @@ public class SearchControllerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		this.controller.removeUser("testy");
+		this.dataBase.removeUser("testy");
 		
 	
 		
 	}
 
+	/*
 	@Test
 	public void testSearchSchool() {
-		Assert.assertTrue("Circle University was found", this.controller.searchSchool("Minnesota", 53)== true);
+		Assert.assertEquals("search results correct",true, this.controller.searchSchool(this.parameters));
 		
-		Assert.assertTrue("University Not Found", this.controller.searchSchool("Hawaii", 300)== false);
+		Assert.assertEquals("search results wrong", true, this.controller.searchSchool(this.parameters));
 	}
-
+*/
 }

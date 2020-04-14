@@ -49,16 +49,18 @@ public class AccountControllerTest {
 		Assert.assertEquals("login succesful", true, this.controller.logOn("testy","123"));		
 		
 	}
-	/*
+	
 	@Test
 	public void TestLogOut() {
+		this.controller.logOn("MrLogout12", "321");
 		
-		Assert.assertTrue("User is Logged out", this.controller.logOut("Mr.Logout12") == true);
+		Assert.assertEquals("User is Logged out",true, this.controller.logOut("Mr.Logout12") == true);
 		
-		Assert.assertTrue("User is currently logged in", this.controller.logOut("Mr.Logout12") == false);
+		
+		Assert.assertEquals("User is currently logged in", false, this.controller.logOut("Mr.Logout12") );
 		
 	}
-	*/
+	
 	
 
 }

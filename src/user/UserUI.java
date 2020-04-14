@@ -110,6 +110,12 @@ public interface UserUI {
 	}
 
 
+	public static void createController(DBController dataBase, AccountController accountController) {
+		// TODO Auto-generated method stub
+		userController.createDataBase(dataBase,accountController);
+		
+	}
+	
 	public static void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		userController.createDataBase(dataBase);

@@ -30,6 +30,12 @@ public class DBController
 	{
 		this.dataBase.university_addUniversity(university.getName(),university.getState(), university.getLocation(),university.getControl(), university.getNumStudents(),university.getPercentFemale(), university.getVerbalSAT(), university.getMathSAT(), university.getExpenses(), university.getFinancialAid(), university.getNumApplications(), university.getPercentAdmitted(), university.getPercentEnrolled(), university.getAcademicsScale(), university.getSocialScale(), university.getLifeQualityScale());
 	}
+	
+	
+	public void removeSchool(String university) {
+		this.dataBase.university_deleteUniversity(university);
+	}
+	
 	/**
 	 * This method adds a User to the DB
 	 * 
@@ -103,13 +109,14 @@ public class DBController
 	{
 		String[][] allSchools;
 		allSchools = this.dataBase.university_getUniversities();
+		University temp = null;
 		for(int i = 0; i < allSchools.length; i++) {
 			if(allSchools[i][0].equals(university)) {
-				University temp = new University(allSchools[i]);
+				temp = new University(allSchools[i]);
 				return temp;
 			}
 		}
-		return null;
+		return temp;
 	}
 	
 	

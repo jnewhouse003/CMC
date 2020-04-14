@@ -361,5 +361,16 @@ public class University {
 	public void setEmphases(String emphases) {
 		this.emphases = emphases;
 	}
+	
+	public boolean equals(Object c) {
+		if(this.getName().equals( ((University) c).getName())) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+		
+	}
 
 }

@@ -13,6 +13,12 @@ import university.University;
  */
 public class searchController{
 	
+	DBController dataBase;
+	
+	public searchController(DBController controller) {
+		this.dataBase = controller;
+	}
+	
 
 	/**
 	 * This method returns a list of Universities
@@ -21,9 +27,9 @@ public class searchController{
 	 * @param numStudents
 	 * @return ArrayList of Universities
 	 */
-	public ArrayList<University> searchSchool(String state, int numStudents) {
-		DBController DataBase = new DBController("goldencircle","csci230");
-		return DataBase.findByCriteria(state, numStudents);
+	public ArrayList<University> searchSchool(Criteria criteria) {
+		
+		return dataBase.findByCriteria(criteria);
 		
 	}
 	
@@ -32,7 +38,7 @@ public class searchController{
 		System.out.println();
 	}
 	
-	public Criteria findByCriteria() {
-		return null; 
-	}
+	
+	
+	
 	}

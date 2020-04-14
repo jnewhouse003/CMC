@@ -13,7 +13,7 @@ public class Account {
 	private String userName;
 	private String firstName; 
 	private String lastName;
-	private boolean logOnSatus;
+	private boolean logOnStatus;
 	private char type;
 	
 	/**
@@ -30,7 +30,7 @@ public class Account {
 		this.setLastName(lastName); 
 		this.password = password;
 		this.userName = userName;
-		this.setLogOnSatus(true);
+		this.setLogOnStatus(true);
 		this.setType(type);
 	}
 
@@ -73,7 +73,7 @@ public class Account {
 	
 
 		public void logOff(){
-			this.setLogOnSatus(false);
+			this.logOnStatus = false;
 		}
 	
 		public boolean logOn(String userName, String password) {
@@ -83,7 +83,7 @@ public class Account {
 		
 		public boolean isLoggedOn() {
 		
-			return true;
+			return logOnStatus;
 		}
 		
 
@@ -140,15 +140,16 @@ public class Account {
 		/**
 		 * @return the logOnSatus
 		 */
-		public boolean isLogOnSatus() {
-			return logOnSatus;
+		public boolean getLogOnStatus() {
+			return logOnStatus;
 		}
 
 		/**
 		 * @param logOnSatus the logOnSatus to set
 		 */
-		public void setLogOnSatus(boolean logOnSatus) {
-			this.logOnSatus = logOnSatus;
+		public Boolean setLogOnStatus(boolean logOnStatus) {
+			this.logOnStatus = logOnStatus;
+			return logOnStatus;
 		}
 		
 		

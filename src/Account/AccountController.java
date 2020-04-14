@@ -15,6 +15,7 @@ import university.University;
 public class AccountController {
 
 	DBController dbController;
+	private Account loggedInUser;
 	
 	/**
 	 * This method logs an account on
@@ -32,12 +33,13 @@ public class AccountController {
 			else {
 				if (hardCode.getPassword().equals(password))
 				{
-					return true;
+					this.loggedInUser = hardCode;
+					return loggedInUser.setLogOnStatus(true);
 				}
 				else
 				{
-					return false;
-				
+					this.loggedInUser = hardCode;
+					return loggedInUser.setLogOnStatus(false);
 				}
 			}
 		
@@ -60,15 +62,28 @@ public class AccountController {
 		
 		if (dbController.getAccount(account) != null)
 		{
-			dbController.getAccount(account).logOff();
-			return true;
+			if(this.loggedInUser.getUserName().equals(this.dbController.getAccount(account).getUserName())) {
+				if(this.getLoggedInUserStatus() == true) {
+					this.loggedInUser.logOff();
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				
+				return false;
+			}
+			
 		}
+		else {
 		
 		return false;
 		
 		}
 		 
-	
+	}
 	
 	public String getPassword() {
 		
@@ -131,6 +146,19 @@ public class AccountController {
 	public void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		this.dbController = dataBase;
+	}
+	
+	public Account getLoggedInUser() {
+		return loggedInUser;
+		
+	}
+	
+	public void setLoggedInUser(Account user) {
+		this.loggedInUser = user;
+	}
+	
+	public boolean getLoggedInUserStatus() {
+		return this.loggedInUser.getLogOnStatus();
 	}
 
 }

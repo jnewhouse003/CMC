@@ -7,27 +7,35 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import Account.Account;
+import Account.AccountController;
+import Criteria.Criteria;
 import DB.DBController;
+import university.University;
 import user.UserController;
 
 
 public class UserControllerTest {
 	UserController controller;
 	DBController dataBase;
-	ArrayList<String> userInfo = new ArrayList();
+	ArrayList<String> userInfo = new ArrayList<String>();
 	User test;
-	ArrayList<String> wrongUserInfo = new ArrayList();
+	ArrayList<String> wrongUserInfo = new ArrayList<String>();
+	Criteria parameters;
+	ArrayList<University> searchResults = new ArrayList<University>();
+	AccountController accountController;
 	
 	@Before
 	public void setUp() throws Exception {
 		this.controller = new UserController();
 		this.dataBase = new DBController("goldencircle","csci230");
-		this.controller.createDataBase(dataBase);
+		this.accountController = new AccountController();
+		this.accountController.createController(this.dataBase);
+		this.controller.createDataBase(dataBase, this.accountController);
 
-		dataBase.addUser("test", ",Mctester", "tester", "123", 's');
+		dataBase.addUser("test", ",Mctester", "tester", "123", 'u');
 		//this.controller.addSavedSchool("tester", "HARVARD");
 		
+		//view user info
 		this.test = new User("test", "Mctester", "testy", "123", 'u');
 		
 		this.userInfo.add("test");
@@ -40,6 +48,28 @@ public class UserControllerTest {
 		this.wrongUserInfo.add("antiTest");
 		this.wrongUserInfo.add("antiMcTester");
 		
+		//searchSchool
+		
+		this.accountController.logOn("tester", "123");
+		ArrayList<String> temp = new ArrayList<String>();
+		this.parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
+	
+		this.searchResults.add(dataBase.getUniversity("BARNARD"));
+		this.searchResults.add(this.dataBase.getUniversity("COLUMBIA"));
+		this.searchResults.add(this.dataBase.getUniversity("COOPER UNION"));
+		this.searchResults.add(this.dataBase.getUniversity("EASTMAN SCHOOL OF MUSIC"));
+		this.searchResults.add(this.dataBase.getUniversity("FORDHAM"));
+		this.searchResults.add(this.dataBase.getUniversity("JUILLIARD"));
+		this.searchResults.add(this.dataBase.getUniversity("NEW YORK UNIVERSITY"));
+		this.searchResults.add(this.dataBase.getUniversity("POLYTECHNIC INSTITUTE OF NEWYORK"));
+		this.searchResults.add(this.dataBase.getUniversity("PRATT"));
+		this.searchResults.add(this.dataBase.getUniversity("ST JOHNS UNIVERSITY"));
+		this.searchResults.add(this.dataBase.getUniversity("TOURO"));
+		this.searchResults.add(this.dataBase.getUniversity("UNIVERSITY OF ROCHESTER"));
+		
+
+		
+		
 	}
 		
 	@After
@@ -47,6 +77,10 @@ public class UserControllerTest {
 		this.dataBase.removeSavedSchool("tester","HARVARD");
 		this.dataBase.removeSavedSchool("tester","ARIZONA STATE");
 		this.dataBase.removeUser("tester");
+		
+		for(int i = 0; i < this.searchResults.size(); i++) {
+			this.searchResults.remove(i);
+		}
 	}
 		
 	/*
@@ -82,6 +116,21 @@ public class UserControllerTest {
 		
 		
 	}
+	
+	
+	@Test
+	public void testSearchSchool() {
+		Assert.assertEquals("search school with a user that exists and logged it", true, this.controller.searchSchool("tester",this.parameters).equals(this.searchResults));
+		
+		Assert.assertEquals("search school with a user that doesn't exist", false, this.controller.searchSchool("notTester",this.parameters).equals( this.searchResults));
+		
+		
+		Assert.assertEquals("search school with a user that exists but not logged in", false, this.controller.searchSchool("tester",this.parameters).equals( this.searchResults));
+		
+		this.accountController.logOn("tester", "123");
+		
+	}
+
 
 
 	

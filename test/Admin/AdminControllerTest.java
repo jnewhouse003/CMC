@@ -3,6 +3,7 @@ package Admin;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ import DB.DBController;
 
 public class AdminControllerTest {
 	DBController dataBase;
+	AdminController val;
 	@Before
 	public void setUp() throws Exception {
 		this.dataBase = new DBController("goldencircle","csci230");
@@ -24,7 +26,8 @@ public class AdminControllerTest {
 
 	@Test
 	public void testActivateUser() {
-		Assert.assertEquals("no username", true, this.dataBase.("")
+		Assert.assertEquals("username invalid", false, val.activateUser("mrice001"));
+		Assert.assertEquals("username valid", true, val.activateUser(""));
 	}
 
 }

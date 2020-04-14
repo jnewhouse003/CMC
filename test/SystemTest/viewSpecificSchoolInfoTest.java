@@ -2,7 +2,6 @@ package SystemTest;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -10,16 +9,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Account.AccountUI;
+import DB.DBController;
 import university.University;
 
 public class viewSpecificSchoolInfoTest {
 
-	ArrayList<University> schools;
+	University school;
+	DBController db;
 	
 	@Before
 	public void setUp() throws Exception {
-		schools = new ArrayList();
-		schools.add(AccountUI.viewResults("ARIZONA STATE"));
+		//schools = new ArrayList();
+		school = AccountUI.viewResults("ARIZONA STATE");
 	}
 
 	@After
@@ -28,7 +29,7 @@ public class viewSpecificSchoolInfoTest {
 
 	@Test
 	public void test() {
-		Assert.assertEquals("info shown successfully", "ARIZONA STATE", schools.get(0));
+		Assert.assertEquals("info shown successfully", "ARIZONA STATE", school.getName());
 	}
 
 }

@@ -33,7 +33,7 @@ public class UserControllerTest {
 		this.controller.createDataBase(dataBase, this.accountController);
 
 		dataBase.addUser("test", ",Mctester", "tester", "123", 'u');
-		//this.controller.addSavedSchool("tester", "HARVARD");
+		this.controller.addSavedSchool("tester", "HARVARD");
 		
 		//view user info
 		this.test = new User("test", "Mctester", "testy", "123", 'u');
@@ -82,17 +82,18 @@ public class UserControllerTest {
 			this.searchResults.remove(i);
 		}
 	}
-		
-	/*
-	@Test
-	public void testRemoveSavedSchools() {
-		Assert.assertEquals("Removed School", true, userUI.removeSavedSchool("tester", "Harvard"));
-		
 	@Test
 	public void testViewSavedSchools() {
-		Assert.assertEquals("List shows Harvard", true, String[] savedSchools = UserUI.viewSavedSchool("tester");)
+		//Assert.assertEquals("List shows Harvard", true, this.dataBase.getSavedSchool("tester"));
+		Assert.assertEquals("List shows Harvard", "HARVARD", this.controller.viewSavedSchool("tester")[1]);
 	}
-	*/
+
+	@Test
+	public void testRemoveSavedSchools() {
+		Assert.assertEquals("Removed School", true, this.dataBase.removeSavedSchool("tester", "HARVARD"));
+	}
+		
+
 	@Test 
 	public void testAddSavedSchool() {
 		this.dataBase.addSavedSchool("tester","HARVARD");

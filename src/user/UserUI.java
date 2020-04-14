@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import Account.Account;
 import Account.AccountController;
+import Criteria.Criteria;
 import DB.DBController;
 import university.University;
 
@@ -20,16 +21,17 @@ public interface UserUI {
 	}
 	*/
 	
-	public static void searchSchool(User user, String state, int numStudents) {
+	public static void searchSchool(String user, Criteria parameters) {
 		
-		displayResults(userController.searchSchool(user, state, numStudents));
+		displayResults(userController.searchSchool(user, parameters));
 	}
 	
 	
-	public static void viewUserInfo(Account userInfo) {
+	
+	public static ArrayList<String> viewUserInfo(User userInfo) {
 		
 		
-		info.viewUserInfo(userInfo);
+		return userController.viewUserInfo(userInfo);
 	}
 	
 	public static void editUserInfo(Account userInfo, String password, String firstName, String lastName) {
@@ -39,16 +41,16 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static void removeSavedSchool(User user, String name) {
+	public static Boolean removeSavedSchool(User peterUser, String name) {
 		
 		
-		userController.removeSavedSchool(user, name);
+		return userController.removeSavedSchool(peterUser, name);
 	}
 	
 	
-	public static void addSavedSchool(String user, String school) {
+	public static Boolean addSavedSchool(String user, String school) {
 		
-		userController.addSavedSchool(user, school);
+		 return userController.addSavedSchool(user, school);
 		
 	}
 
@@ -68,30 +70,34 @@ public interface UserUI {
 	}
 	*/
 	public static void displayResults(ArrayList<University> results) {
-		for (int i = 0; i < results.size(); i++) {
-			System.out.println("University name: " + results.get(i).getName()); 
-			System.out.println("State: " + results.get(i).getState());
-			System.out.println("location: " + results.get(i).getLocation());
-			System.out.println("control: " + results.get(i).getControl());
-			System.out.println("Number of Students:" + results.get(i).getNumStudents());
-			System.out.println("percentage Female: " + results.get(i).getPercentFemale());
-			System.out.println("percentage Male: " + results.get(i).getPercentMale());
-			System.out.println("Verbal SAT: " + results.get(i).getVerbalSAT()); 
-			System.out.println("Math SAT: " + results.get(i).getMathSAT());
-			System.out.println("expenses: " + results.get(i).getExpenses());
-			System.out.println("control: " + results.get(i).getControl());
-			System.out.println("financial Aid:" + results.get(i).getFinancialAid());
-			System.out.println("Number of Applications: " + results.get(i).getNumApplications());
-			System.out.println("Percent Admitted " + results.get(i).getPercentAdmitted());
-			System.out.println("Percent Enrolled: " + results.get(i).getPercentEnrolled()); 
-			System.out.println("Academics Scale: " + results.get(i).getAcademicsScale());
-			System.out.println("Social Scale: " + results.get(i).getSocialScale());
-			System.out.println("Life Quality Scale: " + results.get(i).getLifeQualityScale());
-			System.out.println("Emphases:" + results.get(i).getEmphases());
-			System.out.println("");
+		if(results != null) {
+			for (int i = 0; i < results.size(); i++) {
+				System.out.println("University name: " + results.get(i).getName()); 
+				System.out.println("State: " + results.get(i).getState());
+				System.out.println("location: " + results.get(i).getLocation());
+				System.out.println("control: " + results.get(i).getControl());
+				System.out.println("Number of Students:" + results.get(i).getNumStudents());
+				System.out.println("percentage Female: " + results.get(i).getPercentFemale());
+				System.out.println("percentage Male: " + results.get(i).getPercentMale());
+				System.out.println("Verbal SAT: " + results.get(i).getVerbalSAT()); 
+				System.out.println("Math SAT: " + results.get(i).getMathSAT());
+				System.out.println("expenses: " + results.get(i).getExpenses());
+				System.out.println("control: " + results.get(i).getControl());
+				System.out.println("financial Aid:" + results.get(i).getFinancialAid());
+				System.out.println("Number of Applications: " + results.get(i).getNumApplications());
+				System.out.println("Percent Admitted " + results.get(i).getPercentAdmitted());
+				System.out.println("Percent Enrolled: " + results.get(i).getPercentEnrolled()); 
+				System.out.println("Academics Scale: " + results.get(i).getAcademicsScale());
+				System.out.println("Social Scale: " + results.get(i).getSocialScale());
+				System.out.println("Life Quality Scale: " + results.get(i).getLifeQualityScale());
+				System.out.println("Emphases:" + results.get(i).getEmphases());
+				System.out.println("");
 		
+			}
 		}
-		
+		else {
+			System.out.println("NO SCHOOLS");
+		}
 	}
 	
 
@@ -104,11 +110,20 @@ public interface UserUI {
 	}
 
 
+	public static void createController(DBController dataBase, AccountController accountController) {
+		// TODO Auto-generated method stub
+		userController.createDataBase(dataBase,accountController);
+		
+	}
+	
 	public static void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		userController.createDataBase(dataBase);
 		
 	}
+
+
+	
 
 
 	

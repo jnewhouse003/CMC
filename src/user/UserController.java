@@ -6,6 +6,8 @@ package user;
 import java.util.ArrayList;
 
 import Account.Account;
+import Account.AccountController;
+import Criteria.Criteria;
 import DB.DBController;
 import search.searchController;
 import university.University;
@@ -18,7 +20,8 @@ import university.University;
 public class UserController {
 	private Object savedSchools;
 	DBController dataBase;
-	searchController search = new searchController();
+	searchController search;
+	AccountController accountController;
 	
 
 	//private DBContoller dbController; 
@@ -41,12 +44,31 @@ public class UserController {
 		}
 		
 		/**
+		 * This method returns Universities if the user is logged on
 		 * 
-		 * @param University
-		 * @return
+		 * @param user
+		 * @param criteria
+		 * @return ArrayList of Universities
 		 */
-		public University searchSchool(Criteria criteria) {
-			return this.searchSchool(criteria);
+		public ArrayList<University> searchSchool(String user, Criteria criteria) {
+			ArrayList<University> schools = new ArrayList();
+			if(this.dataBase.lookUpUser(user) == true) {
+				
+				if(this.accountController.getLoggedInUserStatus() == true) {
+					schools = this.search.searchSchool(criteria);
+					
+					return schools;
+				}
+				else {
+					return schools;
+				}
+			}
+			else {
+			
+				return schools;
+			}
+			
+			
 		}
 		
 		/**
@@ -59,18 +81,6 @@ public class UserController {
 		
 		}
 		
-		/**
-		 * @param info 
-		 * 
-		 */
-	
-		
-		/**public void viewUserInfo(Account user) {
-			System.out.println("User: " + user.getUserName()); 
-			
-			System.out.println("Password: " + user.getPassword()); 
-		}
-		*/
 		
 		
 		
@@ -82,15 +92,16 @@ public class UserController {
 		/**
 		 * 
 		 * @param school
+		 * @return 
 		 */
-		public void removeSavedSchool(User user, String name) {
+		public Boolean removeSavedSchool(User peterUser, String name) {
 			
-			user.removeSavedSchool(dataBase.getUniversity(name));
+			return peterUser.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
 		/**
 		 * 
-		 */
+		 
 		public void logOut() {
 			Object user;
 			if(((Object) user).isLoggedOn() == false) {
@@ -98,6 +109,7 @@ public class UserController {
 			}
 			
 		}
+		*/
 		
 		/**
 		 * 
@@ -115,16 +127,10 @@ public class UserController {
 		 * @param numStudents
 		 * @return ArrayList of Universities
 		 */
-		public ArrayList<University> searchSchool(User user, String state, int numStudents){
-			if(user.isLoggedOn()) {
-				
-				return search.searchSchool(state, numStudents);
-				
-			}
-			return null;
+		
 			
 			
-		}
+		
 		
 		/**
 		 * This method returns a list of the top 5 schools based on given criteria
@@ -144,6 +150,11 @@ public class UserController {
 			
 			
 		}
+		
+		public ArrayList<Account> allUsers(Account user){
+			return null;
+			
+		}
 
 		
 		/**
@@ -153,17 +164,41 @@ public class UserController {
 		 * @param school
 		 * @return
 		 */
-		public void addSavedSchool(String user, String school) {
+		public Boolean addSavedSchool(String user, String school) {
 			// TODO Auto-generated method stub
 			
-			dataBase.addSavedSchool(user,school);
+			return dataBase.addSavedSchool(user,school);
+		
 			
 		}
 
-	public void createDataBase(DB.DBController dataBase) {
+	public void createDataBase(DB.DBController dataBase, AccountController accountController) {
 		// TODO Auto-generated method stub
 		this.dataBase = dataBase;
+		this.search = new searchController(dataBase);
+		this.accountController = accountController;
+	}
+
+
+
+	public ArrayList<String> viewUserInfo(User user) {
+		ArrayList<String> info = new ArrayList();
 		
+		info.add(user.getFirstName());
+		info.add(user.getLastName());
+		info.add(user.getUserName());
+		info.add(user.getPassword());
+		
+		return info;
+		
+	}
+
+
+
+	public void createDataBase(DBController dataBase2) {
+		// TODO Auto-generated method stub
+		this.dataBase = dataBase2;
+		this.search = new searchController(dataBase2);
 	}
 
 

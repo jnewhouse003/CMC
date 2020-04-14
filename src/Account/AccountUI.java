@@ -75,6 +75,11 @@ public interface AccountUI {
 		name.createController(dataBase);
 	}
 
+	public static AccountController  getAccountController() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
 }
 
 

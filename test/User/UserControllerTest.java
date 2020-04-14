@@ -18,9 +18,9 @@ public class UserControllerTest {
 	public void setUp() throws Exception {
 		this.controller = new UserController();
 		this.dataBase = new DBController("goldencircle","csci230");
-		controller.createController(dataBase);
-		dataBase.addUser("test", "tester", "tester", "123", "s");
-		dataBase.addSavedSchool(tester, Harvard);
+		this.controller.createController(dataBase);
+		dataBase.addUser("test", "tester", "tester", "123", 's');
+		dataBase.addSavedSchool("tester", "Harvard");
 		
 	@After
 	public void tearDown() throws Exception {
@@ -34,6 +34,11 @@ public class UserControllerTest {
 	@Test
 	public void testViewSavedSchools() {
 		Assert.assertEquals("List shows Harvard", true, String[] savedSchools = UserUI.viewSavedSchool("tester");)
+	}
+	
+	@Test 
+	public void testAddSavedSchool() {
+		Assert.assertEquals("school saved", true, );
 	}
 
 }

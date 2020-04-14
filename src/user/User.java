@@ -23,8 +23,8 @@ public class User extends Account {
 	 * @param lastName
 	 * @param type
 	 */
-	public User(String name, String password, String firstName, String lastName, char type) {
-		super(name, password, firstName, lastName, type);
+	public User(String firstName, String lastName, String name, String password, char type) {
+		super(firstName, lastName, name, password, type);
 		// TODO
 	}
 
@@ -48,10 +48,12 @@ public class User extends Account {
 		// TODO
 	}
 	
-	public void removeSavedSchool(University school) {
+	public Boolean removeSavedSchool(University school) {
 		if(savedSchools != null) {
 			this.savedSchools.remove(school);
+			return true;
 		}
+		return false;
 	}
 	
 	public boolean isLoggedOn() {
@@ -81,6 +83,25 @@ public class User extends Account {
 		
 		
 	}
+	
+	public String getUserName() {
+		return super.getUserName();
+	}
+	
+	public String getPassword() {
+		return super.getPassword();
+	}
+	
+	
+	public String getLastName() {
+		return super.getLastName();
+	}
+	
+	
+	public String getFirstName() {
+		return super.getFirstName();
+	}
+	
 	
 	
 }

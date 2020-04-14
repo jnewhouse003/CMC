@@ -1,6 +1,9 @@
 package Account;
 
 import DB.DBController;
+
+import java.util.ArrayList;
+
 import Account.Account;
 import university.University;
 
@@ -12,6 +15,7 @@ import university.University;
 public class AccountController {
 
 	DBController dbController;
+	private Account loggedInUser;
 	
 	/**
 	 * This method logs an account on
@@ -23,22 +27,27 @@ public class AccountController {
 		
 		
 			Account hardCode = dbController.getAccount(username);
-			if(hardCode != null) {
+			if(hardCode.getUserName().equals("")) {
+				return false;
+			}
+			else {
 				if (hardCode.getPassword().equals(password))
 				{
-					return true;
+					this.loggedInUser = hardCode;
+					return loggedInUser.setLogOnStatus(true);
 				}
 				else
 				{
-					return false;
-				
+					this.loggedInUser = hardCode;
+					return loggedInUser.setLogOnStatus(false);
 				}
 			}
-			else {
-				return false;
-			}
 		
-		}
+				
+			}
+			
+		
+		
 		
 		
 	
@@ -53,15 +62,28 @@ public class AccountController {
 		
 		if (dbController.getAccount(account) != null)
 		{
-			dbController.getAccount(account).logOff();
-			return true;
+			if(this.loggedInUser.getUserName().equals(this.dbController.getAccount(account).getUserName())) {
+				if(this.getLoggedInUserStatus() == true) {
+					this.loggedInUser.logOff();
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				
+				return false;
+			}
+			
 		}
+		else {
 		
 		return false;
 		
 		}
 		 
-	
+	}
 	
 	public String getPassword() {
 		
@@ -70,22 +92,20 @@ public class AccountController {
 	
 	public University viewResults(String university) {
 		
-		 return dbController.getUniversity(university);
+		 
+		if(dbController.getUniversity(university)== null) {
+			return null;
+		}
+		else {
+			return dbController.getUniversity(university);
+		}
 			
 			
 		
 	}
 	
 	
-	public void viewUserInfo(Account user) {
-		System.out.println("User: " + user.getUserName()); 
-		
-		System.out.println("Password: " + user.getPassword()); 
-		
-		System.out.println("First Name: " + user.getFirstName()); 
-		
-		System.out.println("Last Name: " + user.getLastName()); 
-	}
+
 	
 	/**
 	 * This method changes the information tied to a user's Account
@@ -126,6 +146,19 @@ public class AccountController {
 	public void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		this.dbController = dataBase;
+	}
+	
+	public Account getLoggedInUser() {
+		return loggedInUser;
+		
+	}
+	
+	public void setLoggedInUser(Account user) {
+		this.loggedInUser = user;
+	}
+	
+	public boolean getLoggedInUserStatus() {
+		return this.loggedInUser.getLogOnStatus();
 	}
 
 }

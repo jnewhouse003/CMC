@@ -1,7 +1,7 @@
 package DB;
 import java.util.ArrayList;
 import Account.Account;
-
+import Criteria.Criteria;
 import dblibrary.project.csci230.UniversityDBLibrary;
 
 import university.University;
@@ -26,9 +26,14 @@ public class DBController
 	   this.dataBase = new UniversityDBLibrary(username,password);
 	  }
 	  
-	public void addSchool(String university) 
+	public void addSchool(University university) 
 	{
-		
+		this.dataBase.university_addUniversity(university.getName(),university.getState(), university.getLocation(),university.getControl(), university.getNumStudents(),university.getPercentFemale(), university.getVerbalSAT(), university.getMathSAT(), university.getExpenses(), university.getFinancialAid(), university.getNumApplications(), university.getPercentAdmitted(), university.getPercentEnrolled(), university.getAcademicsScale(), university.getSocialScale(), university.getLifeQualityScale());
+	}
+	
+	
+	public void removeSchool(String university) {
+		this.dataBase.university_deleteUniversity(university);
 	}
 	
 	/**
@@ -47,9 +52,28 @@ public class DBController
 	}
 	
 	
-	public void addSavedSchool(String user, String university) {
+	public Boolean addSavedSchool(String user, String university) {
 		
-		this.dataBase.user_saveSchool(user, university);
+		if(this.dataBase.user_saveSchool(user, university) == 1) {
+			return true;	
+		}
+		else if(this.dataBase.user_saveSchool(user, university) == -1) {
+			return false;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public Boolean removeSavedSchool(String user, String university) {
+		
+		if(this.dataBase.user_removeSchool(user, university) == 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 	
@@ -85,13 +109,14 @@ public class DBController
 	{
 		String[][] allSchools;
 		allSchools = this.dataBase.university_getUniversities();
+		University temp = null;
 		for(int i = 0; i < allSchools.length; i++) {
 			if(allSchools[i][0].equals(university)) {
-				University temp = new University(allSchools[i]);
+				temp = new University(allSchools[i]);
 				return temp;
 			}
 		}
-		return null;
+		return temp;
 	}
 	
 	
@@ -134,10 +159,6 @@ public class DBController
 			{
 				return true;
 			}
-			else 
-			{
-				return false;
-			}
 		}
 		return false;
 		
@@ -161,6 +182,24 @@ public class DBController
 		
 		return schools;
 	}
+
+	/**
+	 * this method returns a list of all users
+	 * 
+	 * @return users
+	 */
+	public ArrayList<Account> findallUsers(){
+		String[][] allUsers = this.dataBase.user_getUsers();
+		ArrayList<Account> users = new ArrayList();
+		for(int i = 0; i < allUsers.length; i++)
+		{
+			Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+			users.add(temp);
+				
+			}
+		return users;
+		}
+
 	
 	/**
 	 * This method searches the Universities based on given criteria
@@ -169,27 +208,125 @@ public class DBController
 	 * @param numStudents
 	 * @return foundSchools
 	 */
-	public ArrayList<University> findByCriteria(String state, int numStudents) 
+	public ArrayList<University> findByCriteria(Criteria parameters) 
 	{
 		String[][] allSchools;
 
 		ArrayList<University> foundSchools = new ArrayList();
 		
+		
+		
 		allSchools = this.dataBase.university_getUniversities();
 		
 
 		for(int i = 0; i < allSchools.length; i++) {
-			if(allSchools[i][1].equals(state) && Integer.valueOf(allSchools[i][4]) == numStudents) 
-			{
-					University tempUniversity = new University(allSchools[i]);
-					foundSchools.add(tempUniversity);
-					
+			University temp = new University(allSchools[i]);
+			foundSchools.add(temp);
+			
+			if(temp.getState().equals(parameters.getState()) || parameters.getState().equals("")) {
+				if(temp.getName().equals(parameters.getName()) || parameters.getName().equals("")) {
+					if(temp.getLocation().equals(parameters.getLocation()) || parameters.getLocation().equals("")) {
+						if(temp.getControl().equals(parameters.getControl()) || parameters.getControl().equals("")) {
+							if(parameters.getNumApplicantsMax() == 0 || temp.getNumStudents() <= parameters.getNumStudentMax() && temp.getNumStudents() >= parameters.getNumStudentMin() ){
+								if(parameters.getPercentFemaleMax() == 0.0 ||temp.getPercentFemale() >= parameters.getPercentFemaleMin() && temp.getPercentFemale() <= parameters.getPercentFemaleMax()) {
+									if(parameters.getPercentMaleMax() == 0.0 || temp.getPercentMale() >= parameters.getPercentMaleMin() && temp.getPercentMale() <= parameters.getPercentMaleMax()) {
+										if(parameters.getVerbalSATMax() == 0 || temp.getVerbalSAT() >= parameters.getVerbalSATMin() && temp.getVerbalSAT() <= parameters.getVerbalSATMax()) {
+											if(parameters.getMathSATMax() == 0 || temp.getMathSAT() >= parameters.getMathSATMin() && temp.getMathSAT() <= parameters.getMathSATMax()) {
+												if(parameters.getExpensesMax() == 0.0 || temp.getExpenses() >= parameters.getExpensesMin() && temp.getExpenses() <= parameters.getExpensesMax()) {
+													if(parameters.getFinancialAidMax() == 0.0 || temp.getFinancialAid() >= parameters.getFinancialAidMin() && temp.getFinancialAid() <= parameters.getFinancialAidMax()) {
+														if(parameters.getNumApplicantsMax() == 0 || temp.getNumApplications() >= parameters.getNumApplicantsMin() && temp.getNumApplications() <= parameters.getNumApplicantsMax()) {
+															if(parameters.getPercentAdmittedMax() == 0.0 || temp.getPercentAdmitted() >= parameters.getPercentAdmittedMin() && temp.getPercentAdmitted() <= parameters.getPercentAdmittedMax()) {
+																if(parameters.getPercentEnrolledMax() == 0.0 || temp.getPercentEnrolled() >= parameters.getPercentEnrolledMin() && temp.getPercentEnrolled() <= parameters.getPercentEnrolledMax()) {
+																	if(parameters.getAcademicScaleMax() == 0 || temp.getAcademicsScale() >= parameters.getAcademicsScaleMin() && temp.getAcademicsScale() <= parameters.getAcademicScaleMax()) {
+																		if(temp.getSocialScale() >= parameters.getSocialScaleMin() && temp.getSocialScale() <= parameters.getSocialScaleMax() || parameters.getSocialScaleMax() == 0) {
+																			if(temp.getLifeQualityScale() >= parameters.getLifeQualityScaleMin() && temp.getLifeQualityScale() <= parameters.getLifeQualityScaleMax() || parameters.getLifeQualityScaleMax() == 0) {
+																				if(parameters.getEmphases().size() == 0) {
+																					
+																				}
+																				else {	
+																					if(parameters.getEmphases().contains(temp.getEmphases())) {
+																						
+																					}
+																					else {
+																						foundSchools.remove(temp);
+																					}
+																				}
+																			}
+																			else {
+																				foundSchools.remove(temp);
+																			}
+																		}
+																		else {
+																			foundSchools.remove(temp);
+																		}
+																	}
+																	else {
+																		foundSchools.remove(temp);
+																	}
+																}
+																else {
+																	foundSchools.remove(temp);
+																}
+															}
+															else {
+																foundSchools.remove(temp);
+															}
+														}
+														else {
+															foundSchools.remove(temp);
+														}
+													}
+													else {
+														foundSchools.remove(temp);
+													}
+												}
+												else {
+													foundSchools.remove(temp);
+												}
+											}
+											else {
+												foundSchools.remove(temp);
+											}
+										}
+										else {
+											foundSchools.remove(temp);
+										}
+									}
+									else {
+										foundSchools.remove(temp);
+									}
+								}
+								else {
+									foundSchools.remove(temp);
+								}	
+							}
+							else {
+								foundSchools.remove(temp);
+							}
+						}
+						else {
+							foundSchools.remove(temp);
+						}
+					}
+					else {
+						foundSchools.remove(temp);
+					}
+				}
+				else { 
+					foundSchools.remove(temp);
+				}
 			}
+			else {
+				foundSchools.remove(temp);
+			}
+	
+			}
+		return foundSchools;
 		}
 		
-		return foundSchools;
 		
-	}
+		
+	
 
 	/**
 	 * This method returns the top 5 schools based on given criteria
@@ -270,8 +407,8 @@ public class DBController
 		
 	}
 	
-	public void removeUser(String userName) {
-		this.dataBase.user_deleteUser(userName);
+	public int removeUser(String userName) {
+		return this.dataBase.user_deleteUser(userName);
 	}
 
 

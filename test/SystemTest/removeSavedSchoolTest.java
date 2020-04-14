@@ -28,7 +28,7 @@ public class removeSavedSchoolTest {
 		AccountUI.createController(dataBase);
 		AccountUI.addUser("test", "tester", "tester", "123", 's');
 		this.test = new User("test", "tester", "tester", "123", 's');
-		UserUI.addSavedSchool("tester", "Harvard");
+		UserUI.addSavedSchool("tester", "HARVARD");
 		
 	}
 	
@@ -39,7 +39,9 @@ public class removeSavedSchoolTest {
 	
 	@Test
 	public void testRemoveSavedSchools() {
-		Assert.assertEquals("Removed School", true, UserUI.removeSavedSchool(this.test, "HARVARD"));
+
+		Assert.assertEquals("Removed School", true, this.dataBase.removeSavedSchool("tester", "HARVARD"));
+
 		
 		
 		

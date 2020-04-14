@@ -20,11 +20,15 @@ public class AdminControllerTest {
 		this.dataBase.addUser("rice", "m", "mrice001", "password1", 'u');
 		AdminUI.createController(this.dataBase);
 		AdminUI.deactivateUser("mrice001");
+		
+		
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		
+		this.dataBase.removeUser("mrice001");
+
 	}
 
 	@Test

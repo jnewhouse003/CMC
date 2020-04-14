@@ -15,8 +15,10 @@ public class AdminControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		this.dataBase = new DBController("goldencircle","csci230");
-		AdminUI.createController(dataBase);
+		this.val = new AdminController();
+		this.val.createDataBase(this.dataBase);
 		this.dataBase.addUser("rice", "m", "mrice001", "password1", 'u');
+		AdminUI.createController(this.dataBase);
 		AdminUI.deactivateUser("mrice001");
 		
 		

@@ -41,24 +41,28 @@ public class AdminController {
 	
 	public boolean deactivateUser(String userName) {
 		Account actor = this.dataBaseCon.getAccount(userName);
-		if(actor == null) {
+		if(actor.getUserName().equals("")) {
 			return false;
-		} else {
+		}
+		else if(actor.getUserName().equals(userName)) {
 			this.dataBaseCon.editUser(actor.getUserName(), actor.getFirstName(),actor.getLastName(),actor.getPassword(), actor.getType(), 'N');
 			return true;
+		} else {
+			return false;
 			
 		}
 	}
 	
 	public boolean activateUser(String userName) {
 		Account actor = this.dataBaseCon.getAccount(userName);
-		if(actor == null) {
+		if(actor.getUserName().equals("")) {
 			return false;
-		} else {
-			
+		}
+		else if(actor.getUserName().equals(userName)) {
 			this.dataBaseCon.editUser(actor.getUserName(), actor.getFirstName(),actor.getLastName(),actor.getPassword(), actor.getType(), 'Y');
 			return true;
-			
+		} else {
+			return false;
 		}
 	}
 

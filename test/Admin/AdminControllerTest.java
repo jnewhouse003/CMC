@@ -24,18 +24,19 @@ public class AdminControllerTest {
 
 	@After
 	public void tearDown() throws Exception {
+		
 	}
 
 	@Test
 	public void testActivateUser() {
-		Assert.assertEquals("username invalid", false, val.activateUser("mrice001"));
-		Assert.assertEquals("username valid", true, val.activateUser(""));
+		Assert.assertEquals("username invalid", false, val.activateUser(""));
+		Assert.assertEquals("username valid",true, val.activateUser("mrice001"));
 	}
 	
 	@Test
 	public void testDeactivateUser() {
-		Assert.assertEquals("Username is invalid", false, val.deactivateUser("mrice001"));
-		Assert.assertEquals("Username is valid", true, val.deactivateUser(""));
+		Assert.assertEquals("Username is invalid", false, val.deactivateUser(""));
+		Assert.assertEquals("Username is valid", true, val.deactivateUser("mrice001"));
 	}
 
 }

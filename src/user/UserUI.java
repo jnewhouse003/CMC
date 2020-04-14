@@ -21,9 +21,10 @@ public interface UserUI {
 	}
 	*/
 	
-	public static void searchSchool(String user, Criteria parameters) {
+	public static ArrayList<University> searchSchool(String user, Criteria parameters) {
 		
 		displayResults(userController.searchSchool(user, parameters));
+		return userController.searchSchool(user, parameters);
 	}
 	
 	

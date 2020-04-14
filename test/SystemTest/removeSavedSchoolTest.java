@@ -39,7 +39,7 @@ public class removeSavedSchoolTest {
 	
 	@Test
 	public void testRemoveSavedSchools() {
-		Assert.assertEquals("Removed School", true, UserUI.removeSavedSchool(this.test, "Harvard"));
+		Assert.assertEquals("Removed School", true, UserUI.removeSavedSchool(this.test, "HARVARD"));
 		
 		
 		

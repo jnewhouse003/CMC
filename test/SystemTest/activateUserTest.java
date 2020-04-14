@@ -27,8 +27,8 @@ public class activateUserTest {
 	@Before
 	public void setUp() throws Exception {
 		this.dataBase = new DBController("goldencircle","csci230");
-		AccountUI.createController(dataBase);
-		dataBase.addUser("rice", "m", "mrice001", "password1", 'u');
+		AdminUI.createController(dataBase);
+		this.dataBase.addUser("rice", "m", "mrice001", "password1", 'u');
 		AdminUI.deactivateUser("mrice001");
 		
 	}
@@ -43,9 +43,10 @@ public class activateUserTest {
 	}
 
 	@Test
-	public void test() {
+	public void testActivateUser() {
 		
-		Assert.assertEquals("User has been activated", AccountUI.addUser("act", "t", "activate12", "322", 'a'));
+		Assert.assertEquals("User has been activated",true, AdminUI.activateUser("mrice001"));
+		Assert.assertEquals("User not activated", true, AdminUI.activateUser(""));
 		
 	}
 

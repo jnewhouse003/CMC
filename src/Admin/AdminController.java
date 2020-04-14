@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import Account.Account;
 import DB.DBController;
 import university.University;
+import user.User;
 
 /**
  * This is the class for an Admin Controller
@@ -39,22 +40,23 @@ public class AdminController {
 	}
 	
 	public boolean deactivateUser(String userName) {
-		Account actor = dataBaseCon.getAccount(userName);
-		if(actor.getUserName().equals("")) {
+		Account actor = this.dataBaseCon.getAccount(userName);
+		if(actor == null) {
 			return false;
 		} else {
-			dataBaseCon.editUser("", "", "","", 'u', 'N');
+			this.dataBaseCon.editUser(actor.getUserName(), actor.getFirstName(),actor.getLastName(),actor.getPassword(), actor.getType(), 'N');
 			return true;
 			
 		}
 	}
 	
 	public boolean activateUser(String userName) {
-		Account actor = dataBaseCon.getAccount(userName);
-		if(actor.getUserName().equals("")) {
+		Account actor = this.dataBaseCon.getAccount(userName);
+		if(actor == null) {
 			return false;
 		} else {
-			dataBaseCon.editUser("", "", "","", 'u', 'Y');
+			
+			this.dataBaseCon.editUser(actor.getUserName(), actor.getFirstName(),actor.getLastName(),actor.getPassword(), actor.getType(), 'Y');
 			return true;
 			
 		}

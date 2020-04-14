@@ -18,8 +18,9 @@ import DB.DBController;
  * @author dalvarez001
  *
  */
-public class viewListOfUsersTest {
+public class activateUserTest {
 	DBController dataBase;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -27,7 +28,8 @@ public class viewListOfUsersTest {
 	public void setUp() throws Exception {
 		this.dataBase = new DBController("goldencircle","csci230");
 		AccountUI.createController(dataBase);
-		dataBase.addUser("log", "out", "Mr.Logout12", "321", 'u');
+		dataBase.addUser("rice", "m", "mrice001", "password1", 'u');
+		AdminUI.deactivateUser("mrice001");
 		
 	}
 
@@ -36,12 +38,14 @@ public class viewListOfUsersTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		//dataBase.removeUser("Mr.Logout12");
+		this.dataBase.removeUser("mrice001");
+		
 	}
 
 	@Test
 	public void test() {
-		Assert.asser
+		
+		Assert.assertEquals("User has been activated", AccountUI.addUser("act", "t", "activate12", "322", 'a'));
 		
 	}
 

@@ -6,6 +6,8 @@ package Admin;
 import java.util.ArrayList;
 
 import Account.Account;
+import university.University;
+import user.User;
 
 /**
  * This is the class for an Admin
@@ -19,6 +21,11 @@ public class Admin extends Account
 
 	ArrayList manageUsers = new ArrayList();
 	
+	private String pass;
+	private String username; 
+	private boolean userBoolean;
+	private boolean adminBoolean; 
+	
 	/**
 	 * This is the constructor for an Admin
 	 * 
@@ -29,7 +36,12 @@ public class Admin extends Account
 	 */
 	public Admin(String password, String username, boolean userBoolean, boolean adminBoolean) 
 	{
-	super(password,username,userBoolean,AdminBoolen){
+	super();
+	this.setPass(password);
+	this.setUsername(username);
+	this.setUserBoolean(userBoolean);
+	this.setAdminBoolean(adminBoolean);
+	
 	}
 	
 	/**
@@ -37,7 +49,7 @@ public class Admin extends Account
 	 * 
 	 * @param University
 	 */
-	public void addSchool(University) 
+	public void addSchool(University university) 
 	{
 		//TODO
 	}
@@ -47,7 +59,7 @@ public class Admin extends Account
 	 * 
 	 * @param University
 	 */
-	public void removeSchool(University) 
+	public void removeSchool(University university) 
 	{
 		//TODO
 	}
@@ -57,7 +69,7 @@ public class Admin extends Account
 	 * 
 	 * @param User
 	 */
-	public void deactivateUser(User) 
+	public void deactivateUser(User userName) 
 	{
 		//TODO
 	}
@@ -67,8 +79,67 @@ public class Admin extends Account
 	 * 
 	 * @param Admin
 	 */
-	public boolean isLoggedOn(Admin)
+	public boolean isLoggedOn(Admin adminUser)
 	{
+		return true;
+		
+	}
+
+	/**
+	 * @return the pass
+	 */
+	public String getPass() {
+		return pass;
+	}
+
+	/**
+	 * @param pass the pass to set
+	 */
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
+	 * @return the userBolean
+	 */
+	public boolean isUserBoolean() {
+		return userBoolean;
+	}
+
+	/**
+	 * @param userBolean the userBolean to set
+	 */
+	public void setUserBoolean(boolean userBoolean) {
+		this.userBoolean = userBoolean;
+		
+	}
+
+	/**
+	 * @return the adminBoolean
+	 */
+	public boolean isAdminBoolean() {
+		return adminBoolean;
+	}
+
+	/**
+	 * @param adminBoolean the adminBoolean to set
+	 */
+	public void setAdminBoolean(boolean adminBoolean) {
+		this.adminBoolean = adminBoolean;
 		
 	}
 	

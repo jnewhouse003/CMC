@@ -3,7 +3,6 @@ package Admin;
 import java.util.ArrayList;
 
 import Account.Account;
-import Account.AccountController;
 import DB.DBController;
 import university.University;
 
@@ -27,8 +26,12 @@ public interface AdminUI {
 	public static void logout() {
 		
 	}
-	public static int deactivateUser(String userName) {
+	public static boolean deactivateUser(String userName) {
 		return controller.deactivateUser(userName);
+	}
+	
+	public static boolean activateUser(String userName) {
+		return controller.activateUser(userName);
 	}
 	
 	/**
@@ -96,7 +99,6 @@ public interface AdminUI {
 		controller.createDataBase(dataBase);
 		
 	}
-	
 	
 
 }

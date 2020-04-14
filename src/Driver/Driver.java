@@ -66,19 +66,10 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		}
 		
 		System.out.println("--------------------");
-		
-<<<<<<< HEAD
+
 		Account test = new Account("test", "mctester", "testy", "123", 'u');
 		System.out.println("Step 2: view Profile");
 		UserUI.viewUserInfo(test);
-=======
-		User test = new User("testy", "mctester", "testy", "123", 'u');
-		System.out.println("Step 2: viewAndEditProfile");
-		ArrayList<String> info = UserUI.viewUserInfo(test);
-		for(int i = 0;i < info.size(); i++) {
-			System.out.println(info.get(i));
-		}
->>>>>>> 58043dbfafd23e9f8d4e7102aed83f16cf05d268
 		
 		System.out.println("Step 3: Edit Profile");
         UserUI.editUserInfo(test, "1234", "Test", "Mctest");
@@ -143,12 +134,17 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		}
 		
 		System.out.println("-------------------");
-		System.out.println("Step 12: Activate/Add User");
+		System.out.println("Step 12:/Add User");
 		AccountUI.addUser("Diego", "A", "dalv1212", "3232", 'a');
 		AccountUI.addUser("Jerome", "B", "jnew1212", "32321", 'a');
 		AccountUI.addUser("Nick", "C", "npink1212", "32322", 'a');
 		AccountUI.addUser("GiGi", "D", "gfit1212", "32323", 'a');
 		AccountUI.addUser("Joe", "E", "jlaux1212", "32324", 'a');
+		
+		System.out.println("-------------------");
+		System.out.println("Step 12:/Activate User");	
+		AdminUI.activateUser("npink1212");
+		
 		
 		System.out.println("-------------------");
 		System.out.println("Step 13: Logout");
@@ -163,14 +159,17 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("-------------------");
 		System.out.println("Step 14: Deactivate user (admin)");
-		AdminUI.deactivateUser("dalv1212");
+		AdminUI.deactivateUser("npink");
 		
 		System.out.println("-------------------");
-		System.out.println("Step 15: View list users (admin)");
+		System.out.println("Step 15:/Activate User");	
+		AdminUI.activateUser("npink1212");
+		
+		System.out.println("-------------------");
+		System.out.println("Step 16: View list users (admin)");
 		AdminUI.allUsers();
-		AdminUI.deactivateUser("testy");
-		AdminUI.deactivateUser("tester");
-		AdminUI.allUsers();
+
+	
 		
 		
 		

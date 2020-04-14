@@ -38,9 +38,26 @@ public class AdminController {
 		dataBaseCon = dataBase;
 	}
 	
-	public int deactivateUser(String userName) {
-		return dataBaseCon.removeUser(userName);
-		
+	public boolean deactivateUser(String userName) {
+		Account actor = dataBaseCon.getAccount(userName);
+		if(actor.getUserName().equals("")) {
+			return false;
+		} else {
+			dataBaseCon.editUser("", "", "","", 'u', 'N');
+			return true;
+			
+		}
+	}
+	
+	public boolean activateUser(String userName) {
+		Account actor = dataBaseCon.getAccount(userName);
+		if(actor.getUserName().equals("")) {
+			return false;
+		} else {
+			dataBaseCon.editUser("", "", "","", 'u', 'Y');
+			return true;
+			
+		}
 	}
 
 }

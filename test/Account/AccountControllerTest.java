@@ -1,17 +1,21 @@
 package Account;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import DB.DBController;
+import user.User;
 import Account.AccountController;
 
 public class AccountControllerTest {
 	AccountController controller;
 	DBController dataBase;
-
+	
+	
 	@Before
 	public void setUp() throws Exception {
 		this.controller = new AccountController();
@@ -22,6 +26,9 @@ public class AccountControllerTest {
 		//for the logout test
 		dataBase.addUser("log", "out", "Mr.Logout12", "321", 'u');
 		controller.logOn("Mr.Logout12", "321");
+		
+		
+		
 		
 	}
 
@@ -42,7 +49,8 @@ public class AccountControllerTest {
 		Assert.assertEquals("login succesful", true, this.controller.logOn("testy","123"));		
 		
 	}
-	
+	/*
+	@Test
 	public void TestLogOut() {
 		
 		Assert.assertTrue("User is Logged out", this.controller.logOut("Mr.Logout12") == true);
@@ -50,6 +58,8 @@ public class AccountControllerTest {
 		Assert.assertTrue("User is currently logged in", this.controller.logOut("Mr.Logout12") == false);
 		
 	}
+	*/
+	
 
 }
 

@@ -1,6 +1,9 @@
 package Account;
 
 import DB.DBController;
+
+import java.util.ArrayList;
+
 import Account.Account;
 import university.University;
 
@@ -74,22 +77,20 @@ public class AccountController {
 	
 	public University viewResults(String university) {
 		
-		 return dbController.getUniversity(university);
+		 
+		if(dbController.getUniversity(university)== null) {
+			return null;
+		}
+		else {
+			return dbController.getUniversity(university);
+		}
 			
 			
 		
 	}
 	
 	
-	public void viewUserInfo(Account user) {
-		System.out.println("User: " + user.getUserName()); 
-		
-		System.out.println("Password: " + user.getPassword()); 
-		
-		System.out.println("First Name: " + user.getFirstName()); 
-		
-		System.out.println("Last Name: " + user.getLastName()); 
-	}
+
 	
 	/**
 	 * This method changes the information tied to a user's Account

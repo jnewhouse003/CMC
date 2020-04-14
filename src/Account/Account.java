@@ -58,7 +58,7 @@ public class Account {
 	 * @return userName
 	 */
 	public String getUserName() {
-		return userName;
+		return this.userName;
 	}
 
 	/**

@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Admin.AdminUI;
 import search.searchController;
 import university.University;
 
@@ -26,6 +27,8 @@ public class DBControllerTest {
 		this.search = new searchController(this.controller);
 		//this.controller.addSchool("Circle University");
 		//this.controller.addSavedSchool("testy", "HARVARD");
+		AdminUI.createController(controller);
+		AdminUI.deactivateUser("testy");
 	}
 
 	@After
@@ -79,4 +82,10 @@ public class DBControllerTest {
 		Assert.assertEquals("school saved succesful", true, this.controller.lookUpUser("testy"));
 		Assert.assertEquals("school saved succesful", false, this.controller.lookUpUser("notTesty"));
 	}
+	@Test
+	public void TestEditUser() {
+		Assert.assertEquals("User found", true, this.controller.editUser("test", "mcTesty", "testy", "123", 'u', 'Y'));
+		Assert.assertEquals("Invalid user", true, this.controller.editUser("test", "mcTesty", "testy12", "123", 'u', 'Y'));
+	}
+
 }

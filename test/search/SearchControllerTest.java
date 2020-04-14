@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import Criteria.Criteria;
 import DB.DBController;
+import university.University;
 
 /**
  * @author giteghete001
@@ -21,7 +22,8 @@ public class SearchControllerTest {
 	searchController controller;
 	DBController dataBase;
 	Criteria parameters;
-
+	ArrayList<University> searchResults = new ArrayList<University>();
+	ArrayList<University> wrongResults = new ArrayList<University>();
 
 	/**
 	 * @throws java.lang.Exception
@@ -30,14 +32,14 @@ public class SearchControllerTest {
 	public void setUp() throws Exception {
 		//creating the universities
 		
-		this.dataBase = new DBController("goldencircle", "cs230");
+		this.dataBase = new DBController("goldencircle", "csci230");
 		this.controller = new searchController(this.dataBase);
 		
 		ArrayList<String> temp = new ArrayList<String>();
 		this.parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
 		
-		//searchResults.add(dataBase.getUniversity("BARNARD"));
-		/*
+		this.searchResults.add(this.dataBase.getUniversity("BARNARD"));
+	
 		this.searchResults.add(this.dataBase.getUniversity("COLUMBIA"));
 		this.searchResults.add(this.dataBase.getUniversity("COOPER UNION"));
 		this.searchResults.add(this.dataBase.getUniversity("EASTMAN SCHOOL OF MUSIC"));
@@ -50,7 +52,7 @@ public class SearchControllerTest {
 		this.searchResults.add(this.dataBase.getUniversity("TOURO"));
 		this.searchResults.add(this.dataBase.getUniversity("UNIVERSITY OF ROCHESTER"));
 		
-		*/
+		
 		
 		
 		
@@ -64,17 +66,20 @@ public class SearchControllerTest {
 	@After
 	public void tearDown() throws Exception {
 		this.dataBase.removeUser("testy");
+		for (int i = 0; i < this.searchResults.size(); i++) {
+			this.searchResults.remove(i);
+		}
 		
 	
 		
 	}
 
-	/*
+	
 	@Test
 	public void testSearchSchool() {
-		Assert.assertEquals("search results correct",true, this.controller.searchSchool(this.parameters));
+		Assert.assertEquals("search results correct",true, this.controller.searchSchool(this.parameters).equals(this.searchResults));
 		
-		Assert.assertEquals("search results wrong", true, this.controller.searchSchool(this.parameters));
+		Assert.assertEquals("search results wrong", false, this.controller.searchSchool(this.parameters).equals(this.wrongResults));
 	}
-*/
+
 }

@@ -30,9 +30,10 @@ public class logOutTest {
 	@Test
 
 	public void testLogOut() {
-		Assert.assertEquals("user is logged out", true, AccountUI.logOut("Mr.Logout12"));
-		
 		Assert.assertEquals("user is logged in", true, AccountUI.logOut("Mr.Logout12"));
+		
+		
+		Assert.assertEquals("user is logged out", false, AccountUI.logOut("Mr.Logout12"));
 	}
 	
 	

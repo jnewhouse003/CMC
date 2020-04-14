@@ -79,10 +79,15 @@ public class DBController
 	
 	
 	
-	public void editUser(String firstName, String lastName, String userName, String password, char type, char status){
+	public boolean editUser(String firstName, String lastName, String userName, String password, char type, char status){
 		
+		if(this.dataBase.user_editUser(userName, firstName, lastName, password, type, status) == -1){
+			return false;
+		} else {
+			this.dataBase.user_editUser(userName, firstName, lastName, password, type, status);
+			return true;
+		}
 		
-		this.dataBase.user_editUser(userName, firstName, lastName, password, type, status);
 	}
 	
 	

@@ -21,22 +21,25 @@ public class editProfileTest {
 		this.database = new DBController("goldencircle","csci230");
 		AccountUI.createController(database);
 		account = new Account("Bob", "Dylan","BobBeast","BobPass",'u');
-		database.addUser("Bob", "Dylan", "BobBeast", "BobPass", 'u');
+		this.database.addUser("Bob", "Dylan", "BobBeast", "BobPass", 'u');
+		UserUI.createController(this.database,AccountUI.getAccountController());
 		
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		database.removeUser("BobBeast");
+		//database.removeUser("BobBeast");
 	}
 
 	@Test
 	public void testEditUserInfo() {
-		UserUI.editUserInfo(account, "BobBetterPass", "Bobby", "Dill");
 		
-		Assert.assertEquals("user info changed in account", "Bobby", account.getFirstName());
 		
-		Assert.assertEquals("info changed in database", "Bobby", database.getAccount("BobBeast").getFirstName());
+		Assert.assertEquals("user info changed in account", "Bob", this.account.getFirstName());
+		
+		UserUI.editUserInfo(this.account, "BobBetterPass", "Bobby", "Dill");
+		
+		Assert.assertEquals("info changed in database", "Bobby", this.database.getAccount("BobBeast").getFirstName());
 		
 		
 		

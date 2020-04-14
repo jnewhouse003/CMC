@@ -119,11 +119,11 @@ public class AccountController {
 		info.setPassword(newPassword); 
 		info.setFirstName(newFirstName);
 		info.setLastName(newLastName);
-		if(dbController == null) {
+		if(this.dbController == null) {
 			
 		}
 		else {
-		dbController.editUser(info.getFirstName(), info.getLastName(), info.getUserName(), info.getPassword(), info.getType(), 'y');
+			this.dbController.editUser(newFirstName, newLastName, info.getUserName(), newPassword, info.getType(), 'y');
 		}
 	}
 

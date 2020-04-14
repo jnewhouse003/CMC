@@ -29,5 +29,11 @@ public class AdminControllerTest {
 		Assert.assertEquals("username invalid", false, val.activateUser("mrice001"));
 		Assert.assertEquals("username valid", true, val.activateUser(""));
 	}
+	
+	@Test
+	public void testDeactivateUser() {
+		Assert.assertEquals("Username is invalid", false, val.deactivateUser("mrice001"));
+		Assert.assertEquals("Username is valid", true, val.deactivateUser(""));
+	}
 
 }

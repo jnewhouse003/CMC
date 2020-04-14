@@ -28,7 +28,7 @@ public class editProfileTest {
 
 	@After
 	public void tearDown() throws Exception {
-		//database.removeUser("BobBeast");
+		database.removeUser("BobBeast");
 	}
 
 	@Test

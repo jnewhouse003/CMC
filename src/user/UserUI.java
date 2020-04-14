@@ -28,10 +28,10 @@ public interface UserUI {
 	
 	
 	
-	public static void viewUserInfo(Account userInfo) {
+	public static ArrayList<String> viewUserInfo(User userInfo) {
 		
 		
-		info.viewUserInfo(userInfo);
+		return userController.viewUserInfo(userInfo);
 	}
 	
 	public static void editUserInfo(Account userInfo, String password, String firstName, String lastName) {

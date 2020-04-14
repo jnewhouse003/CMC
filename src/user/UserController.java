@@ -71,18 +71,6 @@ public class UserController {
 		
 		}
 		
-		/**
-		 * @param info 
-		 * 
-		 */
-	
-		
-		/**public void viewUserInfo(Account user) {
-			System.out.println("User: " + user.getUserName()); 
-			
-			System.out.println("Password: " + user.getPassword()); 
-		}
-		*/
 		
 		
 		
@@ -182,6 +170,20 @@ public class UserController {
 	public void createDataBase(DB.DBController dataBase) {
 		// TODO Auto-generated method stub
 		this.dataBase = dataBase;
+		
+	}
+
+
+
+	public ArrayList<String> viewUserInfo(User user) {
+		ArrayList<String> info = new ArrayList();
+		
+		info.add(user.getFirstName());
+		info.add(user.getLastName());
+		info.add(user.getUserName());
+		info.add(user.getPassword());
+		
+		return info;
 		
 	}
 

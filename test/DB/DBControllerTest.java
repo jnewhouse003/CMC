@@ -34,7 +34,7 @@ public class DBControllerTest {
 		this.controller.removeSavedSchool("testy", "ARIZONA STATE");
 		this.controller.removeUser("testy");
 	}
-/*
+
 	@Test
 	public void TestGetAccount() {
 		Assert.assertEquals("userFound" , "testy" ,this.controller.getAccount("testy").getUserName());
@@ -53,7 +53,7 @@ public class DBControllerTest {
 		Assert.assertEquals("University not found", "Bemid University", this.controller.getUniversity("Bemid University"));
 		
 	}
-	*/
+	
 	@Test
 	public void TestAddSavedSchool() {
 		this.controller.addSavedSchool("testy", "HARVARD");

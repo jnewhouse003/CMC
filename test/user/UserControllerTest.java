@@ -124,7 +124,7 @@ public class UserControllerTest {
 		
 		Assert.assertEquals("search school with a user that doesn't exist", false, this.controller.searchSchool("notTester",this.parameters).equals( this.searchResults));
 		
-		
+		this.accountController.logOut("tester");
 		Assert.assertEquals("search school with a user that exists but not logged in", false, this.controller.searchSchool("tester",this.parameters).equals( this.searchResults));
 		
 		this.accountController.logOn("tester", "123");

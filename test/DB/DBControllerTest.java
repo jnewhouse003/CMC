@@ -51,9 +51,9 @@ public class DBControllerTest {
 	
 	@Test
 	public void TestGetUniversity() {
-		Assert.assertEquals("University found", "Circle University", this.controller.getUniversity("Circle University"));
+		Assert.assertEquals("University found", "Circle University", this.controller.getUniversity("Circle University").getName());
 		
-		Assert.assertEquals("University not found", "Bemid University", this.controller.getUniversity("Bemid University"));
+		Assert.assertEquals("University not found", null, this.controller.getUniversity("Bemid University"));
 		
 	}
 	

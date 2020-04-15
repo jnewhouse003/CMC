@@ -27,18 +27,29 @@ public class AdminController {
 		return dataBaseCon.findallUniversity();
 	}
 	
-
+	/**
+	 * This method finds all users in the database
+	 * @return ArrayList of all users 
+	 */
 	public ArrayList<Account> allUsers() {
 		
 		return dataBaseCon.findallUsers();
 	}
 	
-
+	/**
+	 * This method creates database 
+	 * @param dataBase
+	 */
 	public void createDataBase(DBController dataBase) {
 		// TODO Auto-generated method stub
 		dataBaseCon = dataBase;
 	}
 	
+	/**
+	 * This method checks if the user is valid and then deactivates the user in the database  
+	 * @param userName
+	 * @return boolean 
+	 */
 	public boolean deactivateUser(String userName) {
 		Account actor = this.dataBaseCon.getAccount(userName);
 		if(actor.getUserName().equals("")) {
@@ -53,6 +64,11 @@ public class AdminController {
 		}
 	}
 	
+	/**
+	 * This method checks if the user is valid then activates the user in the datatbase  
+	 * @param userName
+	 * @return boolean
+	 */
 	public boolean activateUser(String userName) {
 		Account actor = this.dataBaseCon.getAccount(userName);
 		if(actor.getUserName().equals("")) {

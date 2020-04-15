@@ -69,12 +69,19 @@ public interface AccountUI {
 		return name.addUser(firstName, lastName, userName, password, type);
 
 	}
-
+	/**
+	 * This method calls on the controller to create a database  
+	 * @param dataBase
+	 */
 	public static void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		name.createController(dataBase);
 	}
 
+	/**
+	 * This method calls on the controller to get the name of the account controller 
+	 * @return name name of account controller 
+	 */
 	public static AccountController  getAccountController() {
 		// TODO Auto-generated method stub
 		return name;

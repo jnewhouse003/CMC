@@ -85,11 +85,20 @@ public class AccountController {
 		 
 	}
 	
+	/**
+	 * This methods should return the password assigned to Account 
+	 * @return null 
+	 */
 	public String getPassword() {
 		
 		return null;
 	}
 	
+	/**
+	 * This method should return the results pulled from database 
+	 * @param university
+	 * @return university gotten from the database
+	 */
 	public University viewResults(String university) {
 		
 		 

@@ -16,20 +16,41 @@ public interface AdminUI {
 	AdminController controller = new AdminController();
 	
 	
-	
+	/**
+	 * This method adds a university through calling the controller 
+	 * @param university
+	 */
 	public static void addSchool(String university) {
 		
 	}
+	
+	/**
+	 * This method edits a school’s information  
+	 */
 	public static void editSchool() {
 		
 	}
+	
+	/**
+	 * This method allows admin to logout  
+	 */
 	public static void logout() {
 		
 	}
+	/**
+	 * This method calls the controller to deactivate a user
+	 * @param userName
+	 * @return boolean
+	 */
 	public static boolean deactivateUser(String userName) {
 		return controller.deactivateUser(userName);
 	}
 	
+	/**
+	 * This method calls the controller to activate a user
+	 * @param userName
+	 * @return boolean
+	 */
 	public static boolean activateUser(String userName) {
 		return controller.activateUser(userName);
 	}
@@ -42,6 +63,9 @@ public interface AdminUI {
 		displayResults(controller.browseSchool());
 	}
 	
+	/**
+	 * This method calls on its controller to display all users  
+	 */
 	public static void allUsers() {
 		displayUsers(controller.allUsers());
 	}
@@ -49,7 +73,10 @@ public interface AdminUI {
 	
 	
 	
-	
+	/**
+	 * This method displays an Arraylist of all user accounts  
+	 * @param users
+	 */
 	public static void displayUsers(ArrayList<Account> users) {
 	
 		System.out.println("   ");
@@ -94,6 +121,10 @@ public interface AdminUI {
 		
 		}
 	}
+	/**
+	 * This method calls its controller to create a database  
+	 * @param dataBase
+	 */
 	public static void createController(DBController dataBase) {
 		// TODO Auto-generated method stub
 		controller.createDataBase(dataBase);

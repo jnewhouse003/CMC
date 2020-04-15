@@ -86,6 +86,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method gets the password
 	 * @return the pass
 	 */
 	public String getPass() {
@@ -93,6 +94,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method changes the password 
 	 * @param pass the pass to set
 	 */
 	public void setPass(String pass) {
@@ -100,6 +102,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method gets the username to set 
 	 * @return the username
 	 */
 	public String getUsername() {
@@ -107,6 +110,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method sets the username 
 	 * @param username the username to set
 	 */
 	public void setUsername(String username) {
@@ -114,6 +118,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method verifies the user
 	 * @return the userBolean
 	 */
 	public boolean isUserBoolean() {
@@ -121,6 +126,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method sets the userBoolean 
 	 * @param userBolean the userBolean to set
 	 */
 	public void setUserBoolean(boolean userBoolean) {
@@ -129,6 +135,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This user check the admin’s boolean status
 	 * @return the adminBoolean
 	 */
 	public boolean isAdminBoolean() {
@@ -136,6 +143,7 @@ public class Admin extends Account
 	}
 
 	/**
+	 * This method sets the admin’s boolean status  
 	 * @param adminBoolean the adminBoolean to set
 	 */
 	public void setAdminBoolean(boolean adminBoolean) {

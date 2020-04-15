@@ -33,7 +33,9 @@ public class searchController{
 		
 	}
 	
-	
+	/**
+	 *  This method is used to print out the results of the search 
+	 */
 	public void viewResults() {
 		System.out.println();
 	}

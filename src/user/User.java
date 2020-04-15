@@ -38,15 +38,9 @@ public class User extends Account {
 		this.savedSchools.add(newSchool);
 	}
 
-	public void viewSavedSchools() {
-		// TODO
-		
-	}
-	
-	public void editUserInfo() {
-		
-		// TODO
-	}
+	/*
+	 * removes saved school from user
+	 */
 	
 	public Boolean removeSavedSchool(University school) {
 		if(savedSchools != null) {
@@ -56,6 +50,10 @@ public class User extends Account {
 		return false;
 	}
 	
+	/*
+	 *returns if user is logged on
+	 */
+	
 	public boolean isLoggedOn() {
 		// TODO
 		
@@ -63,18 +61,7 @@ public class User extends Account {
 		
 	}
 	
-	public void getUserInfo() {
-		// TODO
-	}
 	
-	public void displayProfile(String userName, String Password) {
-		// TODO
-	}
-	
-	public void makeEditable() {
-		// TODO
-		
-	}
 	
 	public Boolean currentlyLoggedOn() {
 		
@@ -84,20 +71,32 @@ public class User extends Account {
 		
 	}
 	
+	/*
+	 * gets the userName for the user
+	 */
 	public String getUserName() {
 		return super.getUserName();
 	}
 	
+	/*
+	 * gets the password for the user
+	 */
 	public String getPassword() {
 		return super.getPassword();
 	}
 	
 	
+	/*
+	 * gets the lastName for the user
+	 */
 	public String getLastName() {
 		return super.getLastName();
 	}
 	
 	
+	/*
+	 * gets the firstName for the user
+	 */
 	public String getFirstName() {
 		return super.getFirstName();
 	}

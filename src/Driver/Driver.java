@@ -69,12 +69,12 @@ public class Driver implements AccountUI, UserUI, AdminUI
 
 		Account test = new Account("test", "mctester", "testy", "123", 'u');
 		System.out.println("Step 2: view Profile");
-		UserUI.viewUserInfo(test);
+		//UserUI.viewUserInfo(test);
 		
 		System.out.println("Step 3: Edit Profile");
         UserUI.editUserInfo(test, "1234", "Test", "Mctest");
         System.out.println("Updated User Info: ");
-        UserUI.viewUserInfo(test);
+        //UserUI.viewUserInfo(test);
        
         System.out.println("--------------------");
         System.out.println("Step 4: Search for schools by a combination of state and number of students");

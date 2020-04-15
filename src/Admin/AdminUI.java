@@ -63,11 +63,17 @@ public interface AdminUI {
 		displayResults(controller.browseSchool());
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * This method calls on its controller to display all users  
 	 */
 	public static void allUsers() {
 		displayUsers(controller.allUsers());
+=======
+	public static ArrayList<Account> allUsers() {
+		
+		return controller.allUsers();
+>>>>>>> c44caa0e88f8218dd3436ffa2c1152495ee8168d
 	}
 	
 	

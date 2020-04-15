@@ -32,7 +32,7 @@ public class AdminController {
 	 * @return ArrayList of all users 
 	 */
 	public ArrayList<Account> allUsers() {
-		
+
 		return dataBaseCon.findallUsers();
 	}
 	

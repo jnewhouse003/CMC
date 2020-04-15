@@ -33,7 +33,7 @@ public class UserControllerTest {
 		
 	@Test
 	public void testViewSavedSchools() {
-		Assert.assertEquals("List shows Harvard", true, String[] savedSchools = UserUI.viewSavedSchool("tester");)
+		Assert.assertEquals("List shows Harvard", true, String[] savedSchools = UserUI.viewSavedSchool("tester");
 	}
 	
 	@Test 

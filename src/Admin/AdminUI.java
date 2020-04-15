@@ -42,8 +42,9 @@ public interface AdminUI {
 		displayResults(controller.browseSchool());
 	}
 	
-	public static void allUsers() {
-		displayUsers(controller.allUsers());
+	public static ArrayList<Account> allUsers() {
+		
+		return controller.allUsers();
 	}
 	
 	

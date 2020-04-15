@@ -10,9 +10,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Account.Account;
 import Account.AccountUI;
 import Admin.AdminUI;
 import DB.DBController;
+import user.User;
+import user.UserUI;
 
 /**
  * @author dalvarez001
@@ -20,14 +23,20 @@ import DB.DBController;
  */
 public class viewListOfUsersTest {
 	DBController dataBase;
+	Account account;
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
 		this.dataBase = new DBController("goldencircle","csci230");
-		AccountUI.createController(dataBase);
-		dataBase.addUser("log", "out", "Mr.Logout12", "321", 'u');
+		AdminUI.createController(dataBase);
+		account = new Account("Bob", "Dylan","BobBeast","BobPass",'u');
+		account = new Account("Bo", "Dy","BoBeast12","BobPass12",'u');
+		account = new Account("B", "D","BDBeast","BobPass1223",'u');
+		this.dataBase.addUser("Bob", "Dylan", "BobBeast", "BobPass", 'u');
+		this.dataBase.addUser("Bo", "Dy","BoBeast12","BobPass12",'u');
+		this.dataBase.addUser("B", "D","BDBeast","BobPass1223",'u');
 		
 	}
 
@@ -36,12 +45,17 @@ public class viewListOfUsersTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		//dataBase.removeUser("Mr.Logout12");
+		dataBase.removeUser("BobBeast");
+		dataBase.removeUser("BoBeast12");
+		dataBase.removeUser("BDBeast");
+		
 	}
 
 	@Test
-	public void test() {
-		Assert.asser
+	public void testViewListOfUsers() {
+		
+		Assert.assertEquals("user in the data base",true, AdminUI.allUsers().get(1).getUserName().equals("BDBeast"));
+		Assert.assertEquals("user not in the data base",false, AdminUI.allUsers() == null);
 		
 	}
 

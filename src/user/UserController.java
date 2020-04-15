@@ -72,7 +72,7 @@ public class UserController {
 		}
 		
 		/**
-		 * 
+		 * gets saved schools for a user and returns them
 		 * @param savedSchools 
 		 */
 		public String[] viewSavedSchool(String username) {
@@ -84,49 +84,21 @@ public class UserController {
 		
 		
 		
-		private void setUserInfo(Object info) {
-			// TODO Auto-generated method stub
-			
-		}
+		
 
 		/**
-		 * 
+		 * removes saved school for a user 
 		 * @param school
 		 * @return 
 		 */
-		public Boolean removeSavedSchool(User peterUser, String name) {
+		public Boolean removeSavedSchool(User user, String name) {
 			
-			return peterUser.removeSavedSchool(dataBase.getUniversity(name));
+			return user.removeSavedSchool(dataBase.getUniversity(name));
 		}
 		
-		/**
-		 * 
-		 
-		public void logOut() {
-			Object user;
-			if(((Object) user).isLoggedOn() == false) {
-			System.out.println("User is now logged out"); 
-			}
-			
-		}
-		*/
 		
-		/**
-		 * 
-		 * @param info
-		 */
-		public void manageProfile(String info) {
-			//Method implementation 
-		}
 		
-		/**
-		 * This method returns Universities if the user is logged on
-		 * 
-		 * @param user
-		 * @param state
-		 * @param numStudents
-		 * @return ArrayList of Universities
-		 */
+		
 		
 			
 			
@@ -171,6 +143,10 @@ public class UserController {
 		
 			
 		}
+		
+		/*
+		 * creates dataBase and accountController
+		 */
 
 	public void createDataBase(DB.DBController dataBase, AccountController accountController) {
 		// TODO Auto-generated method stub
@@ -180,7 +156,10 @@ public class UserController {
 	}
 
 
-
+	/*
+	 * gets user info
+	 */
+	
 	public ArrayList<String> viewUserInfo(User user) {
 		ArrayList<String> info = new ArrayList();
 		
@@ -193,7 +172,9 @@ public class UserController {
 		
 	}
 
-
+	/*
+	 * creates dataBase
+	 */
 
 	public void createDataBase(DBController dataBase2) {
 		// TODO Auto-generated method stub

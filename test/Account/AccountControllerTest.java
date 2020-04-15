@@ -54,7 +54,7 @@ public class AccountControllerTest {
 	public void TestLogOut() {
 		this.controller.logOn("MrLogout12", "321");
 		
-		Assert.assertEquals("User is Logged out",true, this.controller.logOut("Mr.Logout12") == true);
+		Assert.assertEquals("User is Logged out",true, this.controller.logOut("Mr.Logout12"));
 		
 		
 		Assert.assertEquals("User is currently logged in", false, this.controller.logOut("Mr.Logout12") );

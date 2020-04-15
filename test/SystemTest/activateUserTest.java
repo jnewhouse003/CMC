@@ -46,7 +46,7 @@ public class activateUserTest {
 	public void testActivateUser() {
 		
 		Assert.assertEquals("User has been activated",true, AdminUI.activateUser("mrice001"));
-		Assert.assertEquals("User not activated", true, AdminUI.activateUser(""));
+		Assert.assertEquals("User not activated", false, AdminUI.activateUser(""));
 		
 	}
 

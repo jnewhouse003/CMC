@@ -27,7 +27,8 @@ public class DBControllerTest {
 		this.search = new searchController(this.controller);
 		//this.controller.addSchool("Circle University");
 		//this.controller.addSavedSchool("testy", "HARVARD");
-		AdminUI.createController(controller);
+		
+		AdminUI.createController(this.controller);
 		AdminUI.deactivateUser("testy");
 	}
 
@@ -79,8 +80,8 @@ public class DBControllerTest {
 	
 	@Test
 	public void TestLookUpUser() {
-		Assert.assertEquals("school saved succesful", true, this.controller.lookUpUser("testy"));
-		Assert.assertEquals("school saved succesful", false, this.controller.lookUpUser("notTesty"));
+		Assert.assertEquals("user found", true, this.controller.lookUpUser("testy"));
+		Assert.assertEquals("user not found", false, this.controller.lookUpUser("notTesty"));
 	}
 	@Test
 	public void TestEditUser() {

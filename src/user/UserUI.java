@@ -21,6 +21,9 @@ public interface UserUI {
 	}
 	*/
 	
+	/*
+	 * this method calls the userController to search for a school based on criteria
+	 */
 	public static ArrayList<University> searchSchool(String user, Criteria parameters) {
 		
 		//displayResults(userController.searchSchool(user, parameters));
@@ -28,12 +31,18 @@ public interface UserUI {
 	}
 	
 	
-	
+	/*
+	 * call the user controller to view user info
+	 */
 	public static ArrayList<String> viewUserInfo(User userInfo) {
 		
 		
 		return userController.viewUserInfo(userInfo);
 	}
+	
+	/*
+	 * calls account controller to edit the users info
+	 */
 	
 	public static void editUserInfo(Account userInfo, String password, String firstName, String lastName) {
 		
@@ -42,18 +51,30 @@ public interface UserUI {
 		info.editUserInfo(userInfo, password,firstName, lastName);
 	}
 	
-	public static Boolean removeSavedSchool(User peterUser, String name) {
+	/*
+	 * calls to the userController to remove a saved school for a user
+	 */
+	
+	public static Boolean removeSavedSchool(User user, String name) {
 		
 		
-		return userController.removeSavedSchool(peterUser, name);
+		return userController.removeSavedSchool(user, name);
 	}
 	
+	
+	/*
+	 * adds a school to the users saved schools
+	 */
 	
 	public static Boolean addSavedSchool(String user, String school) {
 		
 		 return userController.addSavedSchool(user, school);
 		
 	}
+	
+	/*
+	 * calls to user controller to get the saved schools for a user
+	 */
 
 	public static String[] viewSavedSchool(String username) {
 		
@@ -101,7 +122,9 @@ public interface UserUI {
 		}
 	}
 	
-
+	/*
+	 * calls to the userController to find top five universities 
+	 */
 
 	public static ArrayList<University> findTopFive(String state, String control, int lowerExpense, int upperExpense,String emphasesOne, String emphasesTwo) {
 		// TODO Auto-generated method stub
@@ -110,6 +133,9 @@ public interface UserUI {
 		
 	}
 
+	/*
+	 * create dataBase and accountController
+	 */
 
 	public static void createController(DBController dataBase, AccountController accountController) {
 		// TODO Auto-generated method stub
@@ -117,6 +143,10 @@ public interface UserUI {
 		info.createController(dataBase); 
 		
 	}
+	
+	/*
+	 * creates database
+	 */
 	
 	public static void createController(DBController dataBase) {
 		// TODO Auto-generated method stub

@@ -115,7 +115,7 @@ public class UserControllerTest {
 		
 		Assert.assertEquals("view user info not a user", false, this.controller.viewUserInfo(this.test).equals(this.wrongUserInfo));
 		
-		
+
 	}
 	
 	

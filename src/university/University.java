@@ -35,6 +35,7 @@ public class University {
 	
 	//private variables
 	/**
+	 * This method is used as the constructor for universities 
 	 * @param name
 	 * @param state
 	 * @param location
@@ -82,7 +83,10 @@ public class University {
 
 	
 	
-	
+	/**
+	 * This method is used to set instantiate all the parameter variables used in the constructor above  
+	 * @param strings
+	 */
 	public University(String[] strings) {
 		// TODO Auto-generated constructor stub
 		super();
@@ -111,6 +115,7 @@ public class University {
 
 
 	/**
+	 * This method gets the name of the school 
 	 * @return the name
 	 */
 	public String getName() {
@@ -118,6 +123,7 @@ public class University {
 	}
 
 	/**
+	 *  This method sets the name of the school
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
@@ -125,6 +131,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the State of the school  
 	 * @return the state
 	 */
 	public String getState() {
@@ -132,6 +139,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the state for the school  
 	 * @param state the state to set
 	 */
 	public void setState(String state) {
@@ -139,6 +147,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the location for the school  
 	 * @return the location
 	 */
 	public String getLocation() {
@@ -146,6 +155,7 @@ public class University {
 	}
 
 	/**
+	 *  This method sets the location for the school 
 	 * @param location the location to set
 	 */
 	public void setLocation(String location) {
@@ -153,6 +163,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the control of the school  
 	 * @return the control
 	 */
 	public String getControl() {
@@ -160,6 +171,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the control of the school
 	 * @param control the control to set
 	 */
 	public void setControl(String control) {
@@ -167,6 +179,7 @@ public class University {
 	}
 
 	/**
+	 *This method gets the number of students in the school
 	 * @return the numStudents
 	 */
 	public int getNumStudents() {
@@ -174,6 +187,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the number of students in the school 
 	 * @param numStudents the numStudents to set
 	 */
 	public void setNumStudents(int numStudents) {
@@ -181,6 +195,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the double percent of female in the school  
 	 * @return the percentFemale
 	 */
 	public double getPercentFemale() {
@@ -188,6 +203,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the double percent of female in the school  
 	 * @param percentFemale the percentFemale to set
 	 */
 	public void setPercentFemale(double percentFemale) {
@@ -195,6 +211,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the double percent of male in the school  
 	 * @return the percentMale
 	 */
 	public double getPercentMale() {
@@ -202,6 +219,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the double percent of male in the school  
 	 * @param percentMale the percentMale to set
 	 */
 	public void setPercentMale(double percentMale) {
@@ -209,6 +227,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the verbal score of the students SAT 
 	 * @return the verbalSAT
 	 */
 	public int getVerbalSAT() {
@@ -216,6 +235,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the verbal SAT scores 
 	 * @param verbalSAT the verbalSAT to set
 	 */
 	public void setVerbalSAT(int verbalSAT) {
@@ -223,6 +243,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the math SAT scores  
 	 * @return the mathSAT
 	 */
 	public int getMathSAT() {
@@ -230,6 +251,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the math SAT scores 
 	 * @param mathSAT the mathSAT to set
 	 */
 	public void setMathSAT(int mathSAT) {
@@ -237,6 +259,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets expenses
 	 * @return the expenses
 	 */
 	public double getExpenses() {
@@ -244,6 +267,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the expenses
 	 * @param expenses the expenses to set
 	 */
 	public void setExpenses(double expenses) {
@@ -251,6 +275,7 @@ public class University {
 	}
 
 	/**
+	 *  This method gets the financialAid 
 	 * @return the finanicalAid
 	 */
 	public double getFinancialAid() {
@@ -258,6 +283,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the financial Aid
 	 * @param finanicalAid the finanicalAid to set
 	 */
 	public void setFinancialAid(double financialAid) {
@@ -265,6 +291,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the number of Applications
 	 * @return the numApplications
 	 */
 	public int getNumApplications() {
@@ -272,13 +299,15 @@ public class University {
 	}
 
 	/**
+	 * This method sets the number of applications  
 	 * @param numApplications the numApplications to set
 	 */
 	public void setNumApplications(int numApplications) {
 		this.numApplications = numApplications;
 	}
 
-	/**
+	/**This method gets the double percent of the admitted students  
+	 * 
 	 * @return the percentAdmitted
 	 */
 	public double getPercentAdmitted() {
@@ -286,6 +315,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the double of the percent admitted  
 	 * @param percentAdmitted the percentAdmitted to set
 	 */
 	public void setPercentAdmitted(double percentAdmitted) {
@@ -293,6 +323,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the percent of enrolled students  
 	 * @return the percentEnrolled
 	 */
 	public double getPercentEnrolled() {
@@ -300,6 +331,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the double of the percent of students enrolled  
 	 * @param percentEnrolled the percentEnrolled to set
 	 */
 	public void setPercentEnrolled(double percentEnrolled) {
@@ -307,6 +339,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the academic scale
 	 * @return the academicsScale
 	 */
 	public int getAcademicsScale() {
@@ -314,6 +347,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the academic scale 
 	 * @param academicsScale the academicsScale to set
 	 */
 	public void setAcademicsScale(int academicsScale) {
@@ -321,6 +355,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the social scale of the school 
 	 * @return the socialScale
 	 */
 	public int getSocialScale() {
@@ -328,6 +363,7 @@ public class University {
 	}
 
 	/**
+	 * This method set the social scale 
 	 * @param socialScale the socialScale to set
 	 */
 	public void setSocialScale(int socialScale) {
@@ -335,6 +371,7 @@ public class University {
 	}
 
 	/**
+	 * This method gets the quality life scale 
 	 * @return the lifeQualityScale
 	 */
 	public int getLifeQualityScale() {
@@ -342,6 +379,7 @@ public class University {
 	}
 
 	/**
+	 * This method sets the life quality scale 
 	 * @param lifeQualityScale the lifeQualityScale to set
 	 */
 	public void setLifeQualityScale(int lifeQualityScale) {
@@ -349,6 +387,7 @@ public class University {
 	}
 
 	/**
+	 * This method is used to get the emphases 
 	 * @return the emphases
 	 */
 	public String getEmphases() {
@@ -356,12 +395,16 @@ public class University {
 	}
 
 	/**
+	 * This method is used to set the emphases 
 	 * @param emphases the emphases to set
 	 */
 	public void setEmphases(String emphases) {
 		this.emphases = emphases;
 	}
 	
+	/**
+	 * This method is used to check if a university is valid given the name 
+	 */
 	public boolean equals(Object c) {
 		if(this.getName().equals( ((University) c).getName())) {
 			return true;

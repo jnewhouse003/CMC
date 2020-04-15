@@ -1,2 +1,4 @@
 # CMC
-pull the repository.  then open the driver.java in eclipse and press run.  the output will display in the terminal
+You can find the System Test Harness in the test folder, default package.
+
+It is called "AllTests.java"

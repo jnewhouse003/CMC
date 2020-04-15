@@ -20,6 +20,10 @@ public class viewSpecificSchoolInfoTest {
 	@Before
 	public void setUp() throws Exception {
 		//schools = new ArrayList();
+		this.db = new DBController("goldencircle","csci230");
+		
+		AccountUI.createController(this.db);
+		
 		school = AccountUI.viewResults("ARIZONA STATE");
 	}
 

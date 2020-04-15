@@ -25,13 +25,20 @@ public class DBController
 	public DBController(String username, String password){
 	   this.dataBase = new UniversityDBLibrary(username,password);
 	  }
-	  
+	
+	/**
+	 * This method adds schools to university
+	 * @param university
+	 */
 	public void addSchool(University university) 
 	{
 		this.dataBase.university_addUniversity(university.getName(),university.getState(), university.getLocation(),university.getControl(), university.getNumStudents(),university.getPercentFemale(), university.getVerbalSAT(), university.getMathSAT(), university.getExpenses(), university.getFinancialAid(), university.getNumApplications(), university.getPercentAdmitted(), university.getPercentEnrolled(), university.getAcademicsScale(), university.getSocialScale(), university.getLifeQualityScale());
 	}
 	
-	
+	/**
+	 * This method deletes schools from list of universities 
+	 * @param university
+	 */
 	public void removeSchool(String university) {
 		this.dataBase.university_deleteUniversity(university);
 	}
@@ -51,7 +58,12 @@ public class DBController
 		return this.dataBase.user_addUser(firstName, lastName, userName, password, type);
 	}
 	
-	
+	/**
+	 * This method allows a user to add a school to their saved schools list  
+	 * @param user
+	 * @param university
+	 * @return boolean
+	 */
 	public Boolean addSavedSchool(String user, String university) {
 		
 		if(this.dataBase.user_saveSchool(user, university) == 1) {
@@ -64,7 +76,12 @@ public class DBController
 			return false;
 		}
 	}
-	
+	/**
+	 * This method allows a user remove a school from their saved schools list  
+	 * @param user
+	 * @param university
+	 * @return boolean 
+	 */
 	public Boolean removeSavedSchool(String user, String university) {
 		
 		if(this.dataBase.user_removeSchool(user, university) == 1) {
@@ -78,7 +95,16 @@ public class DBController
 	
 	
 	
-	
+	/**
+	 * This method allows the user to edit hier profile 
+	 * @param firstName
+	 * @param lastName
+	 * @param userName
+	 * @param password
+	 * @param type
+	 * @param status
+	 * @return boolean
+	 */
 	public boolean editUser(String firstName, String lastName, String userName, String password, char type, char status){
 		
 		if(this.dataBase.user_editUser(userName, firstName, lastName, password, type, status) == -1){
@@ -90,7 +116,11 @@ public class DBController
 		
 	}
 	
-	
+	/**
+	 * This method allows user to get a list of their saved sschools 
+	 * @param username
+	 * @return savedSchools list
+	 */
 	public String[] getSavedSchool(String username) {
 		String[][] users;
 		users = this.dataBase.user_getUsernamesWithSavedSchools();
@@ -412,6 +442,11 @@ public class DBController
 		
 	}
 	
+	/**
+	 * This method removes user’s account from the database  
+	 * @param userName
+	 * @return boolean
+	 */
 	public int removeUser(String userName) {
 		return this.dataBase.user_deleteUser(userName);
 	}

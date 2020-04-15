@@ -27,7 +27,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 	
 	
 	/**
-	 * This method runs the driver
+	 * This method is used to run the driver for each use case 
 	 * 
 	 * @param args
 	 */

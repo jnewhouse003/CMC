@@ -5,11 +5,10 @@
 
 // update user info
 
-<%AccountUI.createController((DBController)session.getAttribute("database"));
-		AdminUI.createController((DBController)session.getAttribute("database"));
-		UserUI.createController((DBController)session.getAttribute("database"),AccountUI.getAccountController());
-		DBController temp = (DBController)session.getAttribute("database");
-		
-		UserUI.editUserInfo(temp.getAccount((String)session.getAttribute("uName")),request.getParameter("Password"), request.getParameter("FirstName"), request.getParameter("LastName"));
+<%
+		DBController dataBase = new DBController("goldencircle","csci230");
+		AccountController temp = new AccountController();
+		temp.createController(dataBase);
+		temp.editUserInfo(dataBase.getAccount((String)session.getAttribute("uName")),request.getParameter("Password"), request.getParameter("FirstName"), request.getParameter("LastName"));
 		
 		 response.sendRedirect("manageProfile.jsp");%>

@@ -168,12 +168,12 @@ public class DBController
 		for(int i = 0; i < allUsers.length; i++)
 		{
 			if(allUsers[i][2].equals(account)) {
-				temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+				temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0), allUsers[i][5].charAt(0));
 				return temp;
 				
 			}
 		}
-		temp = new Account("", "", "", "", ' '); 
+		temp = new Account("", "", "", "", ' ', ' '); 
 		return temp;
 		
 	}
@@ -228,7 +228,7 @@ public class DBController
 		ArrayList<Account> users = new ArrayList();
 		for(int i = 0; i < allUsers.length; i++)
 		{
-			Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0));
+			Account temp = new Account(allUsers[i][0], allUsers[i][1], allUsers[i][2], allUsers[i][3], allUsers[i][4].charAt(0), allUsers[i][5].charAt(0));
 			users.add(temp);
 				
 			}

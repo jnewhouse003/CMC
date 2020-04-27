@@ -15,6 +15,7 @@ public class Account {
 	private String lastName;
 	private boolean logOnStatus;
 	private char type;
+	private char status;
 	
 	/**
 	 * This method is the constructor for an Account
@@ -24,7 +25,7 @@ public class Account {
 	 * @param firstName
 	 * @param lastName
 	 */
-	public Account(String firstName, String lastName, String userName, String password,char type) {
+	public Account(String firstName, String lastName, String userName, String password,char type, char status) {
 		super();
 		this.setFirstName(firstName); 
 		this.setLastName(lastName); 
@@ -32,8 +33,14 @@ public class Account {
 		this.userName = userName;
 		this.setLogOnStatus(true);
 		this.setType(type);
+		this.setStatus(status);
 	}
-
+public char getStatus() {
+	return status;
+}
+public void setStatus(char status) {
+	this.status = status;
+}
 	/**
 	 * This method returns the password tied to an Account
 	 * 

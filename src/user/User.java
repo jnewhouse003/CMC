@@ -23,8 +23,8 @@ public class User extends Account {
 	 * @param lastName
 	 * @param type
 	 */
-	public User(String firstName, String lastName, String name, String password, char type) {
-		super(firstName, lastName, name, password, type);
+	public User(String firstName, String lastName, String name, String password, char type, char status) {
+		super(firstName, lastName, name, password, type, status);
 		// TODO
 	}
 
@@ -69,6 +69,9 @@ public class User extends Account {
 		return null;
 		
 		
+	}
+	public char getStatus() {
+		return super.getStatus();
 	}
 	
 	/*

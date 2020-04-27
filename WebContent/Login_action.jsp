@@ -13,7 +13,9 @@
 		//session.setAttribute("database",dataBase);
 		
 		AccountController controller = new AccountController();
+		
 		controller.createController(dataBase);
+		session.setAttribute("AC", controller);
 	   
 	   //If Type is a User go to response.sendRedirect("logOnMenu.jsp");
 	   //If Type is Admin go to  response.sendRedirect("adminMenu.jsp");
@@ -25,6 +27,7 @@
      if (controller.logOn(userName, pass) == true){
     	 if(dataBase.getAccount(userName).getType() =='u'){
     		 session.setAttribute("uName", userName);
+    		 
     	     response.sendRedirect("logOnMenu.jsp");
    		 }
     	 else{

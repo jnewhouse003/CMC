@@ -40,7 +40,7 @@ contains <input name="state" value="" >
 by LOCATION
 </td>
 <td>
-<input name="location" value="" > (SUBURBAN, URBAN, SMALL-CITY OR -1 for UKNOWN)
+<input name="location" value="" > (SUBURBAN, URBAN, SMALL-CITY OR -LEAVE EMPTY for UKNOWN)
 </td>
 </tr>
 <tr align="LEFT">
@@ -49,7 +49,7 @@ by LOCATION
 by CONTROL
 </td>
 <td>
-<input name="control" value="" > (PRIVATE, STATE, CITY OR -1 for UKNOWN)
+<input name="control" value="" > (PRIVATE, STATE, CITY OR LEAVE EMPTY for UKNOWN)
 </td>
 </tr>
 <tr align="LEFT">
@@ -58,7 +58,7 @@ by CONTROL
 by NUMBER OF STUDENTS
 </td>
 <td>
-between <input name="numberOfStudents1" value="" > and <input name="numberOfStudents2" value="" >
+between <input name="numberOfStudents1" value="0" > and <input name="numberOfStudents2" value="0" >
 </td>
 </tr>
 <tr align="LEFT">
@@ -67,7 +67,7 @@ between <input name="numberOfStudents1" value="" > and <input name="numberOfStud
 by % FEMALE
 </td>
 <td>
-between <input name="female1" value="" > and <input name="female2" value="" >
+between <input name="female1" value="0.0" > and <input name="female2" value="0.0" >
 </td>
 </tr>
 
@@ -77,7 +77,7 @@ between <input name="female1" value="" > and <input name="female2" value="" >
 by SAT VERBAL
 </td>
 <td>
-between <input name="satVerbal1" value="" > and <input name="satVerbal2" value="" >
+between <input name="satVerbal1" value="0" > and <input name="satVerbal2" value="0" >
 </td>
 </tr>
 
@@ -87,7 +87,7 @@ between <input name="satVerbal1" value="" > and <input name="satVerbal2" value="
 by SAT MATH
 </td>
 <td>
-between <input name="satMath" value="" > and <input name="satMath" value="" >
+between <input name="satMath1" value="0" > and <input name="satMath2" value="0" >
 </td>
 </tr>
 
@@ -97,7 +97,7 @@ between <input name="satMath" value="" > and <input name="satMath" value="" >
 by EXPENSES
 </td>
 <td>
-between <input name="expenses1" value="" > and <input name="expenses2" value="" >
+between <input name="expenses1" value="0.0" > and <input name="expenses2" value="0.0" >
 </td>
 </tr>
 
@@ -106,7 +106,7 @@ between <input name="expenses1" value="" > and <input name="expenses2" value="" 
 by % FINANCIAL AID
 </td>
 <td>
- between <input name="financialAid1" value="" > and <input name="financialAid2" value="" >
+ between <input name="financialAid1" value="0.0" > and <input name="financialAid2" value="0.0" >
 </td>
 </tr>
 
@@ -116,7 +116,7 @@ by % FINANCIAL AID
 by NUMBER OF APPLICANTS
 </td>
 <td>
-between <input name="numberOfApplicants1" value="" > and <input name="numberOfApplicants2" value="" >
+between <input name="numberOfApplicants1" value="0" > and <input name="numberOfApplicants2" value="0" >
 </td>
 </tr>
 
@@ -125,7 +125,7 @@ between <input name="numberOfApplicants1" value="" > and <input name="numberOfAp
 by % ADMITTED
 </td>
 <td>
-between <input name="admitted1" value="" > and <input name="admitted2" value="" >
+between <input name="admitted1" value="0.0" > and <input name="admitted2" value="0.0" >
 </td>
 </tr>
 
@@ -134,7 +134,7 @@ between <input name="admitted1" value="" > and <input name="admitted2" value="" 
 by % ENROLLED
 </td>
 <td>
-between <input name="enrolled1" value="" > and <input name="enrolled2" value="" >
+between <input name="enrolled1" value="0.0" > and <input name="enrolled2" value="0.0" >
 </td>
 </tr>
 
@@ -143,7 +143,7 @@ between <input name="enrolled1" value="" > and <input name="enrolled2" value="" 
 by ACADEMIC SCALE (1 - 5)
 </td>
 <td>
-between <input name="academicScale1" value="" > and <input name="academicScale2" value="" >
+between <input name="academicScale1" value="0" > and <input name="academicScale2" value="0" >
 </td>
 </tr>
 
@@ -152,7 +152,7 @@ between <input name="academicScale1" value="" > and <input name="academicScale2"
 by SOCIAL SCALE (1 - 5)
 </td>
 <td>
-between <input name="socialScale1" value="" > and <input name="socialScale2" value="" >
+between <input name="socialScale1" value="0" > and <input name="socialScale2" value="0" >
 </td>
 </tr>
 
@@ -161,7 +161,7 @@ between <input name="socialScale1" value="" > and <input name="socialScale2" val
 by QUALITY OF LIFE SCALE (1 - 5)
 </td>
 <td>
-between <input name="qualityOfLife1" value="" > and <input name="qualityOfLife2" value="" >
+between <input name="qualityOfLife1" value="0" > and <input name="qualityOfLife2" value="0" >
 </td>
 </tr>
 
@@ -171,11 +171,11 @@ by EMPHASES
 </td>
 <td>
 contains either <br>
-<input name="financialAid1" value="" ><br>
-<input name="financialAid2" value="" ><br>
-<input name="financialAid3" value="" ><br>
-<input name="financialAid4" value="" ><br>
-<input name="financialAid5" value="" ><br>
+<input name="emphases1" value="" ><br>
+<input name="emphases2" value="" ><br>
+<input name="emphases3" value="" ><br>
+<input name="emphases4" value="" ><br>
+<input name="emphases5" value="" ><br>
 </td>
 </tr>
 

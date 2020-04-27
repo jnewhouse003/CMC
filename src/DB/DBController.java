@@ -258,6 +258,7 @@ public class DBController
 			University temp = new University(allSchools[i]);
 			foundSchools.add(temp);
 			
+			
 			if(temp.getState().equals(parameters.getState()) || parameters.getState().equals("")) {
 				if(temp.getName().equals(parameters.getName()) || parameters.getName().equals("")) {
 					if(temp.getLocation().equals(parameters.getLocation()) || parameters.getLocation().equals("")) {
@@ -283,6 +284,7 @@ public class DBController
 																						
 																					}
 																					else {
+																						
 																						foundSchools.remove(temp);
 																					}
 																				}
@@ -348,10 +350,12 @@ public class DBController
 					}
 				}
 				else { 
+					
 					foundSchools.remove(temp);
 				}
 			}
 			else {
+				
 				foundSchools.remove(temp);
 			}
 	

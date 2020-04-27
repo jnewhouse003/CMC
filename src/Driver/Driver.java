@@ -80,8 +80,9 @@ public class Driver implements AccountUI, UserUI, AdminUI
         System.out.println("Step 4: Search for schools by a combination of state and number of students");
         User peterUser = new User("peter", "ohmann", "pohmann", "123", 'u');
         AccountUI.addUser("peter", "Ohmann", "pohmann", "123", 'u');
-        ArrayList<String> temp = new ArrayList();
-        Criteria parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
+        AccountUI.logOn("pohmann", "123");
+        ArrayList<String> temp = new ArrayList<String>();
+        Criteria parameters = new Criteria("", "NEW YORK", "URBAN", "PRIVATE",0, 0, 0.0,0.0,0.0, 0.0, 0, 0, 0, 0, 0.0, 0.0,0.0,0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0,0,0,0,0,0,temp);
         UserUI.searchSchool("pohmann", parameters);
         //UserUI.searchSchool(peterUser, parameters);
         //UserUI.searchSchool(peterUser, parameters);

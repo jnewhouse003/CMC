@@ -51,17 +51,17 @@ public class UserController {
 		 * @return ArrayList of Universities
 		 */
 		public ArrayList<University> searchSchool(String user, Criteria criteria) {
-			ArrayList<University> schools = new ArrayList();
+			ArrayList<University> schools = new ArrayList<University>();
 			if(this.dataBase.lookUpUser(user) == true) {
 				
-				if(this.accountController.getLoggedInUserStatus() == true) {
+				//if(this.accountController.getLoggedInUserStatus() == true) {
 					schools = this.search.searchSchool(criteria);
 					
 					return schools;
-				}
-				else {
-					return schools;
-				}
+				//}
+				//else {
+					//return schools;
+				//}
 			}
 			else {
 			

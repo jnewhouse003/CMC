@@ -85,6 +85,7 @@ public class Criteria {
 			double percentAdmittedMin, double percentAdmittedMax, double percentEnrolledMin, double percentEnrolledMax,
 			int academicsScaleMin, int academicScaleMax, int socialScaleMin, int socialScaleMax,
 			int lifeQualityScaleMin, int lifeQualityScaleMax, ArrayList<String> emphases) {
+	
 		this.state = state;
 		this.location = location;
 		this.control = control;

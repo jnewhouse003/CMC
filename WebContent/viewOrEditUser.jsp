@@ -26,6 +26,7 @@ for(int i = 0; i < dataBase.findallUsers().size();i++){
 	String un =  dataBase.findallUsers().get(i).getUserName();
 	String pass =  dataBase.findallUsers().get(i).getPassword();
 	char type =  dataBase.findallUsers().get(i).getType();
+	char s =  dataBase.findallUsers().get(i).getStatus();
 
 
 %>
@@ -63,7 +64,7 @@ for(int i = 0; i < dataBase.findallUsers().size();i++){
 <tr>
 <td style="vertical-align: top;">Status<br>
 </td>
-<td style="vertical-align: top;"><input name="Status"> </td>
+<td style="vertical-align: top;"><input name="Status" value="<%=s%>"> </td>
 </tr>
 <%
 	}

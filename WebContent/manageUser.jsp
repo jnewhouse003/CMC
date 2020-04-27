@@ -44,7 +44,7 @@ href="addUser.jsp">Add new User</a>
 	String un =  dataBase.findallUsers().get(i).getUserName();
 	String pass =  dataBase.findallUsers().get(i).getPassword();
 	char type =  dataBase.findallUsers().get(i).getType();
-	
+	char s =  dataBase.findallUsers().get(i).getStatus();
 
 %>
 <tr>
@@ -66,7 +66,8 @@ href="addUser.jsp">Add new User</a>
 </td>
 <td style="vertical-align: top;"><%=type %>
 </td>
-<td style="vertical-align: top;">
+<td style="vertical-align: top;"><%=s %>
+</td>
 <td style="vertical-align: top;">
 <form method="post" action="viewOrEditUser.jsp" style=" text-align: center;">
     <input name="edit" value="edit" type="submit" style="vertical-align: center;">

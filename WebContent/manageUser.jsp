@@ -70,7 +70,7 @@ href="addUser.jsp">Add new User</a>
 <td style="vertical-align: top;">
 <form method="post" action="viewOrEditUser.jsp" style=" text-align: center;">
     <input name="edit" value="edit" type="submit" style="vertical-align: center;">
-    <input name="Username" value="???" type="hidden">
+    <input name="Username" value="<%=un%>" type="hidden">
 </form>
 
 </td>

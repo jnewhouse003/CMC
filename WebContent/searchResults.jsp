@@ -127,12 +127,13 @@ School
 </form>
 </td>
 
-<td style="vertical-align: middle;"> <%=schoolName %>
+<td style="vertical-align: middle;"> <%=schoolName%>
 </td>
 <td>
 <form method="post" action="viewSearchedSchoolPage.jsp" name="View">
    <input name="View" value="view" type="submit">
     <input name="Username" value="???" type="hidden">
+    <input name="school" value=<%=schoolName%> type="hidden">
    </form> </td>
 
 

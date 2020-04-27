@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import = "university.*" %>
+    <%@page import = "DB.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,6 +15,29 @@
 <table style="text-align: left; width: 45%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
+<%
+DBController dataBase = new DBController("goldencircle","csci230");
+University temp = dataBase.getUniversity((String)request.getParameter("school"));
+String name = temp.getName();
+String state = temp.getState();
+String location = temp.getLocation();
+String control = temp.getControl();
+int numStudents = temp.getNumStudents();
+double percentFemale = temp.getPercentFemale();
+int verbalSAT = temp.getVerbalSAT();
+int mathSAT = temp.getMathSAT();
+double expenses = temp.getExpenses();
+double financialAid = temp.getFinancialAid();
+int numApplications = temp.getNumApplications();
+double admitted = temp.getPercentAdmitted();
+double enrolled = temp.getPercentEnrolled();
+int academicScale = temp.getAcademicsScale();
+int socialScale = temp.getSocialScale();
+int lifeQualityScale = temp.getLifeQualityScale();
+
+
+
+%>
 
 	 
      
@@ -22,7 +47,7 @@ cellspacing="2">
 SCHOOL
 </td>
 <td>
-<input name="school" value="???" readonly><br>
+<input name="school" value=<%=name%> readonly><br>
 </td>
 </tr>
 <tr align="LEFT">
@@ -31,7 +56,7 @@ SCHOOL
 STATE
 </td>
 <td>
-<input name="state" value="???" readonly><br>
+<input name="state" value=<%=state%>  readonly><br>
 </td>
 </tr>
 <tr align="LEFT">
@@ -40,7 +65,7 @@ STATE
 LOCATION
 </td>
 <td>
-<input name="location" value="???" readonly><br>
+<input name="location" value=<%=location%>  readonly><br>
 </td>
 </tr>
 <tr align="LEFT">
@@ -49,7 +74,7 @@ LOCATION
 CONTROL
 </td>
 <td>
-<input name="control" value="???" readonly><br>
+<input name="control" value=<%=control%>  readonly><br>
 </td>
 </tr>
 <tr align="LEFT">
@@ -58,7 +83,7 @@ CONTROL
 NUMBER OF STUDENTS
 </td>
 <td>
-<input name="numberOfStudents" value="???" readonly><br>
+<input name="numberOfStudents" value=<%=numStudents%>  readonly><br>
 </td>
 </tr>
 <tr align="LEFT">
@@ -67,7 +92,7 @@ NUMBER OF STUDENTS
 % FEMALE
 </td>
 <td>
-<input name="female" value="???" readonly><br>
+<input name="female" value=<%=percentFemale%> readonly><br>
 </td>
 </tr>
 
@@ -77,7 +102,7 @@ NUMBER OF STUDENTS
 SAT VERBAL
 </td>
 <td>
-<input name="satVerbal" value="???" readonly><br>
+<input name="satVerbal" value=<%=verbalSAT%>  readonly><br>
 </td>
 </tr>
 
@@ -87,7 +112,7 @@ SAT VERBAL
 SAT MATH
 </td>
 <td>
-<input name="satMath" value="???" readonly><br>
+<input name="satMath" value=<%=mathSAT%>  readonly><br>
 </td>
 </tr>
 
@@ -97,7 +122,7 @@ SAT MATH
 EXPENSES
 </td>
 <td>
-<input name="expenses" value="???" readonly><br>
+<input name="expenses" value=<%=expenses%>  readonly><br>
 </td>
 </tr>
 
@@ -106,7 +131,7 @@ EXPENSES
 % FINANCIAL AID
 </td>
 <td>
-<input name="financialAid" value="???" readonly><br>
+<input name="financialAid" value=<%=financialAid%> readonly><br>
 </td>
 </tr>
 
@@ -116,7 +141,7 @@ EXPENSES
 NUMBER OF APPLICANTS
 </td>
 <td>
-<input name="numberOfApplicants" value="???" readonly><br>
+<input name="numberOfApplicants" value=<%=numApplications%> readonly><br>
 </td>
 </tr>
 
@@ -125,7 +150,7 @@ NUMBER OF APPLICANTS
 % ADMITTED
 </td>
 <td>
-<input name="admitted" value="???" readonly><br>
+<input name="admitted" value=<%=admitted%>  readonly><br>
 </td>
 </tr>
 
@@ -134,7 +159,7 @@ NUMBER OF APPLICANTS
 % ENROLLED
 </td>
 <td>
-<input name="enrolled" value="???" readonly><br>
+<input name="enrolled" value=<%=enrolled%>  readonly><br>
 </td>
 </tr>
 
@@ -143,7 +168,7 @@ NUMBER OF APPLICANTS
 ACADEMIC SCALE (1 - 5)
 </td>
 <td>
-<input name="academicScale" value="???" readonly><br>
+<input name="academicScale" value=<%=academicScale%>  readonly><br>
 </td>
 </tr>
 
@@ -152,7 +177,7 @@ ACADEMIC SCALE (1 - 5)
 SOCIAL SCALE (1 - 5)
 </td>
 <td>
-<input name="socialScale" value="???" readonly><br>
+<input name="socialScale" value=<%=socialScale%> readonly><br>
 </td>
 </tr>
 
@@ -161,7 +186,7 @@ SOCIAL SCALE (1 - 5)
 QUALITY OF LIFE SCALE (1 - 5)
 </td>
 <td>
-<input name="qualityOfLife" value="???" readonly><br>
+<input name="qualityOfLife" value=<%=lifeQualityScale%>  readonly><br>
 </td>
 </tr>
 

@@ -17,7 +17,6 @@
 AccountController AC = (AccountController)session.getAttribute("AC");
 DBController dataBase = new DBController("goldencircle","csci230");
 UserController UC = new UserController();
-//DBController dataBase = new DBController("goldencircle","csci230");
 UC.createDataBase(dataBase, AC);
 
 
@@ -124,6 +123,7 @@ School
 <form method="post" action="saveSchoolAction.jsp" >
     <input name="save" value="Save" type="submit">
     <input name="Username" value="???" type="hidden">
+    <input name="school" value=<%=schoolName%> type="hidden">
 </form>
 </td>
 

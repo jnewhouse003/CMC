@@ -38,9 +38,13 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		AccountUI.createController(dataBase);
 		AdminUI.createController(dataBase);
 		UserUI.createController(dataBase,AccountUI.getAccountController());
+		String[][] e = dataBase.getAllEmphases();
+		for (int i = 0; i < e.length; i++) {
+			//System.out.println(e[i][0] + "    " + e[i][1]);
+		}
 		
 		
-		ArrayList<University> sresults = new ArrayList();
+		ArrayList<University> sresults = new ArrayList<University>();
 		sresults.add(dataBase.getUniversity("BARNARD"));
 		UserUI.displayResults(sresults);
 		
@@ -67,7 +71,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 
-		Account test = new Account("test", "mctester", "testy", "123", 'u');
+		Account test = new Account("test", "mctester", "testy", "123", 'u', 'Y');
 		System.out.println("Step 2: view Profile");
 		//UserUI.viewUserInfo(test);
 		
@@ -78,7 +82,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
        
         System.out.println("--------------------");
         System.out.println("Step 4: Search for schools by a combination of state and number of students");
-        User peterUser = new User("peter", "ohmann", "pohmann", "123", 'u');
+        User peterUser = new User("peter", "ohmann", "pohmann", "123", 'u', 'y');
         AccountUI.addUser("peter", "Ohmann", "pohmann", "123", 'u');
         AccountUI.logOn("pohmann", "123");
         ArrayList<String> temp = new ArrayList<String>();
@@ -118,7 +122,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 9: View specific school information");
-		ArrayList<University> schools = new ArrayList();
+		ArrayList<University> schools = new ArrayList<University>();
 		schools.add(AccountUI.viewResults("ARIZONA STATE"));
 		UserUI.displayResults(schools);
 		
@@ -126,6 +130,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		System.out.println("--------------------");
 		System.out.println("Step 10: Add saved school");
 		UserUI.addSavedSchool("pohmann", "ARIZONA STATE");
+		UserUI.addSavedSchool("pohmann", "BARNARD");
 		
 		System.out.println("--------------------");
 		System.out.println("Step 11: view Saved school");

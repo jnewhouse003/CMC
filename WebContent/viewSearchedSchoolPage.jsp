@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import = "DB.*" %>
+    <%@page import = "java.util.ArrayList" %>
+    <%@page import = "university.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,30 +12,29 @@
 </head>
 <body>
 <button type="button" name="back" onclick="history.back()">back</button><br>
-<table style="text-align: left; width: 45%;" border="1" cellpadding="2"
+<table style="text-align: left; width: 50%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
 <%
-for(int i = 0; i < dataBase.findallUniversity().size();i++){
-	if(request.getParameter("school").equals(dataBase.findallUniversity().get(i).getName())){
-	String name = dataBase.findallUniversity().get(i).getName();
-	String state = dataBase.findallUniversity().get(i).getState();
-	String control = dataBase.findallUniversity().get(i).getControl();
-	int students = dataBase.findallUniversity().get(i).getNumStudents();
-	double female = dataBase.findallUniversity().get(i).getPercentFemale();
-	double admitted = dataBase.findallUniversity().get(i).getPercentAdmitted();
-	double male = dataBase.findallUniversity().get(i).getPercentMale();
-	int verbal = dataBase.findallUniversity().get(i).getVerbalSAT();
-	int math = dataBase.findallUniversity().get(i).getMathSAT();
-	double financialAid = dataBase.findallUniversity().get(i).getFinancialAid();
-	double expenses = dataBase.findallUniversity().get(i).getExpenses();
-	int applicants = dataBase.findallUniversity().get(i).getNumApplications();
-	double enrolled = dataBase.findallUniversity().get(i).getPercentEnrolled();
-	int academic = dataBase.findallUniversity().get(i).getAcademicsScale();
-	int social = dataBase.findallUniversity().get(i).getSocialScale();
-	int life = dataBase.findallUniversity().get(i).getLifeQualityScale();
-	String e = dataBase.findallUniversity().get(i).getEmphases();
-	String location = dataBase.findallUniversity().get(i).getLocation();
+	University foundSchool = dataBase.getUniversity(request.getParameter("school"));
+	String name = foundSchool.getName();
+	String state = foundSchool.getState();
+	String control = foundSchool.getControl();
+	int students = foundSchool.getNumStudents();
+	double female = foundSchool.getPercentFemale();
+	double admitted = foundSchool.getPercentAdmitted();
+	double male = foundSchool.getPercentMale();
+	int verbal = foundSchool.getVerbalSAT();
+	int math = foundSchool.getMathSAT();
+	double financialAid = foundSchool.getFinancialAid();
+	double expenses = foundSchool.getExpenses();
+	int applicants = foundSchool.getNumApplications();
+	double enrolled = foundSchool.getPercentEnrolled();
+	int academic = foundSchool.getAcademicsScale();
+	int social = foundSchool.getSocialScale();
+	int life = foundSchool.getLifeQualityScale();
+	ArrayList<String> e = foundSchool.getEmphases();
+	String location = foundSchool.getLocation();
 	
 	
 
@@ -124,20 +125,18 @@ for(int i = 0; i < dataBase.findallUniversity().size();i++){
 </tr>
 
 <tr align="LEFT">
-<td colspan="2" rowspan="1" style="vertical-align: top;">EMPASES</td>
+<td colspan="2" rowspan="1"  style="vertical-align: top;">EMPASES</td>
 <td>
-<input name="financialAid1" value="" readonly><br>
-<input name="financialAid2" value="" readonly><br>
-<input name="financialAid3" value="" readonly><br>
-<input name="financialAid4" value="" readonly><br>
-<input name="financialAid5" value="" readonly><br>
+<%for (int j = 0; j < e.size(); j++){ %>
+<input name="financialAid1" value="<%=e.get(j)%>" size = "30"  readonly><br>
+<%} %>
 </td>
 </tr>
 </table>
 
 <br>
-<%}
-	}%>
+<%
+	%>
 
 </body>
 </html>

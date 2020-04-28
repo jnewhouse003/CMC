@@ -6,6 +6,8 @@ package university;
  * 
  */
 
+import java.util.ArrayList;
+
 /**
  * @author <Diego Alvarez>
  *
@@ -29,7 +31,7 @@ public class University {
 	private int academicsScale;
 	private int socialScale; 
 	private int lifeQualityScale; 
-	private String emphases; 
+	private ArrayList<String> emphases = new ArrayList<String>(); 
 	
 	
 	
@@ -77,7 +79,7 @@ public class University {
 		this.academicsScale = academicsScale;
 		this.socialScale = socialScale;
 		this.lifeQualityScale = lifeQualityScale;
-		this.emphases = i;
+		this.emphases.add(i);
 	}
 
 
@@ -107,7 +109,7 @@ public class University {
 		this.academicsScale = Integer.valueOf(strings[13]);
 		this.socialScale = Integer.valueOf(strings[14]);
 		this.lifeQualityScale = Integer.valueOf(strings[15]);
-		this.emphases = "none";
+		
 	}
 
 
@@ -390,7 +392,7 @@ public class University {
 	 * This method is used to get the emphases 
 	 * @return the emphases
 	 */
-	public String getEmphases() {
+	public ArrayList<String> getEmphases() {
 		return emphases;
 	}
 
@@ -398,8 +400,8 @@ public class University {
 	 * This method is used to set the emphases 
 	 * @param emphases the emphases to set
 	 */
-	public void setEmphases(String emphases) {
-		this.emphases = emphases;
+	public void addEmphases(String emphases) {
+		this.emphases.add(emphases);
 	}
 	
 	/**

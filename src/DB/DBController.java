@@ -148,9 +148,21 @@ public class DBController
 		for(int i = 0; i < allSchools.length; i++) {
 			if(allSchools[i][0].equals(university)) {
 				temp = new University(allSchools[i]);
+				
+				String[][] emphases;
+				emphases = this.dataBase.university_getNamesWithEmphases();
+				for (int j = 0; j < emphases.length; j++) {
+					if(emphases[j][0].equals(university)){
+						temp.addEmphases(emphases[j][1]);
+					}
+				}
+				
 				return temp;
+				
 			}
 		}
+		
+		
 		return temp;
 	}
 	
@@ -456,7 +468,9 @@ public class DBController
 	}
 
 
-	
+	public String [][] getAllEmphases() {
+		return this.dataBase.university_getNamesWithEmphases();
+	}
 	/*
 	
 	public void persist(user) 

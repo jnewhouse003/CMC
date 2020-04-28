@@ -11,10 +11,7 @@ AccountController AC = (AccountController)session.getAttribute("AC");
 DBController dataBase = new DBController("goldencircle","csci230");
 UserController UC = new UserController();
 UC.createDataBase(dataBase, AC);
-UC.addSavedSchool((String)session.getAttribute("uName"), request.getParameter("school"));
+String school = request.getParameter("savedSchool");
+UC.addSavedSchool((String)session.getAttribute("uName"), school);
 
-
-
-
-
-response.sendRedirect("searchResults.jsp");%>
+response.sendRedirect("searchMenu.jsp");%>

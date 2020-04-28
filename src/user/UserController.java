@@ -75,7 +75,7 @@ public class UserController {
 		 * gets saved schools for a user and returns them
 		 * @param savedSchools 
 		 */
-		public String[] viewSavedSchool(String username) {
+		public ArrayList<ArrayList<String>> viewSavedSchool(String username) {
 			return dataBase.getSavedSchool(username);
 			
 		
@@ -91,9 +91,9 @@ public class UserController {
 		 * @param school
 		 * @return 
 		 */
-		public Boolean removeSavedSchool(User user, String name) {
+		public Boolean removeSavedSchool(String user, String name) {
 			
-			return user.removeSavedSchool(dataBase.getUniversity(name));
+			return dataBase.removeSavedSchool(user,name);
 		}
 		
 		

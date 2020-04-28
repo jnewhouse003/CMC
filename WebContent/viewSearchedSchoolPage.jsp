@@ -43,7 +43,7 @@ cellspacing="2">
 <tr align="LEFT">
 
 <td colspan="2" rowspan="1" style="vertical-align: top;">SCHOOL</td>
-<td><input name="school" value="<%=name%>" readonly><br></td>
+<td><input name="school" value="<%=name%>" size = "50" readonly><br></td>
 </tr>
 <tr align="LEFT">
 <td colspan="2" rowspan="1" style="vertical-align: top;">STATE</td>

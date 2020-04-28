@@ -121,16 +121,24 @@ public class DBController
 	 * @param username
 	 * @return savedSchools list
 	 */
-	public String[] getSavedSchool(String username) {
+	public ArrayList<ArrayList<String>> getSavedSchool(String username) {
 		String[][] users;
+		String[][] savedschools = null;
+		ArrayList<ArrayList<String>> schools= new ArrayList<ArrayList<String>>();
+		int count = 0;
 		users = this.dataBase.user_getUsernamesWithSavedSchools();
 		for(int i = 0; i< users.length; i++) {
 			if(users[i][0].equals(username)) {
-				return users[i];
+				schools.add(new ArrayList<String>());
+				schools.get(count).add(users[i][0]);
+				schools.get(count).add(users[i][1]);
+				schools.get(count).add(users[i][2]);
+				count++;
+				
 			}
 		}
-		String[] empty = null;
-		return empty;
+		
+		return schools;
 		
 	}
 	

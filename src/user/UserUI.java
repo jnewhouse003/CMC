@@ -55,7 +55,7 @@ public interface UserUI {
 	 * calls to the userController to remove a saved school for a user
 	 */
 	
-	public static Boolean removeSavedSchool(User user, String name) {
+	public static Boolean removeSavedSchool(String user, String name) {
 		
 		
 		return userController.removeSavedSchool(user, name);
@@ -76,7 +76,7 @@ public interface UserUI {
 	 * calls to user controller to get the saved schools for a user
 	 */
 
-	public static String[] viewSavedSchool(String username) {
+	public static ArrayList<ArrayList<String>> viewSavedSchool(String username) {
 		
 		return userController.viewSavedSchool(username);
 	}

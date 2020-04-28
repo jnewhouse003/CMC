@@ -118,7 +118,7 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 8: Remove saved school");
-		UserUI.removeSavedSchool(peterUser,"St.Johns");
+		UserUI.removeSavedSchool("pohmann","St.Johns");
 		
 		System.out.println("--------------------");
 		System.out.println("Step 9: View specific school information");
@@ -134,9 +134,11 @@ public class Driver implements AccountUI, UserUI, AdminUI
 		
 		System.out.println("--------------------");
 		System.out.println("Step 11: view Saved school");
-		String[] savedSchools = UserUI.viewSavedSchool("pohmann");
-		for(int i = 0; i< savedSchools.length; i++) {
-			System.out.println(savedSchools[i]);
+		ArrayList<ArrayList<String>> savedSchools = UserUI.viewSavedSchool("pohmann");
+		for(int j = 0; j < savedSchools.size();j++) {
+		for(int i = 0; i < 3; i++) {
+			System.out.println(savedSchools.get(j).get(i));
+		}
 		}
 		
 		System.out.println("-------------------");

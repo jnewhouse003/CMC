@@ -123,7 +123,7 @@ School
 <form method="post" action="saveSchoolAction.jsp" >
     <input name="save" value="Save" type="submit">
     <input name="Username" value="???" type="hidden">
-    <input name="savedSchool" value=<%=schoolName%> type="hidden">
+    <input name="savedSchool" value="<%=schoolName%>" type="hidden">
 </form>
 </td>
 
@@ -133,7 +133,7 @@ School
 <form method="post" action="viewSearchedSchoolPage.jsp" name="View">
    <input name="View" value="view" type="submit">
     <input name="Username" value="???" type="hidden">
-    <input name="school" value=<%=schoolName%> type="hidden">
+    <input name="school" value="<%=schoolName%>" type="hidden">
    </form> </td>
 
 

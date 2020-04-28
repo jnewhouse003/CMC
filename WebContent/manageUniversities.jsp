@@ -86,7 +86,7 @@ for(int i = 0; i < dataBase.findallUniversity().size();i++){
 <td>
 <form method="post" action="viewOrEditUniversity.jsp" style=" text-align: center;">
     <input name="edit" value="Edit" type="submit" style="vertical-align: center;">
-    <input name="Username" value="???" type="hidden">
+    <input name="pname" value="<%=name%>" type="hidden">
 </form>
 </td>
 <%} %>

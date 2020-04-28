@@ -15,9 +15,10 @@ Account temp = dataBase.getAccount(un);
 String first = temp.getFirstName();
 String last = temp.getLastName();
 String pass = temp.getPassword();
+char t = temp.getType();
 %>
 
-<form method="post" action="editUserAction.jsp" name="editUser"><br>
+<form method="post" action="editProfileAction.jsp" name="editUser"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" >
 <tbody>
@@ -47,7 +48,7 @@ border="1" >
 <tr>
 <td style="vertical-align: top;">Type<br>
 </td>
-<td style="vertical-align: top;"><input name="Type" value="???" readonly> </td>
+<td style="vertical-align: top;"><input name="Type" value="<%=t%>" readonly> </td>
 </tr>
 
 

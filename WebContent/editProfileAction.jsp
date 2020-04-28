@@ -11,4 +11,4 @@
 		temp.createController(dataBase);
 		temp.editUserInfo(dataBase.getAccount((String)session.getAttribute("uName")),request.getParameter("Password"), request.getParameter("FirstName"), request.getParameter("LastName"));
 		
-		 response.sendRedirect("manageUser.jsp");%>
+		 response.sendRedirect("logOnMenu.jsp");%>

@@ -159,7 +159,7 @@ SOCIAL SCALE (1 - 5)
 QUALITY OF LIFE SCALE (1 - 5)
 </td>
 <td>
-<input name="qualityOfLife" value="???" readonly><br>
+<input name="qualityOfLife" value="" readonly><br>
 </td>
 </tr>
 
@@ -168,11 +168,11 @@ QUALITY OF LIFE SCALE (1 - 5)
 EMPASES
 </td>
 <td>
-<input name="financialAid1" value="???" readonly><br>
-<input name="financialAid2" value="???" readonly><br>
-<input name="financialAid3" value="???" readonly><br>
-<input name="financialAid4" value="???" readonly><br>
-<input name="financialAid5" value="???" readonly><br>
+<input name="financialAid1" value="" readonly><br>
+<input name="financialAid2" value="" readonly><br>
+<input name="financialAid3" value="" readonly><br>
+<input name="financialAid4" value="" readonly><br>
+<input name="financialAid5" value="" readonly><br>
 </td>
 </tr>
 </table>

@@ -13,7 +13,8 @@
 <table style="text-align: left; width: 55%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
-<%
+<a href="manageUniversities.jsp">back to Universities</a>
+<% 
 for(int i = 0; i < dataBase.findallUniversity().size();i++){
 	if(request.getParameter("pname").equals(dataBase.findallUniversity().get(i).getName())){
 	String name = dataBase.findallUniversity().get(i).getName();

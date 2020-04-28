@@ -28,7 +28,7 @@ border="1" >
 <td style="vertical-align: top;"><input name="FirstName" value=<%=first%>><br>
 </td>
 </tr>
-<tr>
+
 <tr>
 <td style="vertical-align: top;">Last Name<br>
 </td>

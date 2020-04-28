@@ -9,7 +9,7 @@
 <title>View School Page</title>
 </head>
 <body>
-
+<button type="button" name="back" onclick="history.back()">back</button><br>
 <table style="text-align: left; width: 45%;" border="1" cellpadding="2"
 cellspacing="2">
 <tbody>
